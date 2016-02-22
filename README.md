@@ -19,7 +19,6 @@ La parte privada de la web dejará a los usuarios modificar su perfil y añadir 
 ## Integrantes del equipo
 
 | Nombre | Apellidos | Correo | Cuenta GitHub |
-| - | - | - | - |
 | Pablo | Bermejo Gómez | p.bermejogo@alumnos.urjc.es | PabloAsekas |
 | Ignacio | López López |  | ilopezlopez |
 | Alejandro | Sanchez-Portal de Vega |  | Alex2626 |
