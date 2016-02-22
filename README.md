@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Cookcinando
 
 ## Descripción
