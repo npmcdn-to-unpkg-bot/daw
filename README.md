@@ -21,5 +21,5 @@ La parte privada de la web dejará a los usuarios modificar su perfil y añadir 
 | Nombre | Apellidos | Correo | Cuenta GitHub |
 | - | - | - | - |
 | Pablo | Bermejo Gómez | p.bermejogo@alumnos.urjc.es | PabloAsekas |
-| Ignacio | López López |  | ilopezlopez |
-| Alejandro | Sánchez-Portal de Vega |  | Alex2626 |
+| Ignacio | López López | i.lopezlope@alumnos.urjc.es | ilopezlopez |
+| Alejandro | Sánchez-Portal de Vega | a.sanchezdev@alumnos.urjc.es | Alex2626 |
