@@ -14,7 +14,7 @@ La parte privada de la web dejará a los usuarios modificar su perfil y añadir 
 - **Platos famosos**: una entidad donde se encuentren las recetas que representan a platos famosos de restaurantes conocidos.
 - **Usuarios**: una entidad donde se encuentren todos los usuarios registrados que pueden hacer uso de la plataforma.
 - **Favoritos**: una entidad donde se encuentren las recetas favoritas de los usuarios.
-- **:**
+- **Restaurantes:** una entidad donde se encuentren los restaurantes de las recetas famosas.
 
 ## Integrantes del equipo
 
