@@ -15,7 +15,7 @@ La parte privada de la web dejará a los usuarios modificar su perfil y añadir 
 - **Usuarios**: una entidad donde se encuentren todos los usuarios registrados que pueden hacer uso de la plataforma.
 - **Favoritos**: una entidad donde se encuentren las recetas favoritas de los usuarios.
 - **Restaurantes:** una entidad donde se encuentren los restaurantes de las recetas famosas.
-
+El
 ## Integrantes del equipo
 
 | Nombre | Apellidos | Correo | Cuenta GitHub |
