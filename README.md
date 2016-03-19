@@ -19,5 +19,7 @@ La parte privada de la web dejará a los usuarios modificar su perfil y añadir 
 ## Integrantes del equipo
 
 Pablo Bermejo Gómez // p.bermejogo@alumnos.urjc.es // PabloAsekas
+
 Ignacio López López // i.lopezlope@alumnos.urjc.es // ilopezlopez
+
 AlejandrovSánchez-Portal de Vega // a.sanchezdev@alumnos.urjc.es // Alex2626
