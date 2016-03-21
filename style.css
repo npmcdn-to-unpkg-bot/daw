@@ -15,3 +15,33 @@
   -o-background-size: cover;
   background-size: cover;
 }
+
+/*INDEX*/
+
+.menu{
+    padding-top: 1.5%;    
+}
+
+.titulo{
+    padding-left: 4%;
+}
+
+#img1{
+    background-color: black;
+}
+ #img2{
+    background-color: red;
+}
+#img3{
+    background-color: black;
+}
+#img4{
+    background-color: blueviolet;
+}
+#img5{
+    background-color: black;
+}
+#img6{
+    background-color: blue;
+}
+
