@@ -28,6 +28,7 @@
 
 #img1{
     background-color: black;
+    
 }
  #img2{
     background-color: red;
@@ -43,5 +44,9 @@
 }
 #img6{
     background-color: blue;
+}
+
+.descripcion{
+    text-align: center;
 }
 
