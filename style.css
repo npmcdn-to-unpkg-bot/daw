@@ -26,12 +26,17 @@
     padding-left: 4%;
 }
 
+.menu1{
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
 #img1{
-    background-color: black;
-    
+    background-color: black;    
 }
  #img2{
     background-color: red;
+    
 }
 #img3{
     background-color: black;
@@ -46,7 +51,13 @@
     background-color: blue;
 }
 
-.descripcion{
-    text-align: center;
+.descripcion {
+    text-align: center; 
+    padding: 2%;
+}
+
+.descripcion #texto{
+    margin: 3%;
+    
 }
 
