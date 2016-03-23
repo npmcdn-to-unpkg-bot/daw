@@ -32,23 +32,30 @@
 }
 
 #img1{
-    background-color: black;    
+    background-color: black;
+    height: 200px;
+    
 }
  #img2{
     background-color: red;
-    
+     height: 100px;
+      
 }
 #img3{
-    background-color: black;
+    background-color: green;
+    height: 100px;
 }
 #img4{
     background-color: blueviolet;
+    height: 200px;
 }
 #img5{
     background-color: black;
+    height: 100px;
 }
 #img6{
     background-color: blue;
+    height: 100px;
 }
 
 .descripcion {
@@ -61,7 +68,7 @@
     
 }
 
-.zonaBusq{
-    
+.zonaBusqueda{
+    padding-bottom: 1%;
 }
 
