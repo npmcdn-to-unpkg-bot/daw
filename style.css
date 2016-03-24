@@ -26,11 +26,6 @@
     padding-left: 4%;
 }
 
-.menu1{
-    padding-top: 2%;
-    padding-bottom: 2%;
-}
-
 #img1{
     background-color: black;
     height: 200px;
@@ -72,3 +67,65 @@
     padding-bottom: 1%;
 }
 
+.container-fluid {
+    padding-bottom: 4%;
+}
+
+.platosFav h1{
+    text-align: center;
+}
+
+#img11{
+    background-color: black;
+    height: 800px;
+    
+}
+ #img22{
+    background-color: red;
+     height: 200px;
+      
+}
+#img33{
+    background-color: green;
+    height: 200px;
+}
+#img44{
+    background-color: blueviolet;
+    height: 200px;
+}
+#img55{
+    background-color: green;
+    height: 200px;
+}
+
+.masPlatos{
+    padding-top: 5%; 
+    padding-bottom: 5%;
+}
+
+.btnMasPlatos{
+    width: 50%;
+    height: 200%;
+    padding: 2%;
+    font-size: 240%
+    
+}
+
+.masRest{
+    padding-top: 5%; 
+    padding-bottom: 5%;
+}
+
+.btnMasRest{
+    width: 50%;
+    height: 200%;
+    padding: 2%;
+    font-size: 240%
+}
+
+.footer{
+    background-color: bisque;
+}
+.enlaces ul{
+    list-style: none;
+}
