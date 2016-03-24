@@ -63,9 +63,16 @@
     
 }
 
-.zonaBusqueda{
+.zonaBusq {
     padding-bottom: 1%;
+    
 }
+
+.zonaBusq .busqueda{
+    width: 200%;
+}
+
+
 
 .container-fluid {
     padding-bottom: 4%;
@@ -77,25 +84,25 @@
 
 #img11{
     background-color: black;
-    height: 800px;
+    height: 600px;
     
 }
  #img22{
     background-color: red;
-     height: 200px;
+     height: 150px;
       
 }
 #img33{
     background-color: green;
-    height: 200px;
+    height: 150px;
 }
 #img44{
     background-color: blueviolet;
-    height: 200px;
+    height: 150px;
 }
 #img55{
     background-color: green;
-    height: 200px;
+    height: 150px;
 }
 
 .masPlatos{
@@ -123,9 +130,34 @@
     font-size: 240%
 }
 
+.seccInter{
+    padding-left: 15%;
+    padding-right: 10%;
+
+}
+
+.seccInter h3{
+    text-align: center;
+    padding-bottom: 2%;
+    
+}
+.seccInter ul{
+    list-style: none;
+}
+
+.seccInter .resources{
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
 .footer{
     background-color: bisque;
 }
-.enlaces ul{
+
+.footer .enlaces ul{
     list-style: none;
+}
+
+.footer .imagenes img{
+    padding-right: 8%;    
 }
