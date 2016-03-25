@@ -2,18 +2,18 @@
 	position: absolute;
 	max-width: 400px;
 	max-height: 300px;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 .full {
-	background: url(img/pizza.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+    background: url(img/pizza.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 /*INDEX*/
@@ -29,12 +29,10 @@
 #img1{
     background-color: black;
     height: 200px;
-    
 }
  #img2{
     background-color: red;
      height: 100px;
-      
 }
 #img3{
     background-color: green;
@@ -52,28 +50,26 @@
     background-color: blue;
     height: 100px;
 }
-
 .descripcion {
     text-align: center; 
     padding: 2%;
 }
-
 .descripcion #texto{
     margin: 3%;
-    
 }
-
 .zonaBusq {
     padding-bottom: 1%;
-    
 }
-
+.zonaBusq form {
+    width: 500px;
+}
 .zonaBusq .busqueda{
-    width: 200%;
+    width: 91%;
+    float: left;
 }
-
-
-
+.zonaBusq .form-group button {
+    float: right;
+}
 .container-fluid {
     padding-bottom: 4%;
 }
