@@ -34,6 +34,100 @@
     background-color: red;
      height: 100px;
 }
+
+
+/* PlatosFavoritos/RestauranteDelMes */
+ #imgFavGrande{
+    background-color: red;
+    height: 600px;
+    background-image: url(img/FavoritoGrande4.png);
+}
+
+.tituloGrande{
+    background-color: aqua;
+    opacity: 0.5;
+}
+
+.imagenGrande {
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 930px;
+    height: 600px;
+}
+
+.tituloPequenio {
+    background-color: aqua;
+    opacity: 0.5;
+}
+
+.imagenPequenia{
+    width: 465px;
+    height: 150px;
+}
+
+#imgFav1{
+    background-image: url(img/FavoritoPequenio1.png);
+}
+
+#imgFav2{
+    background-image: url(img/FavoritoPequenio2.png);
+}
+
+#imgFav3{
+    background-image: url(img/FavoritoPequenio3.png);
+}
+
+#imgFav4{
+    background-image: url(img/FavoritoPequenio4.png);
+}
+
+#imgRestGrande{
+    background-color: red;
+    height: 600px;
+    background-image: url(img/TGBGrande.jpg);
+}
+
+#imgRest1{
+    background-image: url(img/FosterPequenio.jpg);
+}
+
+#imgRest2{
+    background-image: url(img/TagliatellaPequenio.jpg);
+}
+
+#imgRest3{
+    background-image: url(img/TGBPequenio.jpg);
+}
+
+#imgRest4{
+    background-image: url(img/RibsPequenio.png);
+}
+
+/* Fin PlatosFavoritos/RestauranteDelMes */
+
+#img22{
+    background-color: red;
+}
+
+#img33{
+    background-color: green;
+    height: 150px;
+}
+#img44{
+    background-color: blueviolet;
+    height: 150px;
+}
+#img55{
+    background-color: green;
+    height: 150px;
+}
+
+
+
+#img11{
+    background-color: black;
+}
+
 #img3{
     background-color: green;
     height: 100px;
@@ -82,28 +176,9 @@
     padding-left: 0px;
 }
 
-#img11{
-    background-color: black;
-    height: 600px;
-    
-}
- #img22{
-    background-color: red;
-     height: 150px;
-      
-}
-#img33{
-    background-color: green;
-    height: 150px;
-}
-#img44{
-    background-color: blueviolet;
-    height: 150px;
-}
-#img55{
-    background-color: green;
-    height: 150px;
-}
+
+ 
+
 
 .masPlatos{
     padding-top: 5%; 
