@@ -30,10 +30,49 @@
     background-color: black;
     height: 200px;
 }
- #img2{
+#img2{
     background-color: red;
      height: 100px;
 }
+
+/* Cabecera*/
+#cab1{
+    height: 200px;
+    width: 352.5px;
+    background-image: url(img/CabRestaurantes.png);
+}
+
+#cab2{
+    height: 100px;
+    width: 470px;
+    background-image: url(img/CabRecetas.png);
+}
+
+#cab3{
+    height: 100px;
+    width: 470px;
+    background-image: url(img/CabPlatoRestaurante.png);
+}
+
+#cab4{
+    height: 200px;
+    width: 352.5px;
+    background-image: url(img/CabFavoritos.png);
+}
+
+#cab5{
+    height: 100px;
+    width: 235px;
+    background-image: url(img/CabRestauranteMes.png);
+}
+
+#cab6{
+    height: 100px;
+    width: 235px;
+    background-image: url(img/CabPlato.png);
+}
+
+
 
 
 /* PlatosFavoritos/RestauranteDelMes */
