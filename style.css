@@ -340,7 +340,8 @@
 }
 
 .footer{
-    background-color: bisque;
+    background-color: #282828;
+	color: white;
 }
 
 .footer .enlaces ul{
