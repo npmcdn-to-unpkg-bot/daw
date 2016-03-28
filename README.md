@@ -23,3 +23,7 @@ Pablo Bermejo Gómez // p.bermejogo@alumnos.urjc.es // PabloAsekas
 Ignacio López López // i.lopezlope@alumnos.urjc.es // ilopezlopez
 
 AlejandrovSánchez-Portal de Vega // a.sanchezdev@alumnos.urjc.es // Alex2626
+
+## Diagrama
+
+!(https://raw.githubusercontent.com/PabloAsekas/daw/master/capturas/diagrama.png)
