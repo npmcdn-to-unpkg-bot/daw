@@ -82,11 +82,16 @@
     background-color: red;
     height: 600px;
     background: url(img/FavoritoGrande4.png) center center;
+     padding: 1%;
 }
 
 .tituloGrande{
-    background-color: aqua;
-    opacity: 0.5;
+    background-color: lightgrey;
+    opacity: 0.8;
+    position: absolute;
+    font-family: ‘Lucida Console’, Monaco, monospace;
+    color: snow;
+    font-size: 50px;
 }
 
 .imagenGrande {
@@ -97,13 +102,18 @@
 }
 
 .tituloPequenio {
-    background-color: aqua;
-    opacity: 0.5;
+    background-color: lightgrey;
+    opacity: 0.8;
+    position: absolute;
+    font-family: ‘Lucida Console’, Monaco, monospace;
+    color: snow;
+    font-size: 22px;
 }
 
 .imagenPequenia{
 /*    width: 465px;*/
     height: 150px;
+    padding: 1%;
 }
 
 #imgFav1{
