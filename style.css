@@ -81,14 +81,25 @@
     height: 100px;
 /*    width: 235.5px;*/
     background: url(img/CabRestauranteMes.png) center center;
+    padding-left: 41px;
+    padding-top: 36px;
 }
+
+#cab5 .tituloGrande{
+    font-size: 25px;
+}
+
 
 #cab6{
     height: 100px;
 /*    width: 235px;*/
     background: url(img/CabPlato.png) center center;
+    padding-left: 56.8px;
+    padding-top: 28px;
 }
-
+#cab6 .tituloGrande{
+    font-size: 32px;
+}
 
 
 
@@ -101,7 +112,7 @@
 }
 
 .tituloGrande{
-    background-color: lightgrey;
+    background-color: black;
     opacity: 0.8;
     position: absolute;
     font-family: ‘Lucida Console’, Monaco, monospace;
@@ -117,7 +128,7 @@
 }
 
 .tituloPequenio {
-    background-color: lightgrey;
+    background-color: black;
     opacity: 0.8;
     position: absolute;
     font-family: ‘Lucida Console’, Monaco, monospace;
