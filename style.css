@@ -381,15 +381,15 @@
     float: left;
 }
 .recetas1 {
-    background: url(img/DulceriaCriolla.jpg) center center;
+    background: url(img/DulceriaCriolla.jpg) center center no-repeat;
     background-size: 100%;
 }
 .recetas2 {
-    background: url(img/PeladoDeGallina.jpg) center center;
+    background: url(img/PeladoDeGallina.jpg) center center no-repeat;
     background-size: 100%;
 }
 .recetas3 {
-    background: url(img/PizcaAndina.jpg) center center;
+    background: url(img/PizcaAndina.jpg) center center no-repeat;
     background-size: 100%;
 }
 .comentario {
