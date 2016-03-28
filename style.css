@@ -505,3 +505,22 @@
     height: 150px;
     padding-bottom: 200px;
 }
+
+/*NUEVA RECETA*/
+.receta{
+    padding-left: 7.4%;
+}
+.receta textarea{    
+    width: 1100px;
+}
+.modTodo2{
+    padding-left: 34%;
+}
+.addImg{
+    padding-left: 7.4%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+.addImg img{
+    padding-left: 3%;
+}
