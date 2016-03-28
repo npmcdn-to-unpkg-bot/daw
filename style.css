@@ -38,37 +38,37 @@
 /* Cabecera*/
 #cab1{
     height: 200px;
-    width: 352.5px;
-    background-image: url(img/CabRestaurantes.png);
+/*    width: 348.75px;*/
+    background-image: url(img/CabRestaurantes.png);ç
 }
 
 #cab2{
     height: 100px;
-    width: 470px;
+/*    width: 470px;*/
     background-image: url(img/CabRecetas.png);
 }
 
 #cab3{
     height: 100px;
-    width: 470px;
+/*    width: 470px;*/
     background-image: url(img/CabPlatoRestaurante.png);
 }
 
 #cab4{
     height: 200px;
-    width: 352.5px;
+/*    width: 348.75px;*/
     background-image: url(img/CabFavoritos.png);
 }
 
 #cab5{
     height: 100px;
-    width: 235px;
+/*    width: 235.5px;*/
     background-image: url(img/CabRestauranteMes.png);
 }
 
 #cab6{
     height: 100px;
-    width: 235px;
+/*    width: 235px;*/
     background-image: url(img/CabPlato.png);
 }
 
@@ -90,7 +90,7 @@
 .imagenGrande {
     padding-left: 0px;
     padding-right: 0px;
-    width: 930px;
+/*    width: 930px;*/
     height: 600px;
 }
 
@@ -100,7 +100,7 @@
 }
 
 .imagenPequenia{
-    width: 465px;
+/*    width: 465px;*/
     height: 150px;
 }
 
