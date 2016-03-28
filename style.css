@@ -49,38 +49,64 @@
     height: 200px;
 /*    width: 348.75px;*/
     background: url(img/CabRestaurantes.png) center center;
+    padding-left: 90px;
+    padding-top: 60px;
 }
 
 #cab2{
     height: 100px;
 /*    width: 470px;*/
     background: url(img/CabRecetas.png) center center;
+    padding-left: 280px;
+    padding-top: 25px;
+}
+
+#cab2 .tituloGrande{
+    font-size: 35px;    
 }
 
 #cab3{
     height: 100px;
 /*    width: 470px;*/
     background: url(img/CabPlatoRestaurante.png) center center;
+    padding-left: 190px;
+    padding-top: 25px;
+}
+#cab3 .tituloGrande{
+    font-size: 25px;
 }
 
 #cab4{
     height: 200px;
 /*    width: 348.75px;*/
     background: url(img/CabFavoritos.png) center center;
+    padding-left: 138px;
+    padding-top: 60px;
 }
 
 #cab5{
     height: 100px;
 /*    width: 235.5px;*/
     background: url(img/CabRestauranteMes.png) center center;
+    padding-left: 41px;
+    padding-top: 36px;
 }
+
+#cab5 .tituloGrande{
+    font-size: 25px;
+}
+
 
 #cab6{
     height: 100px;
 /*    width: 235px;*/
     background: url(img/CabPlato.png) center center;
+    padding-left: 56.8px;
+    padding-top: 28px;
 }
-
+#cab6 .tituloGrande{
+    font-size: 32px;
+}
 
 
 
@@ -89,11 +115,16 @@
     background-color: red;
     height: 600px;
     background: url(img/FavoritoGrande4.png) center center;
+     padding: 1%;
 }
 
 .tituloGrande{
-    background-color: aqua;
-    opacity: 0.5;
+    background-color: black;
+    opacity: 0.8;
+    position: absolute;
+    font-family: ‘Lucida Console’, Monaco, monospace;
+    color: snow;
+    font-size: 50px;
 }
 
 .imagenGrande {
@@ -104,13 +135,18 @@
 }
 
 .tituloPequenio {
-    background-color: aqua;
-    opacity: 0.5;
+    background-color: black;
+    opacity: 0.8;
+    position: absolute;
+    font-family: ‘Lucida Console’, Monaco, monospace;
+    color: snow;
+    font-size: 22px;
 }
 
 .imagenPequenia{
 /*    width: 465px;*/
     height: 150px;
+    padding: 1%;
 }
 
 #imgFav1{
@@ -133,6 +169,7 @@
     background-color: red;
     height: 600px;
     background: url(img/TGBGrande.jpg) center center;
+    padding:1%; 
 }
 
 #imgRest1{
@@ -150,6 +187,7 @@
 #imgRest4{
     background: url(img/RibsPequenio.png) center center;
 }
+
 
 /* Fin PlatosFavoritos/RestauranteDelMes */
 
