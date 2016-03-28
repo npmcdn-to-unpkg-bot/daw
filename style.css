@@ -42,24 +42,39 @@
     height: 200px;
 /*    width: 348.75px;*/
     background: url(img/CabRestaurantes.png) center center;
+    padding-left: 90px;
+    padding-top: 60px;
 }
 
 #cab2{
     height: 100px;
 /*    width: 470px;*/
     background: url(img/CabRecetas.png) center center;
+    padding-left: 280px;
+    padding-top: 25px;
+}
+
+#cab2 .tituloGrande{
+    font-size: 35px;    
 }
 
 #cab3{
     height: 100px;
 /*    width: 470px;*/
     background: url(img/CabPlatoRestaurante.png) center center;
+    padding-left: 190px;
+    padding-top: 25px;
+}
+#cab3 .tituloGrande{
+    font-size: 25px;
 }
 
 #cab4{
     height: 200px;
 /*    width: 348.75px;*/
     background: url(img/CabFavoritos.png) center center;
+    padding-left: 138px;
+    padding-top: 60px;
 }
 
 #cab5{
