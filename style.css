@@ -27,12 +27,19 @@
 .titulo{
     padding-left: 4%;
 }
-.titulo h1, .logo h1 {
+.titulo h1 {
 	width: 350px;
 	height: 68px;
 	background: url(img/cookcinando.png) no-repeat;
 	text-indent: -9999px;
 	background-size: 100%;
+}
+.logo h1 {
+    width: 350px;
+    height: 68px;
+    background: url(img/CookcinandoBlanco.png) no-repeat;
+    text-indent: -9999px;
+    background-size: 100%;
 }
 .tituloSeccion{
     
