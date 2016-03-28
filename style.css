@@ -397,7 +397,6 @@
     float: left;
 }
 .recetas1 {
-<<<<<<< HEAD
     background: url(img/DulceriaCriolla.jpg) center center no-repeat;
     background-size: 100%;
 }
@@ -408,16 +407,26 @@
 .recetas3 {
     background: url(img/PizcaAndina.jpg) center center no-repeat;
     background-size: 100%;
-=======
-    background: black;
 }
-.recetas2 {
-    background: red;
+
+.restaurante1, .restaurante2, .restaurante3 {
+    width: 33.33%;
+    height: 200px;
+    float: left;
 }
-.recetas3 {
-    background: blue;
->>>>>>> origin/master
+.restaurante1 {
+    background: url(img/RibsGrande.jpg) center center no-repeat;
+    background-size: 100%;
 }
+.restaurante2 {
+    background: url(img/fridays.png) center center no-repeat;
+    background-size: 100%;
+}
+.restaurante3 {
+    background: url(img/pizzahut.png) center center no-repeat;
+    background-size: 100%;
+}
+
 .comentario {
     width: 100%;
     min-height: 100px;
