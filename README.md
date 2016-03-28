@@ -27,3 +27,23 @@ AlejandrovSánchez-Portal de Vega // a.sanchezdev@alumnos.urjc.es // Alex2626
 ## Diagrama
 
 ![](https://raw.githubusercontent.com/PabloAsekas/daw/master/capturas/diagrama.png)
+
+## Capturas
+
+Index: 
+![](https://raw.githubusercontent.com/PabloAsekas/daw/blob/master/capturas/index.png)
+
+Login:
+![](https://raw.githubusercontent.com/PabloAsekas/daw/master/capturas/login.png)
+
+Receta:
+![](https://raw.githubusercontent.com/PabloAsekas/daw/raw/master/capturas/receta.png)
+
+Recetas:
+![](https://raw.githubusercontent.com/PabloAsekas/daw/raw/master/capturas/recetas.png)
+
+Restaurante:
+![](https://raw.githubusercontent.com/PabloAsekas/daw/raw/master/capturas/restaurante.png)
+
+Restaurantes:
+![](https://raw.githubusercontent.com/PabloAsekas/daw/blob/master/capturas/restaurantes.png)
