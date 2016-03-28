@@ -18,6 +18,8 @@
 
 /*INDEX*/
 
+
+
 .menu{
     padding-top: 1.5%;    
 }
@@ -143,6 +145,19 @@
 }
 
 /* Fin PlatosFavoritos/RestauranteDelMes */
+
+#cont-youtube {
+    
+    position: relative;
+    padding-bottom: 75px;
+    height: 100px;
+    
+    overflow:hidden;
+    display:block;
+    
+}
+
+
 
 #img22{
     background-color: red;
