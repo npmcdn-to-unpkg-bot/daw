@@ -36,6 +36,25 @@
     background-color: red;
      height: 100px;
 }
+.cabGrandeTitulo{
+    position: absolute;
+    background-color: aqua;
+    opacity: 0.6;
+    font-family: ‘Lucida Console’, Monaco, monospace;
+    color: snow;
+    font-size: 50px;    
+}
+
+.cabGrande1{
+    padding-top: 60px;
+    padding-left: 90px;
+}
+
+.cabGrande2{
+    padding-top: 60px;
+    padding-left: 135px;
+}
+
 
 /* Cabecera*/
 #cab1{
