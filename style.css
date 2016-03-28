@@ -278,7 +278,7 @@
 
 /* Fin de Index */
 
-/* Recetas */
+/* Recetas y restaurantes */
 .recetas-h1 {
     margin-bottom: 50px;
 }
@@ -287,7 +287,7 @@
     margin-left: -130px;
     left: 50%;
 }
-/* Recetas */
+/* Recetas y restaurantes */
 
 /* Receta */
 .thumbnail-receta {
@@ -348,3 +348,11 @@
     font-size: 30px;
 }
 /* Fin de receta */
+
+/* Restaurante */
+.thumbnail-restaurante {
+    width: 100%;
+    height: 450px;
+    background: url(img/fostershollywood-restaurante.jpg) no-repeat 0 30px fixed;
+    background-size: 100%;
+}
