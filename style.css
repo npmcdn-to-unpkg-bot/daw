@@ -343,13 +343,16 @@
     float: left;
 }
 .recetas1 {
-    background: black;
+    background: url(img/DulceriaCriolla.jpg) center center;
+    background-size: 100%;
 }
 .recetas2 {
-    background: red;
+    background: url(img/PeladoDeGallina.jpg) center center;
+    background-size: 100%;
 }
 .recetas3 {
-    background: blue;
+    background: url(img/PizcaAndina.jpg) center center;
+    background-size: 100%;
 }
 .comentario {
     width: 100%;
