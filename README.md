@@ -47,3 +47,5 @@ Restaurante:
 
 Restaurantes:
 ![](https://raw.githubusercontent.com/PabloAsekas/daw/blob/master/capturas/restaurantes.png)
+
+Las fotos que no se vean es porque son demasiado grandes y GitHub no las muestra, pero sí las descarga.
