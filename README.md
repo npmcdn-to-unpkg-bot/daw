@@ -26,4 +26,4 @@ AlejandrovSánchez-Portal de Vega // a.sanchezdev@alumnos.urjc.es // Alex2626
 
 ## Diagrama
 
-!(https://raw.githubusercontent.com/PabloAsekas/daw/master/capturas/diagrama.png)
+![](https://raw.githubusercontent.com/PabloAsekas/daw/master/capturas/diagrama.png)
