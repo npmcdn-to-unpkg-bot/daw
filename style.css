@@ -27,22 +27,13 @@
 .titulo{
     padding-left: 4%;
 }
-.logo h1{
-	width: 350px;
-	height: 68px;
-	background: url(img/CookcinandoBlanco.png) no-repeat;
-	text-indent: -9999px;
-	background-size: 100%;
-}
-.titulo h1 {
+.titulo h1, .logo h1 {
 	width: 350px;
 	height: 68px;
 	background: url(img/cookcinando.png) no-repeat;
 	text-indent: -9999px;
 	background-size: 100%;
 }
-
-
 .tituloSeccion{
     
     font-family: Georgia, "Times New Roman", Times, serif;
@@ -406,6 +397,7 @@
     float: left;
 }
 .recetas1 {
+<<<<<<< HEAD
     background: url(img/DulceriaCriolla.jpg) center center no-repeat;
     background-size: 100%;
 }
@@ -416,26 +408,16 @@
 .recetas3 {
     background: url(img/PizcaAndina.jpg) center center no-repeat;
     background-size: 100%;
+=======
+    background: black;
 }
-
-.restaurante1, .restaurante2, .restaurante3 {
-    width: 33.33%;
-    height: 200px;
-    float: left;
+.recetas2 {
+    background: red;
 }
-.restaurante1 {
-    background: url(img/RibsGrande.jpg) center center no-repeat;
-    background-size: 100%;
+.recetas3 {
+    background: blue;
+>>>>>>> origin/master
 }
-.restaurante2 {
-    background: url(img/fridays.png) center center no-repeat;
-    background-size: 100%;
-}
-.restaurante3 {
-    background: url(img/pizzahut.png) center center no-repeat;
-    background-size: 100%;
-}
-
 .comentario {
     width: 100%;
     min-height: 100px;
@@ -462,4 +444,55 @@
     height: 450px;
     background: url(img/fostershollywood-restaurante.jpg) no-repeat 0 30px fixed;
     background-size: 100%;
+}
+
+/*MiPerfil*/
+.seccionesPerfil{
+    background-color: #19142f;
+    border-top-right-radius: 20px;
+    height: 1000px;
+}
+.fotoUsu{
+    padding-top: 4%;
+    padding-left: 4%;
+}
+
+.fotoUsu img{
+    margin-left: 4%;    
+}
+
+.miPerfil{
+    padding:2%;
+    border-top-left-radius: 20px;
+    height: 1000px;
+    background-color: lightgrey;
+}
+.descCuenta{
+    width: 300px
+}
+
+
+.miPerfil #button{
+    padding-top: 1%;
+    padding-left: 100px;
+    
+}
+
+.miPerfil h3{
+    text-decoration: underline;
+}
+
+.miPerfil1{
+    padding-left: 15%;
+}
+
+.modTodo #buttonsLast .btn{
+    padding-right: 1%;
+    
+}
+
+.miPerfil2 #plato{
+    background-image: url(img/DulceriaCriolla.jpg);
+    height: 150px;
+    padding-bottom: 200px;
 }
