@@ -39,37 +39,37 @@
 #cab1{
     height: 200px;
 /*    width: 348.75px;*/
-    background-image: url(img/CabRestaurantes.png);ç
+    background: url(img/CabRestaurantes.png) center center;
 }
 
 #cab2{
     height: 100px;
 /*    width: 470px;*/
-    background-image: url(img/CabRecetas.png);
+    background: url(img/CabRecetas.png) center center;
 }
 
 #cab3{
     height: 100px;
 /*    width: 470px;*/
-    background-image: url(img/CabPlatoRestaurante.png);
+    background: url(img/CabPlatoRestaurante.png) center center;
 }
 
 #cab4{
     height: 200px;
 /*    width: 348.75px;*/
-    background-image: url(img/CabFavoritos.png);
+    background: url(img/CabFavoritos.png) center center;
 }
 
 #cab5{
     height: 100px;
 /*    width: 235.5px;*/
-    background-image: url(img/CabRestauranteMes.png);
+    background: url(img/CabRestauranteMes.png) center center;
 }
 
 #cab6{
     height: 100px;
 /*    width: 235px;*/
-    background-image: url(img/CabPlato.png);
+    background: url(img/CabPlato.png) center center;
 }
 
 
@@ -79,7 +79,7 @@
  #imgFavGrande{
     background-color: red;
     height: 600px;
-    background-image: url(img/FavoritoGrande4.png);
+    background: url(img/FavoritoGrande4.png) center center;
 }
 
 .tituloGrande{
@@ -105,41 +105,41 @@
 }
 
 #imgFav1{
-    background-image: url(img/FavoritoPequenio1.png);
+    background: url(img/FavoritoPequenio1.png) center center;
 }
 
 #imgFav2{
-    background-image: url(img/FavoritoPequenio2.png);
+    background: url(img/FavoritoPequenio2.png) center center;
 }
 
 #imgFav3{
-    background-image: url(img/FavoritoPequenio3.png);
+    background: url(img/FavoritoPequenio3.png) center center;
 }
 
 #imgFav4{
-    background-image: url(img/FavoritoPequenio4.png);
+    background: url(img/FavoritoPequenio4.png) center center;
 }
 
 #imgRestGrande{
     background-color: red;
     height: 600px;
-    background-image: url(img/TGBGrande.jpg);
+    background: url(img/TGBGrande.jpg) center center;
 }
 
 #imgRest1{
-    background-image: url(img/FosterPequenio.jpg);
+    background: url(img/FosterPequenio.jpg) center center;
 }
 
 #imgRest2{
-    background-image: url(img/TagliatellaPequenio.jpg);
+    background: url(img/TagliatellaPequenio.jpg) center center;
 }
 
 #imgRest3{
-    background-image: url(img/TGBPequenio.jpg);
+    background: url(img/TGBPequenio.jpg) center center;
 }
 
 #imgRest4{
-    background-image: url(img/RibsPequenio.png);
+    background: url(img/RibsPequenio.png) center center;
 }
 
 /* Fin PlatosFavoritos/RestauranteDelMes */
