@@ -526,5 +526,20 @@
 }
 
 /* Perfil publico */
-
+.perfil-publico {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+.perfil-publico img {
+    position: relative;
+    left: 50%;
+    margin-left: -100px;
+}
+.perfil-publico h3, .perfil-publico p {
+    text-align: center;
+}
+.perfil-publico h3 {
+    font-size: 30px;
+}
 /* Fin perfil publico */
