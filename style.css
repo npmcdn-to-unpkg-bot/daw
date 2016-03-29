@@ -453,59 +453,46 @@
     background-size: 100%;
 }
 
-/*MiPerfil*/
-.seccionesPerfil{
-    background-color: #19142f;
-    border-top-right-radius: 20px;
-    height: 1000px;
-    font-size: 20px;
+/* Fin de perfil privado */
+.cabecera-subrayada {
+    width: 100%;
+    margin: 0 0 30px 0;
+    border-bottom: 1px solid #ccc;
 }
-.fotoUsu{
-    padding-top: 4%;
-    padding-left: 4%;
+.cabecera-subrayada h1 {
+    margin-top: 0;
 }
-
-.fotoUsu img{
-    margin-left: 4%;    
-    margin-bottom: 4%;
+.imagen-de-perfil {
+    height: 200px;
 }
-
-.miPerfil{
-    padding:2%;
-    border-top-left-radius: 20px;
-    height: 1000px;
-    background-color: lightgrey;
+.imagen-de-perfil img {
+    float: left;
 }
-.descCuenta{
-    width: 300px
+.separado {
+    display: block;
 }
-
-
-.miPerfil #button{
-    padding-top: 1%;
-    padding-left: 100px;
-    
+.botones-foto {
+    float: left;
+    margin-left: 20px;
+    max-width: 200px;
 }
-
-.miPerfil h3{
-    text-decoration: underline;
+.botones-foto button {
+    width: 150%;
+    margin-bottom: 20px;
 }
-
-.miPerfil1{
-    padding-left: 15%;
+.inputs {
+    clear: both;
+    margin-top: 30px;
+}
+.inputs span {
+    float: left;
+}
+.inputs input, .inputs button, .inputs textarea {
+    width: 40%;
+    margin-top: 20px;
 }
 
-.modTodo #buttonsLast .btn{
-    padding-right: 1%;
-    
-}
-
-.miPerfil2 #plato{
-    background-image: url(img/DulceriaCriolla.jpg);
-    height: 150px;
-    padding-bottom: 200px;
-}
-
+/* Fin de perfil privado */
 /*NUEVA RECETA*/
 .receta{
     padding-left: 7.4%;
