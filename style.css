@@ -494,22 +494,16 @@
 
 /* Fin de perfil privado */
 /*NUEVA RECETA*/
-.receta{
-    padding-left: 7.4%;
-}
-.receta textarea{    
+.inputs-receta input, .inputs-receta textarea{
     width: 100%;
+    margin-bottom: 30px;
 }
-.modTodo2{
-    padding-left: 34%;
+.inputs-receta button.separado {
+    margin-bottom: 30px;
 }
-.addImg{
-    padding-left: 7.4%;
-    padding-top: 3%;
-    padding-bottom: 3%;
-}
-.addImg img{
-    padding-left: 3%;
+
+.inputs-receta button.publicar {
+    width: 100%;
 }
 
 /* Perfil publico */
