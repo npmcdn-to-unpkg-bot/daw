@@ -493,7 +493,7 @@
 }
 
 /* Fin de perfil privado */
-/*NUEVA RECETA*/
+/* Nueva receta*/
 .inputs-receta input, .inputs-receta textarea{
     width: 100%;
     margin-bottom: 30px;
@@ -506,6 +506,18 @@
     width: 100%;
 }
 
+/* Fin nueva receta */
+/* Ajustes perfil privado */
+.inputs-ajustes label {
+    margin-bottom: 10px;
+}
+.inputs-ajustes input {
+    margin-bottom: 30px;
+}
+.inputs-ajustes button {
+    width: 100%;
+}
+/* Fin ajustes perfil privado */
 /* Perfil publico */
 .perfil-publico {
     float: none;
