@@ -1,0 +1,545 @@
+.centrado {
+	position: absolute;
+	max-width: 400px;
+	max-height: 300px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.full {
+    background: url(img/pizza.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+/*INDEX*/
+
+
+
+.menu{
+    padding-top: 1.5%;    
+}
+
+.titulo{
+    padding-left: 4%;
+}
+.titulo h1 {
+	width: 350px;
+	height: 68px;
+	background: url(img/cookcinando.png) no-repeat;
+	text-indent: -9999px;
+	background-size: 100%;
+}
+.logo h1 {
+    width: 350px;
+    height: 68px;
+    background: url(img/CookcinandoBlanco.png) no-repeat;
+    text-indent: -9999px;
+    background-size: 100%;
+}
+.tituloSeccion{
+    
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size:24px;
+	margin-top: 0px; margin-bottom: 0px;
+	text-align: center;
+    font-weight: normal;
+    color: #222;
+}
+#texto{
+    font-family: "Lucida Grande", Tahoma;
+	font-size: 15px;
+	font-weight: lighter;
+	font-variant: normal;
+	
+	color: #666666;    
+	text-align: center!important;
+	letter-spacing: 0.3em;
+}
+#img1{
+    background-color: black;
+    height: 200px;
+}
+#img2{
+    background-color: red;
+     height: 100px;
+}
+
+/* Cabecera*/
+#cab1{
+    height: 200px;
+    background: url(img/CabRestaurantes.png) center center;
+    background-size: 100%;
+    padding-left: 90px;
+    padding-top: 60px;
+}
+
+#cab2{
+    height: 100px;
+    background: url(img/CabRecetas.png) center center;
+    padding-left: 280px;
+    padding-top: 25px;
+    background-size: 100%;
+}
+
+
+#cab3{
+    height: 100px;
+    background: url(img/CabPlatoRestaurante.png) center center;
+    padding-left: 190px;
+    padding-top: 25px;
+    background-size: 100%;
+}
+#cab4{
+    height: 200px;
+    background: url(img/CabFavoritos.png) center center;
+    padding-left: 138px;
+    padding-top: 60px;
+    background-size: 100%;
+}
+#cab5{
+    height: 100px;
+    background: url(img/CabRestauranteMes.png) center center;
+    padding-left: 41px;
+    padding-top: 36px;
+    background-size: 100%;
+}
+#cab5 .tituloGrande {
+	font-size: 18px;
+}
+
+#cab6{
+    height: 100px;
+    background: url(img/CabPlato.png) center center;
+    padding-left: 56.8px;
+    padding-top: 28px;
+    background-size: 100%;
+}
+
+/* PlatosFavoritos/RestauranteDelMes */
+ #imgFavGrande{
+    background-color: red;
+    height: 600px;
+    background: url(img/FavoritoGrande4.png) center center;
+    background-size: 100%;
+     padding: 1%;
+}
+
+.tituloGrande{
+    background-color: black;
+    opacity: 0.8;
+    position: absolute;
+    font-family: ‘Lucida Console’, Monaco, monospace;
+    color: snow;
+    font-size: 30px;
+    right: 0;
+}
+
+.imagenGrande {
+    padding-left: 0px;
+    padding-right: 0px;
+/*    width: 930px;*/
+    height: 600px;
+}
+
+.tituloPequenio {
+    background-color: black;
+    opacity: 0.8;
+    position: absolute;
+    font-family: ‘Lucida Console’, Monaco, monospace;
+    color: snow;
+    font-size: 22px;
+}
+.imagenPequenya {
+	height: 600px;
+}
+
+.imagenPequenia{
+    height: 150px;
+}
+
+#imgFav1{
+    background: url(img/FavoritoPequenio1.png) center center;
+    background-size: 100%;
+}
+
+#imgFav2{
+    background: url(img/FavoritoPequenio2.png) center center;
+    background-size: 100%;
+}
+
+#imgFav3{
+    background: url(img/FavoritoPequenio3.png) center center;
+    background-size: 100%;
+}
+
+#imgFav4{
+    background: url(img/FavoritoPequenio4.png) center center;
+    background-size: 100%;
+}
+
+#imgRestGrande{
+    background-color: red;
+    height: 600px;
+    background: url(img/TGBGrande.jpg) center center;
+    background-size: 100%;
+    padding:1%; 
+}
+
+#imgRest1{
+    background: url(img/FosterPequenio.jpg) center center;
+    background-size: 100%;
+}
+
+#imgRest2{
+    background: url(img/TagliatellaPequenio.jpg) center center;
+    background-size: 100%;
+}
+
+#imgRest3{
+    background: url(img/TGBPequenio.jpg) center center;
+    background-size: 100%;
+}
+
+#imgRest4{
+    background: url(img/RibsPequenio.png) center center;
+    background-size: 100%;
+}
+
+
+/* Fin PlatosFavoritos/RestauranteDelMes */
+
+#cont-youtube {
+    
+    position: relative;
+    padding-bottom: 75px;
+    height: 100px;
+    
+    overflow:hidden;
+    display:block;
+    
+}
+
+
+
+#img22{
+    background-color: red;
+}
+
+#img33{
+    background-color: green;
+    height: 150px;
+}
+#img44{
+    background-color: blueviolet;
+    height: 150px;
+}
+#img55{
+    background-color: green;
+    height: 150px;
+}
+
+
+
+#img11{
+    background-color: black;
+}
+
+#img3{
+    background-color: green;
+    height: 100px;
+}
+#img4{
+    background-color: blueviolet;
+    height: 200px;
+}
+#img5{
+    background-color: black;
+    height: 100px;
+}
+#img6{
+    background-color: blue;
+    height: 100px;
+}
+.descripcion {
+    text-align: center; 
+    padding: 2%;
+}
+.descripcion #texto{
+    margin: 3%;
+}
+.zonaBusq {
+    padding-bottom: 1%;
+}
+.zonaBusq form {
+    width: 500px;
+}
+.zonaBusq .busqueda{
+    width: 91%;
+    float: left;
+}
+.zonaBusq .form-group button {
+    float: right;
+}
+.container-fluid {
+    padding-bottom: 4%;
+}
+
+.platosFav h1{
+    text-align: center;
+}
+
+.imagenGrande {
+    padding-left: 0px;
+}
+
+
+ 
+
+
+.masPlatos{
+    padding-top: 5%; 
+    padding-bottom: 5%;
+}
+
+.btnMasPlatos{
+    width: 50%;
+    height: 200%;
+    padding: 2%;
+    font-size: 240%
+    
+}
+
+.masRest{
+    padding-top: 5%; 
+    padding-bottom: 5%;
+}
+
+.btnMasRest{
+    width: 50%;
+    height: 200%;
+    padding: 2%;
+    font-size: 240%
+}
+
+.seccInter{
+    padding-left: 15%;
+    padding-right: 10%;
+
+}
+
+.seccInter h3{
+    text-align: center;
+    padding-bottom: 2%;
+    
+}
+.seccInter ul{
+    list-style: none;
+}
+
+.seccInter .resources{
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.footer{
+    background-color: #282828;
+	color: white;
+}
+
+.footer .enlaces ul{
+    list-style: none;
+}
+
+.footer .imagenes img{
+    padding-right: 8%;    
+}
+
+/* Fin de Index */
+
+/* Recetas y restaurantes */
+.recetas-h1 {
+    margin-bottom: 50px;
+}
+.centrado-pagination {
+    position: relative;
+    margin-left: -130px;
+    left: 50%;
+}
+/* Recetas y restaurantes */
+
+/* Receta */
+.thumbnail-receta {
+    width: 100%;
+    height: 450px;
+    background: url(img/pabellon-criollo.jpg) no-repeat 50% fixed;
+    background-size: 100%;
+}
+.info-usuario {
+    padding-left: 4%;
+}
+.fecha {
+    float: left;
+}
+.restaurante {
+    float: left;
+    margin-left: 15px;
+}
+.contenido {
+    padding-top: 20px;
+    font-size: 18px;
+}
+.contenido img {
+    width: 100%;
+    height: auto !important;
+    margin-bottom: 20px;
+}
+.recetas1, .recetas2, .recetas3 {
+    width: 33.33%;
+    height: 200px;
+    float: left;
+}
+.recetas1 {
+<<<<<<< HEAD
+    background: url(img/DulceriaCriolla.jpg) center center no-repeat;
+    background-size: 100%;
+}
+.recetas2 {
+    background: url(img/PeladoDeGallina.jpg) center center no-repeat;
+    background-size: 100%;
+}
+.recetas3 {
+    background: url(img/PizcaAndina.jpg) center center no-repeat;
+    background-size: 100%;
+=======
+    background: black;
+}
+.recetas2 {
+    background: red;
+}
+.recetas3 {
+    background: blue;
+>>>>>>> origin/master
+}
+.comentario {
+    width: 100%;
+    min-height: 100px;
+    margin-top: 20px;
+}
+.comentario img {
+    float: left;
+    width: 9.77%;
+}
+.comentario div {
+    float: left;
+    width: 85.23%;
+    margin-left: 20px;
+}
+.comentario span {
+    font-weight: bold;
+    font-size: 30px;
+}
+/* Fin de receta */
+
+/* Restaurante */
+.thumbnail-restaurante {
+    width: 100%;
+    height: 450px;
+    background: url(img/fostershollywood-restaurante.jpg) no-repeat 0 30px fixed;
+    background-size: 100%;
+}
+
+/* Fin de perfil privado */
+.cabecera-subrayada {
+    width: 100%;
+    margin: 0 0 30px 0;
+    border-bottom: 1px solid #ccc;
+}
+.cabecera-subrayada h1 {
+    margin-top: 0;
+}
+.imagen-de-perfil {
+    height: 200px;
+}
+.imagen-de-perfil img {
+    float: left;
+}
+.separado {
+    display: block;
+}
+.botones-foto {
+    float: left;
+    margin-left: 20px;
+    max-width: 200px;
+}
+.botones-foto button {
+    width: 150%;
+    margin-bottom: 20px;
+}
+.inputs {
+    clear: both;
+    margin-top: 30px;
+}
+.inputs span {
+    float: left;
+}
+.inputs input, .inputs button, .inputs textarea {
+    width: 40%;
+    margin-top: 20px;
+}
+
+/* Fin de perfil privado */
+/* Nueva receta*/
+.inputs-receta input, .inputs-receta textarea{
+    width: 100%;
+    margin-bottom: 30px;
+}
+.inputs-receta button.separado {
+    margin-bottom: 30px;
+}
+
+.inputs-receta button.publicar {
+    width: 100%;
+}
+
+/* Fin nueva receta */
+/* Ajustes perfil privado */
+.inputs-ajustes label {
+    margin-bottom: 10px;
+}
+.inputs-ajustes input {
+    margin-bottom: 30px;
+}
+.inputs-ajustes button {
+    width: 100%;
+}
+/* Fin ajustes perfil privado */
+/* Perfil publico */
+.perfil-publico {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+.perfil-publico img {
+    position: relative;
+    left: 50%;
+    margin-left: -100px;
+}
+.perfil-publico h3, .perfil-publico p {
+    text-align: center;
+}
+.perfil-publico h3 {
+    font-size: 30px;
+}
+/* Fin perfil publico */
+
+/*PRIVADO mis recetas*/
+
+.addReceta .tituloGrande{
+    margin-right: 35%;
+    font-size: 40px;
+}
