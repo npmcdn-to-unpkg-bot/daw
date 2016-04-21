@@ -17,11 +17,11 @@ export class Restaurante {
 export class RestauranteService {
 
   private restaurantes = [
-  	new Restaurante(1, 'The Good Burger', 'Especialistas en el mundo de la hamburguesa', 'COMO ESTO CUELE ASCIENDO AL DE MARKETING', 'http://www.comprarfranquicia.com/sites/default/files/tgb_b.jpg'),
-  	new Restaurante(2, 'Fosters Hollywood','Sabor americano de alta calidat', 'JAJAJAJAJA YA QUISIERAMOS NOSOTROS PARECERNOS EN ALGO A LO QUE HACEN EN AMERICA EQUISDE', 'http://www.cenabarato.com/wp-content/uploads/2014/07/fosters-hollywood.jpg'),
-  	new Restaurante(3, 'Ribs','Como el Fosters', 'Pero con mejores costillas', 'https://media-cdn.tripadvisor.com/media/photo-s/05/8b/72/77/restaurante-ribs.jpg'),
-  	new Restaurante(4, 'La tagliatella','Comida italiana demasiado cara', 'y encima las pizzas son finisimas', 'http://www.latagliatella.es/wp-content/uploads/benvenuti-blog.jpg'),
-  	new Restaurante(5, 'Telepizza','Sí, seguimos haciendo la pizzalada', 'No tenemos puta vergüenza', 'https://i.ytimg.com/vi/MCbgh42ykYk/hqdefault.jpg')
+  	new Restaurante(1, 'The Good Burger', 'Especialistas en el mundo de la hamburguesa', 'COMO ESTO CUELE ASCIENDO AL DE MARKETING', 'img/TGBGrande.jpg'),
+  	new Restaurante(2, 'Fosters Hollywood','Sabor americano de alta calida', 'JAJAJAJAJA YA QUISIERAMOS NOSOTROS PARECERNOS EN ALGO A LO QUE HACEN EN AMERICA EQUISDE', 'img/FosterGrande.jpg'),
+  	new Restaurante(3, 'Ribs','De las mejores parrillas actualmente', 'Pero con mejores costillas', 'img/RibsGrande.jpg'),
+  	new Restaurante(4, 'La tagliatella','El toque italiano más fresco', 'y encima las pizzas son finisimas', 'img/TagliatellaGrande.jpg'),
+  	new Restaurante(5, 'Telepizza','Uno de los referentes en pizzas', 'No tenemos puta vergüenza', 'img/telepizza.png')
   ];
 
   getRestaurantes() {

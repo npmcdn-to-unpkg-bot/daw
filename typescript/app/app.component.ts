@@ -14,7 +14,6 @@ import {RecetaService} from './receta.service';
 @Component({
   selector: 'app',
   template: `
-    <h1 class="title">Library</h1>
     <router-outlet></router-outlet>
   `,
   providers:  [RestauranteService, RecetaService],
