@@ -17,10 +17,10 @@ export class Receta {
 export class RecetaService {
 
   private recetas = [
-  	new Receta(1, 'Pollo al limón', 'Del chino fa', 'Liquiiiiisimo', 'https://i.ytimg.com/vi/shrNtGTrDFs/maxresdefault.jpg'),
-  	new Receta(2, 'Rollito de primavera','Al principio no sabe a nada', 'Pero luego le coges el gusto y es la polla con alas', 'https://s-media-cache-ak0.pinimg.com/236x/f4/68/0d/f4680deefb6a7a5394437cb466fed6e9.jpg'),
-  	new Receta(3, 'Se nota que tengo ganas de ir al chino?','Buf, maldita salsa agridulce', 'Mazo de buena', 'https://cis-public.foodpanda.com/dynamic/production/es/images/vendors/restaurante_chino_fa-centro_200067_sqp.jpg'),
-  	new Receta(4, 'Y ya paro','Que no se me ocurre nada', '(－‸ლ)(－‸ლ)(－‸ლ)(－‸ლ)', 'https://i.stack.imgur.com/jdhVC.png'),
+  	new Receta(1, 'Costillas BBQ', 'Las famosas del Ribs', 'Liquiiiiisimo', 'img/RibsGrande.jpg'),
+  	new Receta(2, 'Tortilla de Patatas','Plato español, de raza.', 'Pero luego le coges el gusto y es la polla con alas', 'img/FavoritoGrande4.png'),
+  	new Receta(3, 'Pulpo a la Gallega','Plato Gallego', 'No sabe si entra o sale del plato', 'img/FavoritoGrande3.png'),
+  	new Receta(4, 'Raviolis con salsa de Queso Manchego', 'Con el mejor queso del mundo','Como va a saber mal', 'https://i.stack.imgur.com/jdhVC.png'),
   ];
 
   getRecetas() {

@@ -34,7 +34,7 @@ export class RecetaDetailComponent {
     }
 
     removeReceta() {
-        let okResponse = window.confirm("¿Quieres eliminar este restaurante?");
+        let okResponse = window.confirm("¿Quieres eliminar esta receta?");
         if (okResponse) {
             this.service.removeReceta(this.receta).subscribe(
                 _ => this.router.navigate(['Receta']),

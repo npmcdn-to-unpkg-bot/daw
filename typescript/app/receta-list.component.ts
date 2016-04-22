@@ -5,13 +5,18 @@ import {Receta, RecetaService}   from './receta.service';
 @Component({
     directives: [ROUTER_DIRECTIVES],
     template: `
-    <h2>Recetas</h2>
-    <ul class="items">
-      <li *ngFor="#receta of recetas">
-        <a [routerLink]="['RecetaDetail', {id: receta.id}]">{{receta.title}}</a>
-        {{receta.abstract}}
-      </li>
-    </ul>
+    <div class="container-fluid">
+      <h1 class="text-center recetas-h1">Recetas</h1>
+      <div *ngFor="#recetas of recetas" class="col-xs-6 col-md-4">
+          <div class="thumbnail">
+              <img src="{{receta.thumbnail}}" alt="{{receta.title}}">
+              <div class="caption">
+                  <h3><a [routerLink]="['RecetaDetail', {id: receta.id}]">{{receta.title}}</a></h3>
+                  <p>{{receta.abstract}}</p>
+              </div>
+          </div>
+      </div>
+    </div>
     <button (click)="newReceta()">Nuevo receta</button>
     <button (click)="gotoRestaurantes()">Ir a restaurantes</button>
   `
