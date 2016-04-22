@@ -10,7 +10,9 @@ import {Restaurante, RestauranteService}   from './restaurante.service';
         <div class="row">
           <div class="col-md-12">
             <h2 class="text-center">{{restaurante.title}}</h2>
-             <div class="contenido">
+            <div class="contenido">
+              <h3>Descripción</h3>
+              {{restaurante.details}}
              </div>
           </div>
         </div>

@@ -3,22 +3,19 @@ import {Observable} from 'rxjs/Observable';
 import {withObserver} from './utils';
 
 export class Restaurante {
-
   constructor(
     public id: number,
     public title: string,
     public abstract: string,
     public details: string,
     public thumbnail: string) {}
-
 }
 
 @Injectable()
 export class RestauranteService {
-
   private restaurantes = [
-  	new Restaurante(1, 'The Good Burger', 'Especialistas en el mundo de la hamburguesa', '<h3>Hola</h3>', 'img/TGBGrande.jpg'),
-  	new Restaurante(2, 'Fosters Hollywood','Sabor americano de alta calida', 'JAJAJAJAJA YA QUISIERAMOS NOSOTROS PARECERNOS EN ALGO A LO QUE HACEN EN AMERICA EQUISDE', 'img/FosterGrande.jpg'),
+  	new Restaurante(1, 'The Good Burger', 'Especialistas en el mundo de la hamburguesa', 'Algo', 'img/TGBGrande.jpg'),
+  	new Restaurante(2, "Foster's Hollywood",'Sabor americano de alta calida', `<div class="col-xs-4 col-md-4 popular"><h3>Entrantes</h3><ul><li><img src="img/foster-patatas.png" width="100px" height="auto" />Bacon & Cheese Fries<hr align="left" noshade="noshade" size="2" width="80%" /></li><li><img src="img/foster-combo.png" width="100px" height="auto" />Hollywood Combo<hr align="left" noshade="noshade" size="2" width="80%" /></li><li><img src="img/foster-chicken.png" width="100px" height="auto" />Fosters Chicken Pops<hr align="left" noshade="noshade" size="2" width="80%" /></li></ul></div>`, 'img/FosterGrande.jpg'),
   	new Restaurante(3, 'Ribs','De las mejores parrillas actualmente', 'Pero con mejores costillas', 'img/RibsGrande.jpg'),
   	new Restaurante(4, 'La tagliatella','El toque italiano más fresco', 'y encima las pizzas son finisimas', 'img/TagliatellaGrande.jpg'),
   	new Restaurante(5, 'Telepizza','Uno de los referentes en pizzas', 'No tenemos puta vergüenza', 'img/telepizza.png')
