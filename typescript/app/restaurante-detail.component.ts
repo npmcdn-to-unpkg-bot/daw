@@ -4,12 +4,23 @@ import {Restaurante, RestauranteService}   from './restaurante.service';
 
 @Component({
     template: `
+      <div class="thumbnail-restaurante" style="background: url({{restaurante.thumbnail}}) no-repeat 0 30px fixed;">
+      </div>
+      <div class="container-fluid seccInter">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="text-center">{{restaurante.title}}</h2>
+             <div class="contenido">
+             </div>
+          </div>
+        </div>
+      </div>
   <h2>Restaurante "{{restaurante.title}}"</h2>
   <div>
     <p>{{restaurante.abstract}}</p>
   </div>
   <div>
-    <p>{{restaurante.details}}</p>
+    {{restaurante.details}}
   </div>
   <div>
     <img src="{{restaurante.thumbnail}}" />

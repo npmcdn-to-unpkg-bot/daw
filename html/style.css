@@ -404,7 +404,6 @@
     float: left;
 }
 .recetas1 {
-<<<<<<< HEAD
     background: url(img/DulceriaCriolla.jpg) center center no-repeat;
     background-size: 100%;
 }
@@ -415,7 +414,6 @@
 .recetas3 {
     background: url(img/PizcaAndina.jpg) center center no-repeat;
     background-size: 100%;
-=======
     background: black;
 }
 .recetas2 {
@@ -423,7 +421,6 @@
 }
 .recetas3 {
     background: blue;
->>>>>>> origin/master
 }
 .comentario {
     width: 100%;
@@ -449,7 +446,6 @@
 .thumbnail-restaurante {
     width: 100%;
     height: 450px;
-    background: url(img/fostershollywood-restaurante.jpg) no-repeat 0 30px fixed;
     background-size: 100%;
 }
 

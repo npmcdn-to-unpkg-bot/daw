@@ -17,7 +17,7 @@ export class Restaurante {
 export class RestauranteService {
 
   private restaurantes = [
-  	new Restaurante(1, 'The Good Burger', 'Especialistas en el mundo de la hamburguesa', 'COMO ESTO CUELE ASCIENDO AL DE MARKETING', 'img/TGBGrande.jpg'),
+  	new Restaurante(1, 'The Good Burger', 'Especialistas en el mundo de la hamburguesa', '<h3>Hola</h3>', 'img/TGBGrande.jpg'),
   	new Restaurante(2, 'Fosters Hollywood','Sabor americano de alta calida', 'JAJAJAJAJA YA QUISIERAMOS NOSOTROS PARECERNOS EN ALGO A LO QUE HACEN EN AMERICA EQUISDE', 'img/FosterGrande.jpg'),
   	new Restaurante(3, 'Ribs','De las mejores parrillas actualmente', 'Pero con mejores costillas', 'img/RibsGrande.jpg'),
   	new Restaurante(4, 'La tagliatella','El toque italiano más fresco', 'y encima las pizzas son finisimas', 'img/TagliatellaGrande.jpg'),
