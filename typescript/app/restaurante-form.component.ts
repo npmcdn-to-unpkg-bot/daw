@@ -4,29 +4,47 @@ import {Restaurante, RestauranteService}   from './restaurante.service';
 
 @Component({
   template: `
-  <h2>Restaurante "{{restaurante.title}}"</h2>
-  <div *ngIf="restaurante.id">
-    <label>Id: </label>{{restaurante.id}}</div>
-    <div>
-        <label>Title: </label>
-        <input [(ngModel)]="restaurante.title" placeholder="title"/>
-    </div>
-    <div>
-        <label>Abstract: </label>
-        <textarea [(ngModel)]="restaurante.abstract" placeholder="abstract"></textarea>
-    </div>
-    <div>
-        <label>Details: </label>
-        <textarea [(ngModel)]="restaurante.details" placeholder="details"></textarea>
-    </div>
-    <div>
-        <label>Thumbnail: </label>
-        <input [(ngModel)]="restaurante.thumbnail" placeholder="thumbnail"/>
-    </div>
-    <p>
-        <button (click)="cancel()">Cancel</button>
-        <button (click)="save()">Save</button>
-    </p>`
+   <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-2 col-md-2">
+                <ul class="nav nav-pills nav-stacked">
+                    <li>
+                        <a href="#"> Mi Cuenta</a>
+                    </li>
+                    <li>
+                        <a href="#"> Mis Recetas</a>
+                    </li>
+                    <li >
+                        <a href="#"> Favoritos</a>
+                    </li>
+                    <li>
+                        <a href="#">Añadir Receta</a>
+                    </li>
+                    <li class="active">
+                        <a href="#">Añadir Restaurante</a>
+                    </li>
+                    <li>
+                        <a href="#">Ajustes</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xs-2 col-md-8">
+                <div class="cabecera-subrayada">
+                    <h1>Añadir o editar nuevo restaurante</h1>
+                </div>
+                <div class="inputs-receta">
+                    <input [(ngModel)]="restaurante.title" class="form-control" placeholder="Nombre"/>
+                    <input [(ngModel)]="restaurante.abstract" class="form-control" placeholder="Breve descripción" />
+                    <textarea rows="9" class="form-control" [(ngModel)]="restaurante.details" placeholder="Detalles"></textarea>
+                    <input class="form-control" [(ngModel)]="restaurante.thumbnail" placeholder="Imagen pequeña"/>
+                    <input class="form-control" [(ngModel)]="restaurante.thumbnailbig" placeholder="Imagen grande"/>
+                    <input class="form-control" [(ngModel)]="restaurante.map" placeholder="URL Mapa"/>
+                    <button (click)="save()" type="submit" class="btn btn-default publicar">Publicar</button>
+                    <button (click)="cancel()" type="submit" class="btn btn-default publicar">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>`
 })
 export class RestauranteFormComponent {
 
