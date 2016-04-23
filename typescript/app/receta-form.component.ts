@@ -4,29 +4,43 @@ import {Receta, RecetaService}   from './receta.service';
 
 @Component({
   template: `
-  <h2>Receta "{{receta.title}}"</h2>
-  <div *ngIf="receta.id">
-    <label>Id: </label>{{receta.id}}</div>
-    <div>
-        <label>Title: </label>
-        <input [(ngModel)]="receta.title" placeholder="title"/>
-    </div>
-    <div>
-        <label>Abstract: </label>
-        <textarea [(ngModel)]="receta.abstract" placeholder="abstract"></textarea>
-    </div>
-    <div>
-        <label>Details: </label>
-        <textarea [(ngModel)]="receta.details" placeholder="details"></textarea>
-    </div>
-    <div>
-        <label>Thumbnail: </label>
-        <input [(ngModel)]="receta.thumbnail" placeholder="thumbnail"/>
-    </div>
-    <p>
-        <button (click)="cancel()">Cancel</button>
-        <button (click)="save()">Save</button>
-    </p>`
+      <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-2 col-md-2">
+                <ul class="nav nav-pills nav-stacked">
+                    <li>
+                        <a href="#"> Mi Cuenta</a>
+                    </li>
+                    <li>
+                        <a href="#"> Mis Recetas</a>
+                    </li>
+                    <li >
+                        <a href="#"> Favoritos</a>
+                    </li>
+                    <li class="active">
+                        <a href="#">Añadir Receta</a>
+                    </li>
+                    <li>
+                        <a href="#">Ajustes</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xs-2 col-md-8">
+                <div class="cabecera-subrayada">
+                    <h1>Añadir o editar receta</h1>
+                </div>
+                <div class="inputs-receta">
+                  <input type="text" class="form-control" [(ngModel)]="receta.title" placeholder="Título"/>
+                  <input type="text" class="form-control" [(ngModel)]="receta.abstract" placeholder="Descripción" />
+                  <textarea [(ngModel)]="receta.details" rows="9" class="form-control" placeholder="Detalles de la receta"></textarea>
+                  <input type="text" class="form-control" [(ngModel)]="receta.thumbnail" placeholder="Imagen pequeña" />
+                  <input type="text" class="form-control" [(ngModel)]="receta.thumbnailbig" placeholder="Imagen grande" />
+                  <button (click)="cancel()" type="submit" class="btn btn-default publicar">Cancelar</button>
+                  <button (click)="save()" type="submit" class="btn btn-default publicar">Publicar</button>
+                </div>
+            </div>
+        </div>
+    </div>`
 })
 export class RecetaFormComponent {
 

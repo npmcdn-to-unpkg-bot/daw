@@ -31,7 +31,7 @@ import {Restaurante, RestauranteService}   from './restaurante.service';
             <div class="thumbnail">
                 <img src="{{restaurante.thumbnail}}" alt="{{restaurante.title}}">
                 <div class="caption">
-                    <h3>{{restaurante.title}}</h3>
+                    <h3><a>{{restaurante.title}}</a></h3>
                     <p>{{restaurante.abstract}}</p>
                 </div>
             </div>

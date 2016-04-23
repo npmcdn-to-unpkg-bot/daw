@@ -9,7 +9,8 @@ export class Receta {
     public title: string,
     public abstract: string,
     public details: string,
-    public thumbnail: string) {}
+    public thumbnail: string
+    public thumbnailbig: string) {}
 
 }
 
@@ -17,10 +18,10 @@ export class Receta {
 export class RecetaService {
 
   private recetas = [
-  	new Receta(1, 'Costillas BBQ', 'Las famosas del Ribs', 'Liquiiiiisimo', 'img/RibsGrande.jpg'),
-  	new Receta(2, 'Tortilla de Patatas','Plato español, de raza.', 'Pero luego le coges el gusto y es la polla con alas', 'img/FavoritoGrande4.png'),
-  	new Receta(3, 'Pulpo a la Gallega','Plato Gallego', 'No sabe si entra o sale del plato', 'img/FavoritoGrande3.png'),
-  	new Receta(4, 'Raviolis con salsa de Queso Manchego', 'Con el mejor queso del mundo','Como va a saber mal', 'https://i.stack.imgur.com/jdhVC.png'),
+  	new Receta(1, 'Costillas BBQ', 'Las famosas del Ribs', 'Liquiiiiisimo', 'img/RibsGrande.jpg', 'img/pabellon-criollo.jpg'),
+  	new Receta(2, 'Tortilla de Patatas','Plato español, de raza.', 'Pero luego le coges el gusto y es la polla con alas', 'img/FavoritoGrande4.png', 'img/pabellon-criollo.jpg'),
+  	new Receta(3, 'Pulpo a la Gallega','Plato Gallego', 'No sabe si entra o sale del plato', 'img/FavoritoGrande3.png', 'img/pabellon-criollo.jpg'),
+  	new Receta(4, 'Raviolis con salsa de Queso Manchego', 'Con el mejor queso del mundo','Como va a saber mal', 'https://i.stack.imgur.com/jdhVC.png', 'img/pabellon-criollo.jpg'),
   ];
 
   getRecetas() {
@@ -29,7 +30,7 @@ export class RecetaService {
 
   getReceta(id: number | string) {
     let receta = this.recetas.filter(h => h.id === +id)[0]
-    return withObserver(new Receta(receta.id, receta.title, receta.abstract, receta.details, receta.thumbnail));
+    return withObserver(new Receta(receta.id, receta.title, receta.abstract, receta.details, receta.thumbnail, receta.thumbnailbig));
   }
 
   removeReceta(receta: Receta){
@@ -49,6 +50,7 @@ export class RecetaService {
       oldReceta.abstract = receta.abstract;
       oldReceta.details = receta.details;
       oldReceta.thumbnail = receta.thumbnail;
+      oldReceta.thumbnailbig = receta.thumbnailbig;
     } else {
       receta.id = this.recetas.length+1;
       this.recetas.push(receta);
