@@ -4,46 +4,63 @@ import {Restaurante, RestauranteService}   from './restaurante.service';
 
 @Component({
     template: `
-      <div class="thumbnail-restaurante" style="background: url({{restaurante.thumbnail}}) no-repeat 0 30px fixed;">
+      <div class="thumbnail-restaurante" style="background: url({{restaurante.thumbnailbig}}) no-repeat 0 30px fixed; background-size: 100%">
       </div>
       <div class="container-fluid seccInter">
         <div class="row">
           <div class="col-md-12">
             <h2 class="text-center">{{restaurante.title}}</h2>
-             <div class="contenido">
+            <button (click)="editRestaurante()" type="submit" class="btn btn-default publicar">Editar</button>
+            <button (click)="removeRestaurante()" type="submit" class="btn btn-default publicar">Eliminar</button>
+            <div class="contenido">
+              <h3>Descripción</h3>
+              {{restaurante.details}}
+              <div class="row">
+                <div class="col-md-12">
+                    <h3>Localización</h3>
+                    <iframe src="{{restaurante.map}}" width="100%" height="480"></iframe>
+                </div>
+              </div>
              </div>
           </div>
         </div>
       </div>
-  <h2>Restaurante "{{restaurante.title}}"</h2>
-  <div>
-    <p>{{restaurante.abstract}}</p>
-  </div>
-  <div>
-    {{restaurante.details}}
-  </div>
-  <div>
-    <img src="{{restaurante.thumbnail}}" />
-  </div>
-  <p>
-    <button (click)="removeRestaurante()">Eliminar</button>
-    <button (click)="editRestaurante()">Editar</button>
-    <br>
-    <button (click)="gotoRestaurantes()">All restaurantes</button>
-  </p>`
+      <div class="container-fluid">
+        <h3 class="text-center recetas-h1">Restaurantes relacionados</h3>
+        <div *ngFor="#restaurante of restaurantes" class="col-xs-6 col-md-4">
+            <div class="thumbnail">
+                <img src="{{restaurante.thumbnail}}" alt="{{restaurante.title}}">
+                <div class="caption">
+                    <h3>{{restaurante.title}}</h3>
+                    <p>{{restaurante.abstract}}</p>
+                </div>
+            </div>
+        </div>
+      </div>`
 })
 export class RestauranteDetailComponent {
 
     restaurante: Restaurante;
+    restaurantes: Restaurantes[];
 
-    constructor(private router: Router, routeParams: RouteParams, private service: RestauranteService) {
+    constructor(
+    private router: Router,
+    routeParams: RouteParams,
+    private service: RestauranteService,
+    private restaurantesService: RestauranteService,
+    ) {
         let id = routeParams.get('id');
         service.getRestaurante(id).subscribe(
             restaurante => this.restaurante = restaurante,
             error => console.error(error)
         );
     }
-
+     ngOnInit(){
+        this.restaurantesService.getRestaurantes().subscribe(
+        restaurantes => this.restaurantes = restaurantes,
+        error => console.log(error)
+        );
+    }
     removeRestaurante() {
         let okResponse = window.confirm("¿Quieres eliminar este restaurante?");
         if (okResponse) {

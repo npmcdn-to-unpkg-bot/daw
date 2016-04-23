@@ -7,7 +7,7 @@ import {Receta, RecetaService}   from './receta.service';
     template: `
     <div class="container-fluid">
       <h1 class="text-center recetas-h1">Recetas</h1>
-      <div *ngFor="#recetas of recetas" class="col-xs-6 col-md-4">
+      <div *ngFor="#receta of recetas" class="col-xs-6 col-md-4">
           <div class="thumbnail">
               <img src="{{receta.thumbnail}}" alt="{{receta.title}}">
               <div class="caption">
