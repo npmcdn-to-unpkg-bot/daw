@@ -19,6 +19,89 @@
 /*INDEX*/
 
 
+.img-contenedor1 p{
+    top: 65px;
+}
+.contenedorPequenio1{
+    top: 25px;
+}
+.contenedorPequenio2{
+    top: 125px;
+}
+.tituloPequenio1{
+    background-color: black;
+    opacity: 0.8;
+    position: absolute;
+    font-family: ‘Lucida Console’, Monaco, monospace;
+    color: snow;
+    right: 0;
+    z-index: 2;
+    font-size: 20px;
+}
+
+.tituloPequenio2{
+    background-color: black;
+    opacity: 0.8;
+    position: absolute;
+    font-family: ‘Lucida Console’, Monaco, monospace;
+    color: snow;
+    right: 0;
+    z-index: 2;
+    font-size: 25px;
+}
+
+.img-contenedor1 img {
+    -webkit-filter: grayscale(0.8) sepia(0.2);
+    -webkit-transition:all .9s ease; /* Safari y Chrome */
+    -moz-transition:all .9s ease; /* Firefox */
+    -o-transition:all .9s ease; /* IE 9 */
+    -ms-transition:all .9s ease; /* Opera */
+    -webkit-transform:scale(1.10);
+    -moz-transform:scale(1.10);
+    -ms-transform:scale(1.10);
+    -o-transform:scale(1.10);
+    transform:scale(1.10);
+    z-index: 1;
+}
+.img-contenedor1:hover img {
+    -webkit-filter: none;
+    -webkit-transform:scale(1.25);
+    -moz-transform:scale(1.25);
+    -ms-transform:scale(1.25);
+    -o-transform:scale(1.25);
+    transform:scale(1.25);
+}
+.img-contenedor1 {/*Ancho y altura son modificables al requerimiento de cada uno*/
+    height: 200px;
+    overflow:hidden;
+}
+.img-contenedor2 img {
+    -webkit-filter: grayscale(0.8) sepia(0.2);
+    -webkit-transition:all .9s ease; /* Safari y Chrome */
+    -moz-transition:all .9s ease; /* Firefox */
+    -o-transition:all .9s ease; /* IE 9 */
+    -ms-transition:all .9s ease; /* Opera */
+    -webkit-transform:scale(1.10);
+    -moz-transform:scale(1.10);
+    -ms-transform:scale(1.10);
+    -o-transform:scale(1.10);
+    transform:scale(1.10);
+}
+.img-contenedor2:hover img {
+    -webkit-filter: none;
+    -webkit-transform:scale(1.25);
+    -moz-transform:scale(1.25);
+    -ms-transform:scale(1.25);
+    -o-transform:scale(1.25);
+    transform:scale(1.25);
+}
+.img-contenedor2 {/*Ancho y altura son modificables al requerimiento de cada uno*/
+    height: 100px;
+    overflow:hidden;
+}
+
+/***********************************************************************************/
+
 
 .menu{
     padding-top: 1.5%;    
@@ -137,6 +220,7 @@
     color: snow;
     font-size: 30px;
     right: 0;
+    z-index: 2;
 }
 
 .imagenGrande {
