@@ -16,17 +16,13 @@ import {PerfilService} from './perfil.service';
 //Index
 import {IndexService} from './index.service';
 import {IndexListComponent} from './index-list.component';
-//Login
-import {LogInService} from './login.service';
-import {LogInDetailComponent} from './login-detail.component';
-
 
 @Component({
   selector: 'app',
   template: `
     <router-outlet></router-outlet>
   `,
-  providers:  [RestauranteService, RecetaService,LogInService],
+  providers:  [RestauranteService, RecetaService],
   directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([
@@ -44,8 +40,6 @@ import {LogInDetailComponent} from './login-detail.component';
   {path: '/receta/edit/:id', name: 'RecetaEdit', component: RecetaFormComponent}
   //PerfilPrivado
   {path: '/perfil', name: 'Perfil', component: PerfilDetailComponent}
-//Login
-    {path:'/login', name: 'LogIn', component: LogInDetailComponent}
 ])
-
+])
 export class AppComponent { }
