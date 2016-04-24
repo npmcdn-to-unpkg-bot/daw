@@ -1,8 +1,9 @@
 import {Component}  from 'angular2/core';
-import {RouteParams, Router} from 'angular2/router';
+import {ROUTER_DIRECTIVES, RouteParams, Router} from 'angular2/router';
 import {Restaurante, RestauranteService}   from './restaurante.service';
 
 @Component({
+    directives: [ROUTER_DIRECTIVES],
     template: `
       <div class="thumbnail-restaurante" style="background: url({{restaurante.thumbnailbig}}) no-repeat 0 30px fixed; background-size: 100%">
       </div>
@@ -31,7 +32,7 @@ import {Restaurante, RestauranteService}   from './restaurante.service';
             <div class="thumbnail">
                 <img src="{{restaurante.thumbnail}}" alt="{{restaurante.title}}">
                 <div class="caption">
-                    <h3><a>{{restaurante.title}}</a></h3>
+                    <h3><a [routerLink]="['RestauranteDetail', {id: restaurante.id}]">{{restaurante.title}}</a></h3>
                     <p>{{restaurante.abstract}}</p>
                 </div>
             </div>

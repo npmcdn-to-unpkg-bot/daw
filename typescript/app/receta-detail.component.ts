@@ -1,8 +1,9 @@
 import {Component}  from 'angular2/core';
-import {RouteParams, Router} from 'angular2/router';
+import {ROUTER_DIRECTIVES, RouteParams, Router} from 'angular2/router';
 import {Receta, RecetaService}   from './receta.service';
 
 @Component({
+    directives: [ROUTER_DIRECTIVES],
     template: `
     <div class="thumbnail-receta" style=" background: url({{receta.thumbnailbig}}) no-repeat 50% fixed; background-size: 100%;">
     </div>
@@ -30,7 +31,7 @@ import {Receta, RecetaService}   from './receta.service';
                 <div class="thumbnail">
                     <img src="{{receta.thumbnail}}" alt="{{receta.title}}">
                     <div class="caption">
-                        <h3><a>{{receta.title}}</a></h3>
+                        <h3><a [routerLink]="['RecetaDetail', {id: receta.id}]">{{receta.title}}</a></h3>
                         <p>{{receta.abstract}}</p>
                     </div>
                 </div>
