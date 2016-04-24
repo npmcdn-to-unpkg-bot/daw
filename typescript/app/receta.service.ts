@@ -3,7 +3,6 @@ import {Observable} from 'rxjs/Observable';
 import {withObserver} from './utils';
 
 export class Receta {
-
   constructor(
     public id: number,
     public title: string,
@@ -18,10 +17,10 @@ export class Receta {
 export class RecetaService {
 
   private recetas = [
-  	new Receta(1, 'Costillas BBQ', 'Las famosas del Ribs', 'Liquiiiiisimo', 'img/RibsGrande.jpg', 'img/pabellon-criollo.jpg'),
-  	new Receta(2, 'Tortilla de Patatas','Plato español, de raza.', 'Pero luego le coges el gusto y es la polla con alas', 'img/FavoritoGrande4.png', 'img/pabellon-criollo.jpg'),
-  	new Receta(3, 'Pulpo a la Gallega','Plato Gallego', 'No sabe si entra o sale del plato', 'img/FavoritoGrande3.png', 'img/pabellon-criollo.jpg'),
-  	new Receta(4, 'Raviolis con salsa de Queso Manchego', 'Con el mejor queso del mundo','Como va a saber mal', 'https://i.stack.imgur.com/jdhVC.png', 'img/pabellon-criollo.jpg'),
+    new Receta(1, 'Costillas BBQ', 'Las famosas del Ribs', 'Liquiiiiisimo', 'img/RibsGrande.jpg', 'img/pabellon-criollo.jpg'),
+    new Receta(2, 'Tortilla de Patatas','Plato español, de raza.', 'Pero luego le coges el gusto y es la polla con alas', 'img/FavoritoGrande4.png', 'img/pabellon-criollo.jpg'),
+    new Receta(3, 'Pulpo a la Gallega','Plato Gallego', 'No sabe si entra o sale del plato', 'img/FavoritoGrande3.png', 'img/pabellon-criollo.jpg'),
+    new Receta(4, 'Raviolis con salsa de Queso Manchego', 'Con el mejor queso del mundo','Como va a saber mal', 'https://i.stack.imgur.com/jdhVC.png', 'img/pabellon-criollo.jpg'),
   ];
 
   getRecetas() {
