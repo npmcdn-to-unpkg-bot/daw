@@ -10,13 +10,16 @@ import {RecetaListComponent} from './receta-list.component';
 import {RecetaDetailComponent} from './receta-detail.component';
 import {RecetaFormComponent} from './receta-form.component';
 import {RecetaService} from './receta.service';
-
+//PerfilPrivado
+import {PerfilDetailComponent} from './perfil-detail.component';
+import {PerfilService} from './perfil.service';
+ 
 @Component({
   selector: 'app',
   template: `
     <router-outlet></router-outlet>
   `,
-  providers:  [RestauranteService, RecetaService],
+  providers:  [RestauranteService, RecetaService,PerfilService],
   directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([
@@ -30,5 +33,7 @@ import {RecetaService} from './receta.service';
   {path: '/receta/:id', name: 'RecetaDetail', component: RecetaDetailComponent},
   {path: '/receta/new', name: 'RecetaNew', component: RecetaFormComponent},
   {path: '/receta/edit/:id', name: 'RecetaEdit', component: RecetaFormComponent}
+//PerfilPrivado
+  {path: '/perfil', name: 'Perfil', component: PerfilDetailComponent}
 ])
 export class AppComponent { }
