@@ -3,6 +3,7 @@ import {Observable} from 'rxjs/Observable';
 import {withObserver} from './utils';
 
 export class Receta {
+
   constructor(
     public id: number,
     public title: string,
