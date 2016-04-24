@@ -10,6 +10,9 @@ import {RecetaListComponent} from './receta-list.component';
 import {RecetaDetailComponent} from './receta-detail.component';
 import {RecetaFormComponent} from './receta-form.component';
 import {RecetaService} from './receta.service';
+//Index
+import {IndexService} from './index.service';
+import {IndexListComponent} from './index-list.component';
 
 @Component({
   selector: 'app',
@@ -20,12 +23,14 @@ import {RecetaService} from './receta.service';
   directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([
-    //Restaurantes
-  {path: '/restaurantes', name: 'Restaurantes', component: RestauranteListComponent, useAsDefault: true},
+  //Index
+  {path: '/', name: 'Index', component: IndexListComponent, useAsDefault: true},
+  //Restaurantes
+  {path: '/restaurantes', name: 'Restaurantes', component: RestauranteListComponent},
   {path: '/restaurante/:id', name: 'RestauranteDetail', component: RestauranteDetailComponent},
   {path: '/restaurante/new', name: 'RestauranteNew', component: RestauranteFormComponent},
   {path: '/restaurante/edit/:id', name: 'RestauranteEdit', component: RestauranteFormComponent}
-//Recetas
+  //Recetas
   {path: '/recetas', name: 'Recetas', component: RecetaListComponent},
   {path: '/receta/:id', name: 'RecetaDetail', component: RecetaDetailComponent},
   {path: '/receta/new', name: 'RecetaNew', component: RecetaFormComponent},
