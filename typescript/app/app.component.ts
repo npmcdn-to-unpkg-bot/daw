@@ -17,6 +17,9 @@ import {PerfilDetailComponent} from './perfil-detail.component';
 //Index
 import {IndexService} from './index.service';
 import {IndexListComponent} from './index-list.component';
+//Login
+import {LogInService} from './login.service';
+import {LogInDetailComponent} from './login-detail.component';
 
 @Component({
   selector: 'app',
@@ -41,5 +44,8 @@ import {IndexListComponent} from './index-list.component';
   {path: '/receta/edit/:id', name: 'RecetaEdit', component: RecetaFormComponent},
   //PerfilPrivado
   {path: '/perfil/:id', name: 'PerfilDetail', component: PerfilDetailComponent}
+//Login
+    {path:'/login', name: 'LogIn', component: LogInDetailComponent}
 ])
+
 export class AppComponent { }
