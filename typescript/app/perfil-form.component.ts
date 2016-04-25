@@ -72,6 +72,6 @@ export class PerfilFormComponent {
 
   save() {
     this.service.savePerfil(this.perfil);
-    window.history.back();
+    this._router.navigate(['Index']);
   }
 }
