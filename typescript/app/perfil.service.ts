@@ -18,7 +18,7 @@ export class Perfil{
 export class PerfilService{
     
 private perfiles = [
-  new Perfil(1, 'Mariano', 'Rajoy Brei', 'Soy el presi despaña', 'mariano@tocameelano.com', '@NanianoRajoy','123', 'http://wikiblues.net/sites/default/files/upload/fueracopia.jpg')
+  new Perfil(1, 'Mariano', 'Rajoy Brei', 'Soy el presi despaña', 'mariano@tocameelano.com', 'NanianoRajoy','123', 'http://wikiblues.net/sites/default/files/upload/fueracopia.jpg')
 ];
 
 getPerfiles() {

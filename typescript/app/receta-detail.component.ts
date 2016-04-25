@@ -1,6 +1,7 @@
-import {Component}  from 'angular2/core';
+import {Component, OnInit}  from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteParams, Router} from 'angular2/router';
-import {Receta, RecetaService}   from './receta.service';
+import {Receta, RecetaService} from './receta.service';
+import {Perfil, PerfilService} from './perfil.service';
 
 @Component({
     directives: [ROUTER_DIRECTIVES],
@@ -10,10 +11,10 @@ import {Receta, RecetaService}   from './receta.service';
     <div class="container-fluid">
           <div class="row">
               <div class="col-md-3 info-usuario">
-                <img class="avatar" src="img/avatar.jpg" width="200px" height="200px"/>
-                <h3>Manuela Carmena</h3>
-                <p>Usuaria desde 2015</p>
-                <p>Reputación: Alta</p>
+                <img class="avatar" src="{{perfil.thumbnail}}" width="200px" height="200px"/>
+                <h3><a [routerLink]="['PerfilDetail', {id: perfil.id}]">{{perfil.name}} {{perfil.apellidos}}</a></h3>
+                <h4><a [routerLink]="['PerfilDetail', {id: perfil.id}]">@{{perfil.user}}</a></h4>
+                <p>{{perfil.descripcion}}</p>
                 <button type="submit" class="btn btn-default publicar" (click)="removeReceta()">Eliminar</button>
                 <button type="submit" class="btn btn-default publicar" (click)="editReceta()">Editar</button>
               </div>
@@ -38,16 +39,17 @@ import {Receta, RecetaService}   from './receta.service';
         </div>
     `
 })
-export class RecetaDetailComponent {
+export class RecetaDetailComponent implements OnInit{
 
     receta: Receta;
     recetas: Recetas[];
-
+    perfil: Perfil;
     constructor(
       private router: Router,
       routeParams: RouteParams,
       private service: RecetaService,
       private recetasService: RecetaService,
+      private perfilService: PerfilService,
       ){
         let id = routeParams.get('id');
         service.getReceta(id).subscribe(
@@ -55,11 +57,18 @@ export class RecetaDetailComponent {
             error => console.error(error)
         );
     }
+
     ngOnInit(){
         this.recetasService.getRecetas().subscribe(
         recetas => this.recetas = recetas,
-        error => console.log(error)
+        error => console.log(error),
         );
+
+        this.perfilService.getPerfil(this.receta.userid).subscribe(
+        perfil => this.perfil = perfil,
+        error => console.log(error),
+        );
+
     }
     removeReceta() {
         let okResponse = window.confirm("¿Quieres eliminar esta receta?");
