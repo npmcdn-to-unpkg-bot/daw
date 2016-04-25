@@ -13,9 +13,7 @@ import {Restaurante, RestauranteService}   from './restaurante.service';
             <h2 class="text-center">{{restaurante.title}}</h2>
             <button (click)="editRestaurante()" type="submit" class="btn btn-default publicar">Editar</button>
             <button (click)="removeRestaurante()" type="submit" class="btn btn-default publicar">Eliminar</button>
-            <div class="contenido">
-              <h3>Descripción</h3>
-              {{restaurante.details}}
+            <div class="contenido" [innerHtml]="restaurante.details">
               <div class="row">
                 <div class="col-md-12">
                     <h3>Localización</h3>

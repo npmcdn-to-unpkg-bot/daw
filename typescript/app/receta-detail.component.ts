@@ -19,8 +19,7 @@ import {Receta, RecetaService}   from './receta.service';
               </div>
               <div class="col-md-9">
                   <h2>{{receta.title}}</h2>
-                  <div class="contenido">
-                    {{receta.details}}
+                    <div class="contenido" [innerHtml]="receta.details">
                   </div>
               </div>
           </div>
