@@ -15,8 +15,6 @@ import {RecetaService} from './receta.service';
 import {PerfilService} from './perfil.service';
 import {PerfilDetailComponent} from './perfil-detail.component';
 import {PerfilFormComponent} from './perfil-form.component';
-//PerfilPublico
-import {PerfilPublicoDetailComponent} from './perfil-publico-detail.component';
 //Index
 import {IndexService} from './index.service';
 import {IndexListComponent} from './index-list.component';
@@ -45,7 +43,5 @@ import {IndexListComponent} from './index-list.component';
   //PerfilPrivado
   {path: '/perfil/:id', name: 'PerfilDetail', component: PerfilDetailComponent}
   {path: '/perfil/new', name: 'PerfilNew', component: PerfilFormComponent}
-  //PerfilPublico
-  {path: '/perfil/publico/:id', name: 'PerfilPublicoDetail', component: PerfilPublicoDetailComponent}  
 ])
 export class AppComponent { }
