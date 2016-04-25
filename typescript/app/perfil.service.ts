@@ -1,6 +1,7 @@
 import {Injectable} from 'angular2/core';
 import {Observable} from 'rxjs/Observable';
 import {withObserver} from './utils';
+import {RecetaService} from './receta.service';
 import {Receta} from './receta.service';
 
 export class Perfil{
@@ -27,7 +28,7 @@ export class PerfilService{
 
     
     private perfiles = [
-      new Perfil(1, 'Mariano', 'Rajoy Brei', 'Soy el presi despaña', 'mariano@tocameelano.com', 'NanianoRajoy','123',recetas1, 'http://wikiblues.net/sites/default/files/upload/fueracopia.jpg')
+      new Perfil(1, 'Mariano', 'Rajoy Brei', 'Soy el presi despaña', 'mariano@tocameelano.com', 'NanianoRajoy','123',recetas, 'http://wikiblues.net/sites/default/files/upload/fueracopia.jpg')
     ];
 
 getPerfiles() {
