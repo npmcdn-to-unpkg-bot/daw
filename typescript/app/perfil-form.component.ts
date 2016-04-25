@@ -1,38 +1,33 @@
 import {Component}  from 'angular2/core';
-import {ROUTER_DIRECTIVES, RouteParams, Router} from 'angular2/router';
+import {RouteParams, Router} from 'angular2/router';
 import {Perfil, PerfilService} from './perfil.service';
 
 @Component({
-    directives: [ROUTER_DIRECTIVES],
     template: `
         <div class="col-xs-6 col-md-6 text-center centrado">
-					<h1>Cookcinando</h1>
-					<form>
-                        <div class="form-group">
-		 					<input type="text" class="form-control" [(ngModel)]="perfil.name" id="username" placeholder="Nombre">
-		 				</div>
-                        <div class="form-group">
-		 					<input type="text" class="form-control" [(ngModel)]="perfil.apellidos" id="username" placeholder="Apellidos">
-		 				</div>
-                        <div class="form-group">
-		 					<input type="text" class="form-control" [(ngModel)]="perfil.descripcion" id="username" placeholder="descripcion">
-		 				</div>
-                        <div class="form-group">
-						    <input type="text" [(ngModel)]="perfil.correo" class="form-control" id="email" placeholder="Dirección de email">
-						</div>
-		 				<div class="form-group">
-		 					<input type="text" class="form-control" [(ngModel)]="perfil.user" id="username" placeholder="Nombre de usuario">
-		 				</div>
-						<div class="form-group">
-						    <input type="password" [(ngModel)]="perfil.pass" class="form-control" id="password" placeholder="Contraseña">
-						</div>
-                        <div class="form-group">
-						    <input type="text" [(ngModel)]="perfil.thumbnail" class="form-control" id="email" placeholder="Dirección de email">
-						</div>
-                        <button (click)="save()" type="submit" class="btn btn-default">Entrar</button>
-					</form>
+          <div class="form-group">
+	 				 <input type="text" class="form-control" [(ngModel)]="perfil.name" id="username" placeholder="Nombre">
+	 				</div>
+          <div class="form-group">
+	 					<input type="text" class="form-control" [(ngModel)]="perfil.apellidos" id="username" placeholder="Apellidos">
+	 				</div>
+          <div class="form-group">
+	 					<input type="text" class="form-control" [(ngModel)]="perfil.descripcion" id="username" placeholder="descripcion">
+	 				</div>
+          <div class="form-group">
+					  <input type="text" [(ngModel)]="perfil.correo" class="form-control" id="email" placeholder="Dirección de email">
+					</div>
+	 				<div class="form-group">
+	 					<input type="text" class="form-control" [(ngModel)]="perfil.user" id="username" placeholder="Nombre de usuario">
+	 				</div>
+					<div class="form-group">
+					  <input type="password" [(ngModel)]="perfil.pass" class="form-control" id="password" placeholder="Contraseña">
+					</div>
+          <div class="form-group">
+				    <input type="text" [(ngModel)]="perfil.thumbnail" class="form-control" id="email" placeholder="Dirección de email">
+					</div>
+          <button (click)="save()" type="submit" class="btn btn-default">Entrar</button>
 				</div>
-    
         <div style="display:none" class="col-xs-6 col-md-6 text-center centrado">
 					<h1>Cookcinando</h1>
 					<form>
@@ -76,7 +71,7 @@ export class PerfilFormComponent {
   }
 
   save() {
-      this.service.savePerfil(this.perfil);
-      this._router.navigate(['PerfilDetail', {id: 2}]);
+    this.service.savePerfil(this.perfil);
+    window.history.back();
   }
 }

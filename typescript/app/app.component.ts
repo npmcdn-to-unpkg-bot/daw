@@ -41,8 +41,7 @@ import {IndexListComponent} from './index-list.component';
   {path: '/receta/new', name: 'RecetaNew', component: RecetaFormComponent},
   {path: '/receta/edit/:id', name: 'RecetaEdit', component: RecetaFormComponent},
   //PerfilPrivado
-  {path: '/perfil/:id', name: 'PerfilDetail', component: PerfilDetailComponent},
+  {path: '/perfil/:id', name: 'PerfilDetail', component: PerfilDetailComponent}
   {path: '/perfil/new', name: 'PerfilNew', component: PerfilFormComponent}
 ])
-
 export class AppComponent { }
