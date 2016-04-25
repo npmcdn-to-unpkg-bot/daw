@@ -1,6 +1,7 @@
 import {Injectable} from 'angular2/core';
 import {Observable} from 'rxjs/Observable';
 import {withObserver} from './utils';
+import {Receta} from './receta.service';
 
 export class Perfil{
     constructor(
@@ -11,15 +12,23 @@ export class Perfil{
         public correo: string,
         public user: string,
         public pass: string,
+        public recetas: Receta[],
         public thumbnail: string){}
+        
 }
 
 @Injectable()
 export class PerfilService{
+
+    private recetas1 = [
+        new Receta(1, 1, 'Pulpo a la Gallega','Plato Gallego', 'No sabe si entra o sale del plato', 'img/FavoritoGrande3.png', 'img/pabellon-criollo.jpg'),
+        new Receta(2, 1, 'Raviolis con salsa de Queso Manchego', 'Con el mejor queso del mundo','Como va a saber mal', 'https://i.stack.imgur.com/jdhVC.png', 'img/pabellon-criollo.jpg'),
+  ];
+
     
-private perfiles = [
-  new Perfil(1, 'Mariano', 'Rajoy Brei', 'Soy el presi despaña', 'mariano@tocameelano.com', 'NanianoRajoy','123', 'http://wikiblues.net/sites/default/files/upload/fueracopia.jpg')
-];
+    private perfiles = [
+      new Perfil(1, 'Mariano', 'Rajoy Brei', 'Soy el presi despaña', 'mariano@tocameelano.com', 'NanianoRajoy','123',recetas1, 'http://wikiblues.net/sites/default/files/upload/fueracopia.jpg')
+    ];
 
 getPerfiles() {
   return withObserver(this.perfiles);
@@ -27,7 +36,7 @@ getPerfiles() {
 
 getPerfil(id: number | string) {
   let perfil = this.perfiles.filter(h => h.id === +id)[0]
-  return withObserver(new Perfil(perfil.id, perfil.name, perfil.apellidos, perfil.descripcion, perfil.correo, perfil.user, perfil.pass, perfil.thumbnail));
+  return withObserver(new Perfil(perfil.id, perfil.name, perfil.apellidos, perfil.descripcion, perfil.correo, perfil.user, perfil.pass, perfil.recetas, perfil.thumbnail));
 }
 
 removePerfil(perfil: Perfil){
@@ -49,6 +58,7 @@ savePerfil(perfil: Perfil){
     oldPerfil.correo = perfil.correo;
     oldPerfil.user = perfil.user;
     oldPerfil.pass = perfil.pass;
+      oldPerfil.recetas = perfil.recetas;
     oldPerfil.thumbnail = perfil.thumbnail;
   } else {
     perfil.id = this.perfiles.length+1;
