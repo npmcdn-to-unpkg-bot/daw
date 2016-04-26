@@ -40,6 +40,7 @@ import {Perfil, PerfilService} from './perfil.service';
                     <input type="text" class="form-control" [(ngModel)]="perfil.name" placeholder="Nombre"/>
                     <input type="text" class="form-control" [(ngModel)]="perfil.apellidos" placeholder="Apellidos"/>
                     <textarea type="text" rows="9" class="form-control" [(ngModel)]="perfil.descripcion" placeholder="Descripción"></textarea>
+                    
                     <input type="text" class="form-control" [(ngModel)]="perfil.thumbnail" placeholder="Photo"/>
                     <button (click)="save()" type="submit" class="btn btn-default">Guardar</button>
                 </div>
