@@ -7,6 +7,7 @@ import {Restaurante, RestauranteService}   from './restaurante.service';
     template: `
     <div class="container-fluid">
       <h1 class="text-center recetas-h1">Restaurantes</h1>
+    <div><button style="margin-bottom: 10px; margin-left: 20px;" (click)="newRestaurante()" class="btn btn-default publicar">Nuevo Restaurante</button></div>
       <div *ngFor="#restaurante of restaurantes" class="col-xs-6 col-md-4">
           <div class="thumbnail">
               <img src="{{restaurante.thumbnail}}" alt="{{restaurante.title}}">
@@ -17,8 +18,6 @@ import {Restaurante, RestauranteService}   from './restaurante.service';
           </div>
       </div>
     </div>
-    <button (click)="newRestaurante()">Nuevo Restaurante</button>
-    <button (click)="gotoRecetas()">Ir a Recetas</button>
   `
 })
 export class RestauranteListComponent implements OnInit {
@@ -36,8 +35,5 @@ export class RestauranteListComponent implements OnInit {
 
     newRestaurante() {
       this.router.navigate(['RestauranteNew']);
-    }
-    gotoRecetas() {
-        this.router.navigate(['Recetas']);
     }
 }

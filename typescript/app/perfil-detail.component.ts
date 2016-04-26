@@ -1,24 +1,25 @@
 import {Component}  from 'angular2/core';
-import {RouteParams, Router} from 'angular2/router';
+import {ROUTER_DIRECTIVES, RouteParams, Router} from 'angular2/router';
 import {Perfil, PerfilService} from './perfil.service';
 
-@Component({ 
+@Component({
+directives: [ROUTER_DIRECTIVES],
   template: `
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-2 col-md-2">
                 <ul class="nav nav-pills nav-stacked">
                     <li class="active">
-                        <a href="#"> Mi Cuenta</a>
+                        <a>Mi Cuenta</a>
                     </li>
                     <li>
                         <a href="#"> Mis Recetas</a>
                     </li>
                     <li >
-                        <a href="#"> Favoritos</a>
+                        <a> Favoritos</a>
                     </li>
                     <li>
-                        <a href="#">Añadir Receta</a>
+                        <a [routerLink]="['RecetaNew']">Añadir Receta</a>
                     </li>
                     <li>
                         <a href="#">Ajustes</a>

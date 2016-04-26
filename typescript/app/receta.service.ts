@@ -47,7 +47,7 @@ export class RecetaService {
   saveReceta(receta: Receta){
     if(receta.id){
       let oldReceta = this.recetas.filter(h => h.id === receta.id)[0];
-      oldReceta.userid = receta.userid;
+      oldReceta.userid = 1;
       oldReceta.title = receta.title;
       oldReceta.abstract = receta.abstract;
       oldReceta.details = receta.details;
@@ -55,6 +55,7 @@ export class RecetaService {
       oldReceta.thumbnailbig = receta.thumbnailbig;
     } else {
       receta.id = this.recetas.length+1;
+      receta.userid = 1;
       this.recetas.push(receta);
     }
     return withObserver(receta);

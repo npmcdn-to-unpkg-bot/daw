@@ -35,7 +35,7 @@ import {Receta, RecetaService}   from './receta.service';
                   <textarea [(ngModel)]="receta.details" rows="9" class="form-control" placeholder="Detalles de la receta"></textarea>
                   <input type="text" class="form-control" [(ngModel)]="receta.thumbnail" placeholder="Imagen pequeña" />
                   <input type="text" class="form-control" [(ngModel)]="receta.thumbnailbig" placeholder="Imagen grande" />
-                  <button (click)="cancel()" type="submit" class="btn btn-default publicar">Cancelar</button>
+                    <button (click)="cancel()" type="submit" class="btn btn-default publicar">Cancelar</button>
                   <button (click)="save()" type="submit" class="btn btn-default publicar">Publicar</button>
                 </div>
             </div>
