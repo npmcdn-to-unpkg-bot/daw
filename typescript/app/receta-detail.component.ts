@@ -17,7 +17,7 @@ import {Perfil, PerfilService} from './perfil.service';
                 <p>{{perfil.descripcion}}</p>
                 <button type="submit" class="btn btn-default publicar" (click)="removeReceta()">Eliminar</button>
                 <button type="submit" class="btn btn-default publicar" (click)="editReceta()">Editar</button>
-                <button type="submit" class="btn btn-default publicar" (click)="">Editar</button>
+                <button type="submit" class="btn btn-default publicar">Favoritos</button>
               </div>
               <div class="col-md-9">
                   <h2>{{receta.title}}</h2>

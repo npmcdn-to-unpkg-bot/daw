@@ -21,7 +21,7 @@ export class Perfil{
 export class PerfilService{    
     
     private perfiles = [
-      new Perfil(1, 'Mariano', 'Rajoy Brei', 'Soy el presi despaña', 'mariano@tocameelano.com', 'NanianoRajoy','123', 'http://wikiblues.net/sites/default/files/upload/fueracopia.jpg', recetasFavs), 
+      new Perfil(1, 'Mariano', 'Rajoy Brei', 'Soy el presi despaña', 'mariano@tocameelano.com', 'NanianoRajoy','123', 'http://wikiblues.net/sites/default/files/upload/fueracopia.jpg'),
     ];
 
 getPerfiles() {
@@ -30,7 +30,7 @@ getPerfiles() {
 
 getPerfil(id: number | string) {
   let perfil = this.perfiles.filter(h => h.id === +id)[0]
-  return withObserver(new Perfil(perfil.id, perfil.name, perfil.apellidos, perfil.descripcion, perfil.correo, perfil.user, perfil.pass,  perfil.thumbnail, perfil.recetasFav));
+  return withObserver(new Perfil(perfil.id, perfil.name, perfil.apellidos, perfil.descripcion, perfil.correo, perfil.user, perfil.pass,  perfil.thumbnail));
 }
 
 removePerfil(perfil: Perfil){
@@ -53,8 +53,6 @@ savePerfil(perfil: Perfil){
     oldPerfil.user = perfil.user;
     oldPerfil.pass = perfil.pass;    
     oldPerfil.thumbnail = perfil.thumbnail;
-      
-    oldPerfil.recetasFav = perfil.recetasFav;
   } else {
     perfil.id = this.perfiles.length+1;
     this.perfiles.push(perfil);
