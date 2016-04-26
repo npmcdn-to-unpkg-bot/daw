@@ -14,26 +14,15 @@ export class Perfil{
         public user: string,
         public pass: string,        
         public thumbnail: string,
-        
-        public recetasFavs: Receta[]
-    
     ){}
-        
 }
-
-var recetasFavs:Receta[new Receta(1, 1, 'Costillas BBQ', 'Las famosas del Ribs', 'Liquiiiiisimo', 'img/RibsGrande.jpg', 'img/pabellon-criollo.jpg'),
-    new Receta(2, 1, 'Tortilla de Patatas','Plato español, de raza.', 'Pero luego le coges el gusto y es la polla con alas', 'img/FavoritoGrande4.png', 'img/pabellon-criollo.jpg'),
-    new Receta(3, 1, 'Pulpo a la Gallega','Plato Gallego', 'No sabe si entra o sale del plato', 'img/FavoritoGrande3.png', 'img/pabellon-criollo.jpg') ];
 
 @Injectable()
 export class PerfilService{    
-
+    
     private perfiles = [
       new Perfil(1, 'Mariano', 'Rajoy Brei', 'Soy el presi despaña', 'mariano@tocameelano.com', 'NanianoRajoy','123', 'http://wikiblues.net/sites/default/files/upload/fueracopia.jpg', recetasFavs), 
-        new Perfil(1, 'Mariano', 'Rajoy Brei', 'Soy el presi despaña', 'mariano@tocameelano.com', 'NanianoRajoy','123', 'http://wikiblues.net/sites/default/files/upload/fueracopia.jpg', recetasFavs)
     ];
-
-    
 
 getPerfiles() {
   return withObserver(this.perfiles);
@@ -73,4 +62,9 @@ savePerfil(perfil: Perfil){
   return withObserver(perfil);
 
   }
+    
+anadirFavorito (perfil: Perfil, receta: Receta) {
+    perfil.recetasFavs.push(receta);
+    return withObserver(perfil);
+}
 }

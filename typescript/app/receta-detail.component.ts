@@ -12,15 +12,17 @@ import {Perfil, PerfilService} from './perfil.service';
           <div class="row">
               <div class="col-md-3 info-usuario">
                 <img class="avatar" src="{{perfil.thumbnail}}" width="200px" height="200px"/>
-                <h3><a [routerLink]="['PerfilDetail', {id: perfil.id}]">{{perfil.name}} {{perfil.apellidos}}</a></h3>
-                <h4><a [routerLink]="['PerfilDetail', {id: perfil.id}]">@{{perfil.user}}</a></h4>
+                <h3><a [routerLink]="['PerfilPublicoDetail', {id: perfil.id}]">{{perfil.name}} {{perfil.apellidos}}</a></h3>
+                <h4><a [routerLink]="['PerfilPublicoDetail', {id: perfil.id}]">@{{perfil.user}}</a></h4>
                 <p>{{perfil.descripcion}}</p>
                 <button type="submit" class="btn btn-default publicar" (click)="removeReceta()">Eliminar</button>
                 <button type="submit" class="btn btn-default publicar" (click)="editReceta()">Editar</button>
+                <button type="submit" class="btn btn-default publicar" (click)="">Editar</button>
               </div>
               <div class="col-md-9">
                   <h2>{{receta.title}}</h2>
-                    <div class="contenido" [innerHtml]="receta.details"></div>
+                    <div class="contenido" [innerHtml]="receta.details">
+                  </div>
               </div>
           </div>
       </div>
