@@ -34,11 +34,11 @@ import {Restaurante, RestauranteService}   from './restaurante.service';
           </div>
           <div class="col-xs-2 col-md-2">
               <div class="row img-contenedor2">
-                  <p class="contenedorPequenio1 tituloPequenio1">Restaurante del mes</p>
+                  <p class="contenedorPequenio1 tituloPequenio1"><a href="#restaurantes-mes">Restaurantes del mes</a></p>
                   <img src="img/CabRestauranteMes.png" alt="" />
               </div>
               <div class="row img-contenedor2">
-                  <p class="contenedorPequenio2 tituloPequenio2">Plato del mes</p>
+                  <p class="contenedorPequenio2 tituloPequenio2"><a href="#platos-mes">Platos del mes</a></p>
                   <img src="img/CabPlato.png" alt="" />
               </div>
           </div>
@@ -65,7 +65,8 @@ import {Restaurante, RestauranteService}   from './restaurante.service';
         </div>
     </div>
     <div class="container-fluid platosFav">
-            <div class="tituloSeccion"><h1>PLATOS FAVORITOS</h1></div>
+            <a name="platos-mes"></a>
+            <div class="tituloSeccion"><h1>PLATOS DEL MES</h1></div>
             
             <div class="row">
                 <div class="col-xs-12 col-md-12 menu_imgs">
@@ -96,7 +97,7 @@ import {Restaurante, RestauranteService}   from './restaurante.service';
             <div class="row masPlatos">
                 <div class="col-xs-0 col-md-4"></div>
                 <div class="col-xs-12 col-md-8">
-                    <button type="button" class="btn btn-default btn-lg btnMasPlatos">Más Platos</button>
+                    <button type="button" class="btn btn-default btn-lg btnMasPlatos"><a href="/typescript/#/recetas">Más Platos</a></button>
                     
                 </div>
             </div>
@@ -197,6 +198,7 @@ import {Restaurante, RestauranteService}   from './restaurante.service';
         </div>
     </div>
     <div class="container-fluid restMes">
+        <a name="restaurantes-mes"></a>
         <div class="tituloSeccion"><h1>RESTAURANTES DEL MES</h1></div>
         <div class="row">
             <div class="col-xs-12 col-md-12 menu_imgs">
@@ -230,7 +232,7 @@ import {Restaurante, RestauranteService}   from './restaurante.service';
         <div class="row masRest">
             <div class="col-xs-0 col-md-4"></div>
             <div class="col-xs-12 col-md-8">
-                <button type="button" class="btn btn-default btn-lg btnMasRest">Más Restaurantes</button>
+                <button type="button" class="btn btn-default btn-lg btnMasRest"><a href="/typescript/#/restaurantes">Más Restaurantes</a></button>
             </div>
         </div>
     </div>
