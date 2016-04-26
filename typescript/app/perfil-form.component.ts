@@ -4,7 +4,10 @@ import {Perfil, PerfilService} from './perfil.service';
 
 @Component({
     template: `
-        <div class="col-xs-6 col-md-6 text-center centrado">
+        <div class="row">
+        
+        <div class="col-xs-6 col-md-6 text-center">
+            <h3>Registrate</h3>
           <div class="form-group">
 	 				 <input type="text" class="form-control" [(ngModel)]="perfil.name" id="username" placeholder="Nombre">
 	 				</div>
@@ -28,8 +31,11 @@ import {Perfil, PerfilService} from './perfil.service';
 					</div>
           <button (click)="save()" type="submit" class="btn btn-default">Entrar</button>
 				</div>
-        <div style="display:none" class="col-xs-6 col-md-6 text-center centrado">
-					<h1>Cookcinando</h1>
+        </div>
+        <div class="row">
+        
+        <div class="col-xs-6 col-md-6 text-center ">
+            <h3>Inicia sesión</h3>
 					<form>
 		 				<div class="form-group">
 						    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Dirección de email">
@@ -39,8 +45,8 @@ import {Perfil, PerfilService} from './perfil.service';
 						</div>
 						<button type="submit" class="btn btn-default">Entrar</button>
 					</form>
-					<p>Regístrate si aún no lo has hecho</p>
 				</div>
+        </div>
       `
 })
 export class PerfilFormComponent {

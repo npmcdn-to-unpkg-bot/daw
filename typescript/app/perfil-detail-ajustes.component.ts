@@ -9,20 +9,20 @@ directives: [ROUTER_DIRECTIVES],
         <div class="row">
             <div class="col-xs-2 col-md-2">
                 <ul class="nav nav-pills nav-stacked">
-                    <li class="active">
-                        <a>Mi Cuenta</a>
+                    <li>
+                        <a [routerLink]="['PerfilDetail', {id: perfil.id}]">Mi Cuenta</a>
                     </li>
                     <li>
-                        <a [routerLink]="['PerfilMisRecetas', {id: perfil.id}]">Mis Recetas</a>
+                        <a [routerLink]="['PerfilMisRecetas', {id: perfil.id}]"> Mis Recetas</a>
                     </li>
-                    <li >
+                    <li>
                         <a>Favoritos</a>
                     </li>
                     <li>
                         <a [routerLink]="['RecetaNew']">Añadir Receta</a>
                     </li>
-                    <li>
-                        <a [routerLink]="['PerfilAjustes', {id: perfil.id}]">Ajustes</a>
+                    <li class="active">
+                        <a>Ajustes</a>
                     </li>
                 </ul>
             </div>
@@ -32,17 +32,11 @@ directives: [ROUTER_DIRECTIVES],
                 </div>
                 <div class="imagen-de-perfil">
                     <img src="{{perfil.thumbnail}}" width="200px" height="200px" />
-                    <div class="botones-foto">
-                        <button type="submit" (click)="deletePhoto()" class="btn btn-default separado">Quitar</button>
-                        <button type="submit" class="btn btn-default separado">Subir...</button>
-                    </div>
                 </div>
                 <div class="inputs">
-                    <input type="text" class="form-control" [(ngModel)]="perfil.name" placeholder="Nombre"/>
-                    <input type="text" class="form-control" [(ngModel)]="perfil.apellidos" placeholder="Apellidos"/>
-                    <textarea type="text" rows="9" class="form-control" [(ngModel)]="perfil.descripcion" placeholder="Descripción"></textarea>
-                    
-                    <input type="text" class="form-control" [(ngModel)]="perfil.thumbnail" placeholder="Photo"/>
+                    <input type="text" class="form-control" [(ngModel)]="perfil.user" placeholder="Nombre de usuario"/>
+                    <input type="text" class="form-control" [(ngModel)]="perfil.correo" placeholder="Correo"/>
+                    <textarea type="text" rows="9" class="form-control" [(ngModel)]="perfil.pass" placeholder="Contraseña"></textarea>
                     <button (click)="save()" type="submit" class="btn btn-default">Guardar</button>
                 </div>
             </div>
@@ -50,7 +44,7 @@ directives: [ROUTER_DIRECTIVES],
     </div>
   `
 })
-export class PerfilDetailComponent { 
+export class PerfilDetailAjustesComponent { 
     
     perfil: Perfil;
     

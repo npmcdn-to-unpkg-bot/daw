@@ -15,6 +15,8 @@ import {RecetaService} from './receta.service';
 import {PerfilService} from './perfil.service';
 import {PerfilDetailComponent} from './perfil-detail.component';
 import {PerfilFormComponent} from './perfil-form.component';
+import {PerfilDetailRecetasComponent} from './perfil-detail-recetas.component';
+import {PerfilDetailAjustesComponent} from './perfil-detail-ajustes.component';
 //PerfilPublico
 import {PerfilPublicoDetailComponent} from './perfil-publico-detail.component';
 //Index
@@ -45,6 +47,8 @@ import {IndexListComponent} from './index-list.component';
   //PerfilPrivado
   {path: '/perfil/:id', name: 'PerfilDetail', component: PerfilDetailComponent},
   {path: '/perfil/new', name: 'PerfilNew', component: PerfilFormComponent},
+  {path: '/perfil/misrecetas/:id', name: 'PerfilMisRecetas', component: PerfilDetailRecetasComponent},
+  {path: '/perfil/ajustes/:id', name: 'PerfilAjustes', component: PerfilDetailAjustesComponent},
 //PerfilPublico
   {path: '/perfil/publico/:id', name: 'PerfilPublicoDetail', component: PerfilPublicoDetailComponent}  
 ])

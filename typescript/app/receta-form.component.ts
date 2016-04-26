@@ -9,19 +9,19 @@ import {Receta, RecetaService}   from './receta.service';
             <div class="col-xs-2 col-md-2">
                 <ul class="nav nav-pills nav-stacked">
                     <li>
-                        <a href="#"> Mi Cuenta</a>
+                        <a href="/typescript/#/perfil/1">Mi Cuenta</a>
                     </li>
                     <li>
-                        <a href="#"> Mis Recetas</a>
+                        <a href="/typescript/#/perfil/misrecetas/1">Mis Recetas</a>
                     </li>
                     <li >
-                        <a href="#"> Favoritos</a>
+                        <a> Favoritos</a>
                     </li>
                     <li class="active">
-                        <a href="#">Añadir Receta</a>
+                        <a>Añadir Receta</a>
                     </li>
                     <li>
-                        <a href="#">Ajustes</a>
+                        <a href="/typescript/#/perfil/ajustes/1">Ajustes</a>
                     </li>
                 </ul>
             </div>

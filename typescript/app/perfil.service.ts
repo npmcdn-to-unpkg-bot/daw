@@ -21,7 +21,8 @@ export class Perfil{
 export class PerfilService{    
     
     private perfiles = [
-      new Perfil(1, 'Mariano', 'Rajoy Brei', 'Soy el presi despaña', 'mariano@tocameelano.com', 'NanianoRajoy','123', 'http://wikiblues.net/sites/default/files/upload/fueracopia.jpg'),
+      new Perfil(1, 'Tim', 'Cook', 'CEO de Apple. Amante de La Tierra. Me gusta hacer buenos productos y cobrar mucho por ello. También disfruto haciendo recetas y cocinando para mis seres queridos tras una buena keynote.', 'tcook@apple.com', 'TimCook','Apple4Ever', 'http://images.apple.com/pr/bios/images/cook_hero.png'),
+      new Perfil(2, 'Lebron', 'James', 'Dos veces ganador de la NBA. Cuatro veces MVP. Dos veces Oro Olímpico. Pero nada de esto se puede comparar con mi pasión por la comida. Mis recetas son exóticas y fáciles de hacer para los que como yo, no tenemos mucho tiempo (porque estamos ganando millones haciendo lo que amamos).', 'lebronj@m.es', 'TheChosenOne','IMTHEBEST', 'http://cdn5.triplepundit.com/wp-content/uploads/2011/04/chosen_lebron_james1.png')
     ];
 
 getPerfiles() {
