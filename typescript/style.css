@@ -207,7 +207,7 @@
  #imgFavGrande{
     background-color: red;
     height: 600px;
-    background: url(img/FavoritoGrande4.png) center center;
+    background: url(img/crema-de-guisantes-al-queso.jpg) center center;
     background-size: 100%;
      padding: 1%;
 }
@@ -247,22 +247,22 @@
 }
 
 #imgFav1{
-    background: url(img/FavoritoPequenio1.png) center center;
+    background: url(img/roscon-de-hojaldre-con-crema-de-turron-y-mascarpone.jpg) center center;
     background-size: 100%;
 }
 
 #imgFav2{
-    background: url(img/FavoritoPequenio2.png) center center;
+    background: url(img/solomillo-con-salsa-de-setas-y-cappelletti.jpg) center center;
     background-size: 100%;
 }
 
 #imgFav3{
-    background: url(img/FavoritoPequenio3.png) center center;
+    background: url(img/empanadas-burguer-con-queso.jpg) center center;
     background-size: 100%;
 }
 
 #imgFav4{
-    background: url(img/FavoritoPequenio4.png) center center;
+    background: url(img/pijama-helado.jpg) center center;
     background-size: 100%;
 }
 
@@ -280,17 +280,17 @@
 }
 
 #imgRest2{
-    background: url(img/TagliatellaPequenio.jpg) center center;
+    background: url(img/RibsPequenio.png) center center;
     background-size: 100%;
 }
 
 #imgRest3{
-    background: url(img/TGBPequenio.jpg) center center;
+    background: url(img/TagliatellaPequenio.jpg) center center;
     background-size: 100%;
 }
 
 #imgRest4{
-    background: url(img/RibsPequenio.png) center center;
+    background: url(img/telepizza.png) center center;
     background-size: 100%;
 }
 
