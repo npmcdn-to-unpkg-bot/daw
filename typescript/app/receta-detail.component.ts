@@ -20,8 +20,7 @@ import {Perfil, PerfilService} from './perfil.service';
               </div>
               <div class="col-md-9">
                   <h2>{{receta.title}}</h2>
-                    <div class="contenido" [innerHtml]="receta.details">
-                  </div>
+                    <div class="contenido" [innerHtml]="receta.details"></div>
               </div>
           </div>
       </div>
