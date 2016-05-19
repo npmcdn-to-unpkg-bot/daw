@@ -1,6 +1,7 @@
 import {Component}  from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteParams, Router} from 'angular2/router';
 import {Perfil, PerfilService} from './perfil.service';
+import {Receta, RecetaService} from './receta.service';
 
 @Component({
 directives: [ROUTER_DIRECTIVES],
@@ -9,20 +10,20 @@ directives: [ROUTER_DIRECTIVES],
         <div class="row">
             <div class="col-xs-2 col-md-2">
                 <ul class="nav nav-pills nav-stacked">
-                    <li class="active">
-                        <a>Mi Cuenta</a>
+                    <li>
+                        <a [routerLink]="['PerfilDetail', {id: perfil.id}]">Mi Cuenta</a>
                     </li>
                     <li>
-                        <a [routerLink]="['PerfilMisRecetas', {id: perfil.id}]">Mis Recetas</a>
+                        <a [routerLink]="['PerfilMisRecetas', {id: perfil.id}]"> Mis Recetas</a>
                     </li>
-                    <li >
-                        <a [routerLink]="['PerfilMisFavoritos', {id: perfil.id}]">Favoritos</a>
+                    <li>
+                        <a>Favoritos</a>
                     </li>
                     <li>
                         <a [routerLink]="['RecetaNew']">Añadir Receta</a>
                     </li>
-                    <li>
-                        <a [routerLink]="['PerfilAjustes', {id: perfil.id}]">Ajustes</a>
+                    <li class="active">
+                        <a>Ajustes</a>
                     </li>
                 </ul>
             </div>
@@ -32,25 +33,33 @@ directives: [ROUTER_DIRECTIVES],
                 </div>
                 <div class="imagen-de-perfil">
                     <img src="{{perfil.thumbnail}}" width="200px" height="200px" />
-                    <div class="botones-foto">
-                        <button type="submit" (click)="deletePhoto()" class="btn btn-default separado">Quitar</button>
-                        <button type="submit" class="btn btn-default separado">Subir...</button>
-                    </div>
                 </div>
-                <div class="inputs">
-                    <input type="text" class="form-control" [(ngModel)]="perfil.name" placeholder="Nombre"/>
-                    <input type="text" class="form-control" [(ngModel)]="perfil.apellidos" placeholder="Apellidos"/>
-                    <textarea type="text" rows="9" class="form-control" [(ngModel)]="perfil.descripcion" placeholder="Descripción"></textarea>
                     
-                    <input type="text" class="form-control" [(ngModel)]="perfil.thumbnail" placeholder="Photo"/>
-                    <button (click)="save()" type="submit" class="btn btn-default">Guardar</button>
+        <div class="container-fluid platosFav">
+                <a name="platos-mes"></a>
+            <div class="tituloSeccion">
+                <h1>RECETAS FAVORITAS</h1>
+            </div>
+            
+            <div class="row">
+                <div class="col-xs-12 col-md-12 menu_imgs">
+                <a [routerLink]="['RecetaDetail',{id:perfil.getRecFavs.get(1)}]">
+                //<a [routerLink]="['RecetaDetail',{id:perfil.recFavs[1]}]">
+                    <div class="col-xs-8 col-md-8 imagenGrande" id="imgFavGrande" >
+                        <p class="tituloGrande"> Receta Fav1</p>
+                    </div>
+                    </a>                    
                 </div>
+            </div>
+            
+        </div>
+
             </div>
         </div>
     </div>
   `
 })
-export class PerfilDetailComponent { 
+export class PerfilDetailAjustesComponent { 
     
     perfil: Perfil;
     
