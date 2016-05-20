@@ -16,7 +16,7 @@ directives: [ROUTER_DIRECTIVES],
                         <a [routerLink]="['PerfilMisRecetas', {id: perfil.id}]"> Mis Recetas</a>
                     </li>
                     <li>
-                        <a>Favoritos</a>
+                        <a [routerLink]="['PerfilMisFavoritos', {id: perfil.id}]">Favoritos</a>
                     </li>
                     <li>
                         <a [routerLink]="['RecetaNew']">Añadir Receta</a>
@@ -52,6 +52,7 @@ export class PerfilDetailAjustesComponent {
     private router: Router,
     routeParams: RouteParams,
     private service: PerfilService,
+    
     ) {
         let id = routeParams.get('id');
         service.getPerfil(id).subscribe(

@@ -15,7 +15,7 @@ import {Receta, RecetaService}   from './receta.service';
                         <a href="/typescript/#/perfil/misrecetas/1">Mis Recetas</a>
                     </li>
                     <li >
-                        <a> Favoritos</a>
+                        <a href="/typescript/#/perfil/misfavoritos/1">Favoritos</a>
                     </li>
                     <li class="active">
                         <a>Añadir Receta</a>
