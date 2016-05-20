@@ -17,7 +17,7 @@ directives: [ROUTER_DIRECTIVES],
                         <a>Mis Recetas</a>
                     </li>
                     <li >
-                        <a>Favoritos</a>
+                        <a [routerLink]="['PerfilMisFavoritos', {id: perfil.id}]">Favoritos</a>
                     </li>
                     <li>
                         <a [routerLink]="['RecetaNew']">Añadir Receta</a>
