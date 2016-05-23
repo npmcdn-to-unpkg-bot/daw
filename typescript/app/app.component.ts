@@ -21,10 +21,10 @@ import {PerfilDetailAjustesComponent} from './perfil-detail-ajustes.component';
 //PerfilPublico
 import {PerfilPublicoDetailComponent} from './perfil-publico-detail.component';
 //Tipos de Comidas
-/*import {TipoComidaListComponent} from './tipo-comida-list.component';
+import {TipoComidaListComponent} from './tipo-comida-list.component';
 import {TipoComidaDetailComponent} from './tipo-comida-detail.component';
 import {TipoComidaFormComponent} from './tipo-comida-form.component';
-import {TipoComidaService} from './tipo-comida.service';*/
+import {TipoComidaService} from './tipo-comida.service';
 //Login
 import {UsuarioService} from './usuario.service';
 //Index
