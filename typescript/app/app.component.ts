@@ -39,7 +39,7 @@ import {IndexListComponent} from './index-list.component';
   template: `
     <router-outlet></router-outlet>
   `,
-  providers:  [RestauranteService, RecetaService, PerfilService, UsuarioService],
+  providers:  [RestauranteService, RecetaService, PerfilService, UsuarioService,TipoComidaService],
   directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([
