@@ -39,7 +39,7 @@ import {UsuarioService} from './usuario.service';
             <h3>Inicia sesión</h3>
 					<form>
 		 				<div class="form-group">
-						    <input type="text" [(ngModel)]="usuario" class="form-control" id="exampleInputEmail1" placeholder="Dirección de email">
+						    <input type="text" [(ngModel)]="usuario" class="form-control" id="exampleInputEmail1" placeholder="Nombre de usuario">
 						</div>
 						<div class="form-group">
 						    <input type="password" [(ngModel)]="pass" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
@@ -58,7 +58,6 @@ export class PerfilFormComponent {
   usuarioActual: Perfil;
   usuario: string;
   pass: string;
-  prueba: boolean;
 
   constructor(
     private _router:Router,
@@ -75,7 +74,7 @@ export class PerfilFormComponent {
         this.newPerfil = false;
       } else {
         this.perfil = new Perfil(undefined,'','','','','','','','','');
-        this.prueba = new Perfil(undefined,'','','','','','','','','');
+        this.usuario = new Perfil(undefined,'','','','','','','','','');
         this.newPerfil = true;
       }
   }
@@ -92,19 +91,16 @@ export class PerfilFormComponent {
   }
 
   login(usuario: string, pass: string;) {
-    this.prueba = false;
     for (var user of this.perfiles) {
       if (user.user == usuario) {
         if (user.pass == pass) {
           this.usuarioActual = user;
           this.usuarioService.setUsuario(user);
-          this.prueba = true;
           break;
         }
       }
     }
-    console.log(this.prueba);
-    /*this._router.navigate(['Index']);*/
+    //this._router.navigate(['Index']);
     this._router.navigate(['PerfilPublicoDetail', {id: this.usuarioActual.id}]);
   }
   

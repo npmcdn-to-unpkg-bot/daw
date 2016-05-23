@@ -7,7 +7,6 @@ import {UsuarioService} from './usuario.service';
 @Component({
   directives: [ROUTER_DIRECTIVES],
   template: `
-    <h3>@{{usuario.user}}</h3>
      <div class="container-fluid">
         <div class="row">
             <div class="col-md-5 perfil-publico">

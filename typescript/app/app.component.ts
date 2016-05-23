@@ -20,16 +20,13 @@ import {PerfilDetailFavoritosComponent} from './perfil-detail-favoritos.componen
 import {PerfilDetailAjustesComponent} from './perfil-detail-ajustes.component';
 //PerfilPublico
 import {PerfilPublicoDetailComponent} from './perfil-publico-detail.component';
-<<<<<<< HEAD
 //Tipos de Comidas
-import {TipoComidaListComponent} from './tipo-comida-list.component';
+/*import {TipoComidaListComponent} from './tipo-comida-list.component';
 import {TipoComidaDetailComponent} from './tipo-comida-detail.component';
 import {TipoComidaFormComponent} from './tipo-comida-form.component';
-import {TipoComidaService} from './tipo-comida.service';
-=======
+import {TipoComidaService} from './tipo-comida.service';*/
 //Login
 import {UsuarioService} from './usuario.service';
->>>>>>> origin/master
 //Index
 import {IndexService} from './index.service';
 import {IndexListComponent} from './index-list.component';
@@ -59,14 +56,14 @@ import {IndexListComponent} from './index-list.component';
   {path: '/perfil/:id', name: 'PerfilDetail', component: PerfilDetailComponent},
   {path: '/perfil/new', name: 'PerfilNew', component: PerfilFormComponent},
   {path: '/perfil/misrecetas/:id', name: 'PerfilMisRecetas', component: PerfilDetailRecetasComponent},
-  {path: '/perf-il/misfavoritos/:id', name: 'PerfilMisFavoritos', component: PerfilDetailFavoritosComponent},
+  {path: '/perfil/misfavoritos/:id', name: 'PerfilMisFavoritos', component: PerfilDetailFavoritosComponent},
   {path: '/perfil/ajustes/:id', name: 'PerfilAjustes', component: PerfilDetailAjustesComponent},
 //PerfilPublico
   {path: '/perfil/publico/:id', name: 'PerfilPublicoDetail', component: PerfilPublicoDetailComponent},
 //TipoComida
-  {path: '/tipocomida', name: 'TipoComida', component: TipoComidaListComponent},
+  /*{path: '/tipocomida', name: 'TipoComida', component: TipoComidaListComponent},
   {path: '/tipocomida/:id', name: 'TipoComidaDetail', component: TipoComidaDetailComponent},
   {path: '/tipocomida/new', name: 'TipoComidaNew', component: TipoComidaFormComponent},
-    {path: '/tipocomida/edit/:id', name: 'TipoComidaEdit', component: TipoComidaFormComponent},
+    {path: '/tipocomida/edit/:id', name: 'TipoComidaEdit', component: TipoComidaFormComponent},*/
 ])
 export class AppComponent { }
