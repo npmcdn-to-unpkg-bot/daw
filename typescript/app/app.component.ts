@@ -20,11 +20,16 @@ import {PerfilDetailFavoritosComponent} from './perfil-detail-favoritos.componen
 import {PerfilDetailAjustesComponent} from './perfil-detail-ajustes.component';
 //PerfilPublico
 import {PerfilPublicoDetailComponent} from './perfil-publico-detail.component';
+<<<<<<< HEAD
 //Tipos de Comidas
 import {TipoComidaListComponent} from './tipo-comida-list.component';
 import {TipoComidaDetailComponent} from './tipo-comida-detail.component';
 import {TipoComidaFormComponent} from './tipo-comida-form.component';
 import {TipoComidaService} from './tipo-comida.service';
+=======
+//Login
+import {UsuarioService} from './usuario.service';
+>>>>>>> origin/master
 //Index
 import {IndexService} from './index.service';
 import {IndexListComponent} from './index-list.component';
@@ -34,7 +39,7 @@ import {IndexListComponent} from './index-list.component';
   template: `
     <router-outlet></router-outlet>
   `,
-  providers:  [RestauranteService, RecetaService, PerfilService],
+  providers:  [RestauranteService, RecetaService, PerfilService, UsuarioService],
   directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([

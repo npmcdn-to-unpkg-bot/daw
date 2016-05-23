@@ -43,6 +43,6 @@ export class TipoComidaDetailComponent {
     tipocomida: TipoComida;
     
     constructor(
-        private
+private router: Router,
     )
 }
