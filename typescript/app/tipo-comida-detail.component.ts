@@ -1,6 +1,8 @@
 import {Component}  from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteParams, Router} from 'angular2/router';
 import {TipoComida, TipoComidaService} from './tipo-comida.service';
+import {Receta, RecetaService} from './receta.service';
+import {Restaurante, RestauranteService} from './restaurante.service';
 
 @Component({
     directives: [ROUTER_DIRECTIVES],
@@ -22,43 +24,81 @@ import {TipoComida, TipoComidaService} from './tipo-comida.service';
             </div>
           </div>
         </div>
-      </div>
-      <div class="container-fluid">
-        <h3 class="text-center recetas-h1">Tipo Comida relacionadas</h3>
-        <div *ngFor="#tipocomida of tiposcomidas" class="col-xs-6 col-md-4">
-            <div class="thumbnail">
-                <img src="{{tipocomida.thumbnail}}" alt="{{tipocomida.title}}">
-                <div class="caption">
-                    <h3><a [routerLink]="['TipoComidaDetail', {id: tipocomida.id}]">{{restaurante.title}}</a></h3>
-                    <p>{{tipocomida.abstract}}</p>
+        <div class="row">   
+            <div class="col-xs-2 col-md-8">
+                <h2>Recetas</h2>
+                <div *ngFor="#fav of tipocomida.recetas">
+                    <div *ngFor="#receta of recetas">
+                        <div *ngIf="receta.id == fav" class="col-xs-6 col-md-4">
+                            <div class="thumbnail">
+                                <img src="{{receta.thumbnail}}" alt="{{receta.title}}">
+                                <div class="caption">
+                                    <h3><a [routerLink]="['RecetaDetail', {id: receta.id}]">{{receta.title}}</a></h3>
+                                    <p>{{receta.abstract}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-2 col-md-2"></div>
+                <div class="col-xs-2 col-md-8">
+                <h2>Restaurantes</h2>
+                <div *ngFor="#fav of tipocomida.restaurantes">
+                    <div *ngFor="#rest of restaurantes">
+                        <div *ngIf="rest.id == fav" class="col-xs-6 col-md-4">
+                            <div class="thumbnail">
+                                <img src="{{rest.thumbnail}}" alt="{{rest.title}}">
+                                <div class="caption">
+                                    <h3><a [routerLink]="['RestauranteDetail', {id: rest.id}]">{{rest.title}}</a></h3>
+                                    <p>{{rest.abstract}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-      </div>`
+      </div>
+            
+    
+      `
 })
 
 export class TipoComidaDetailComponent {
     
     tipocomida: TipoComida;
     tiposcomidas: TipoComida[];
+    recetas: Receta[];
+    restaurantes: Restaurante[];
     
     constructor(
         private router: Router,
         routeParams: RouteParams,
         private service: TipoComidaService,
+        private recetaService: RecetaService,
+        private restauranteService: RestauranteService
         
     ){
         let id = routeParams.get('id');
         service.getTipoComida(id).subscribe(
-            tipocomida => this.tipocomida = tipoComida,
+            tipocomida => this.tipocomida = tipocomida,
             error => console.error(error)
         );
     }
     ngOnInit(){
-        this.tipoComidaService.getTiposComidas().subscribe(
+        this.service.getTiposComidas().subscribe(
         tiposcomidas => this.tiposcomidas = tiposcomidas,
         error => console.log(error)
         );
+        this.recetaService.getRecetas().subscribe(
+        recetas => this.recetas = recetas,
+        error => console.log(error)
+      );
+      this.restauranteService.getRestaurantes().subscribe(
+        restaurantes => this.restaurantes = restaurantes,
+        error => console.log(error)
+      );
     }
     removeTipoComida() {
         let okResponse = window.confirm("¿Quieres eliminar este tipo de comida?");

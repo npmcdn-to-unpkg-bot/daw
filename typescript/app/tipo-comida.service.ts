@@ -11,19 +11,19 @@ export class TipoComida {
     public title: string,
     public abstract: string,
     public details: string,
-    public recetas: number[],
-    public restaurantes: number[],
     public thumbnail: string,
-    public thumbnailbig: string
+    public thumbnailbig: string,
+    public recetas: number[],
+    public restaurantes: number[]    
     ) {}
 }
 
 @Injectable()
 export class TipoComidaService{
 private tiposComidas = [
-    new TipoComida(1,'Comida Española', 'Comida de todo el territorio español','<h3>Descripción</h3><p>Desde La Coruña a Murcia, desde Bilbao a Cádiz o desde Badajoz a Valencia, todas nuestras recetas (no independentistas).</p><h3>Recomendación de platos</h3><div class="row"><div class="col-xs-4 col-md-4 videos"><h3>Hamburguesas</h3><ul><li><img src="img/tgb-burguertgb.png" width="100px" height="auto" />Hamburguesa TGB<hr align="left" noshade="noshade" size="2" width="80%" /></li><li><img src="img/tgb-bbq.png" width="100px" height="auto" />Hamburguesa BBQ<hr align="left" noshade="noshade" size="2" width="80%" /></li><li><img src="img/tgb-pollo.png" width="100px" height="auto" />Hamburguesa de Pollo<hr align="left" noshade="noshade" size="2" width="80%" /></li></ul></div><div class="col-xs-4 col-md-4 resources"><h3>Hot Dogs</h3><ul><li><img src="img/tgb-hotdog_California.png" width="100px" height="auto" />Hot Dog California<hr align="left" noshade="noshade" size="2" width="80%" /></li><li><img src="img/tgb-hotdog_NewYork.png" width="100px" height="auto" />Hot Dog New York<hr align="left" noshade="noshade" size="2" width="80%" /></li><li><img src="img/tgb-hotdog_Washington.png" width="100px" height="auto" />Hot Dog Washington<hr align="left" noshade="noshade" size="2" width="80%" /></li></ul></div><div class="col-xs-4 col-md-4 popular"><h3>Ensaladas</h3><ul><li><img src="img/tgb-santa_fe.png" width="100px" height="auto" />Ensalada Santa Fe<hr align="left" noshade="noshade" size="2" width="80%" /></li><li><img src="img/tgb-cesar.png" width="100px" height="auto" />Ensalada César<hr align="left" noshade="noshade" size="2" width="80%" /></li><li><img src="img/tgb-huerta.png" width="100px" height="auto" />Ensalada de la Huerta<hr align="left" noshade="noshade" size="2" width="80%" /></li></ul></div></div>', [1,2],[3,1], 'img/banderaEsp.jpg', 'img/banderaEsp.jpg'),
+    new TipoComida(1,'Comida Española', 'Comida de todo el territorio español','<h3>Descripción</h3><p>Desde La Coruña a Murcia, desde Bilbao a Cádiz o desde Badajoz a Valencia, todas nuestras recetas (no independentistas).</p>', 'img/banderaEsp.jpg', 'img/banderaEsp.jpg', [1,2],[3,1]),
     
-    new TipoComida(2,'Comida Española', 'Comida de todo el territorio español','<h3>Descripción</h3><p>Desde La Coruña a Murcia, desde Bilbao a Cádiz o desde Badajoz a Valencia, todas nuestras recetas (no independentistas).</p><h3>Recomendación de platos</h3><div class="row"><div class="col-xs-4 col-md-4 videos"><h3>Hamburguesas</h3><ul><li><img src="img/tgb-burguertgb.png" width="100px" height="auto" />Hamburguesa TGB<hr align="left" noshade="noshade" size="2" width="80%" /></li><li><img src="img/tgb-bbq.png" width="100px" height="auto" />Hamburguesa BBQ<hr align="left" noshade="noshade" size="2" width="80%" /></li><li><img src="img/tgb-pollo.png" width="100px" height="auto" />Hamburguesa de Pollo<hr align="left" noshade="noshade" size="2" width="80%" /></li></ul></div><div class="col-xs-4 col-md-4 resources"><h3>Hot Dogs</h3><ul><li><img src="img/tgb-hotdog_California.png" width="100px" height="auto" />Hot Dog California<hr align="left" noshade="noshade" size="2" width="80%" /></li><li><img src="img/tgb-hotdog_NewYork.png" width="100px" height="auto" />Hot Dog New York<hr align="left" noshade="noshade" size="2" width="80%" /></li><li><img src="img/tgb-hotdog_Washington.png" width="100px" height="auto" />Hot Dog Washington<hr align="left" noshade="noshade" size="2" width="80%" /></li></ul></div><div class="col-xs-4 col-md-4 popular"><h3>Ensaladas</h3><ul><li><img src="img/tgb-santa_fe.png" width="100px" height="auto" />Ensalada Santa Fe<hr align="left" noshade="noshade" size="2" width="80%" /></li><li><img src="img/tgb-cesar.png" width="100px" height="auto" />Ensalada César<hr align="left" noshade="noshade" size="2" width="80%" /></li><li><img src="img/tgb-huerta.png" width="100px" height="auto" />Ensalada de la Huerta<hr align="left" noshade="noshade" size="2" width="80%" /></li></ul></div></div>', [1,2],[3,1], 'img/banderaEsp.jpg', 'img/banderaEsp.jpg')
+    new TipoComida(2,'Comida Española', 'Comida de todo el territorio español','<h3>Descripción</h3><p>Desde La Coruña a Murcia, desde Bilbao a Cádiz o desde Badajoz a Valencia, todas nuestras recetas (no independentistas).</p>', 'img/banderaEsp.jpg', 'img/banderaEsp.jpg', [1,2],[3,1])
     ];
     
     getTiposComidas() {

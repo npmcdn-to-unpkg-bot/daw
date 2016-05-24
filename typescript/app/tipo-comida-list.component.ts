@@ -33,7 +33,7 @@ export class TipoComidaListComponent implements OnInit {
       );
     }
 
-    newRestaurante() {
+    newTipoComida() {
       this.router.navigate(['TipoComidaNew']);
     }
 }

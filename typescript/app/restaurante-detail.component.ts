@@ -34,7 +34,8 @@ import {Restaurante, RestauranteService}   from './restaurante.service';
                 </div>
             </div>
         </div>
-      </div>`
+    </div>
+    `
 })
 export class RestauranteDetailComponent {
 
