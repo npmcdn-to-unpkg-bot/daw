@@ -18,11 +18,11 @@ import {Restaurante, RestauranteService}   from './restaurante.service';
           </div>
           <div class="col-xs-4 col-md-4" >
               <div class="row img-contenedor2">
-    <p class="tituloGrande contenedorPequenio1"><a [routerLink]="['Recetas']">Recetas</a></p>
+                    <p class="tituloGrande contenedorPequenio1"><a [routerLink]="['Recetas']">Recetas</a></p>
                   <img src="img/CabRecetas.png" alt="" />
               </div>
               <div class="row img-contenedor2">
-                  <p class="tituloGrande contenedorPequenio2">Platos de Restaurantes</p>
+                  <p class="tituloGrande contenedorPequenio2"><a [routerLink]="['TipoComida']">Comidas por País</a></p>
                   <img src="img/CabPlatoRestaurante.png" alt="" />
               </div>
           </div>

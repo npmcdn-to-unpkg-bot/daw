@@ -61,9 +61,9 @@ import {IndexListComponent} from './index-list.component';
 //PerfilPublico
   {path: '/perfil/publico/:id', name: 'PerfilPublicoDetail', component: PerfilPublicoDetailComponent},
 //TipoComida
-  /*{path: '/tipocomida', name: 'TipoComida', component: TipoComidaListComponent},
+  {path: '/tipocomida', name: 'TipoComida', component: TipoComidaListComponent},
   {path: '/tipocomida/:id', name: 'TipoComidaDetail', component: TipoComidaDetailComponent},
   {path: '/tipocomida/new', name: 'TipoComidaNew', component: TipoComidaFormComponent},
-    {path: '/tipocomida/edit/:id', name: 'TipoComidaEdit', component: TipoComidaFormComponent},*/
+    {path: '/tipocomida/edit/:id', name: 'TipoComidaEdit', component: TipoComidaFormComponent},
 ])
 export class AppComponent { }
