@@ -16,12 +16,7 @@ import {Restaurante, RestauranteService} from './restaurante.service';
             <button (click)="editTipoComida()" type="submit" class="btn btn-default publicar">Editar</button>
             <button (click)="removeTipoComida()" type="submit" class="btn btn-default publicar">Eliminar</button>
             <div class="contenido" [innerHtml]="tipocomida.details"></div>
-            <div class="row">
-                <div class="col-md-12">
-                    <h3>Localización</h3>
-                    <iframe src="{{tipocomida.map}}" width="100%" height="480"></iframe>
-                </div>
-            </div>
+            
           </div>
         </div>
         <div class="row">   

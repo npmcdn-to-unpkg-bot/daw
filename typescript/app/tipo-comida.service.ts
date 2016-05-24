@@ -23,7 +23,7 @@ export class TipoComidaService{
 private tiposComidas = [
     new TipoComida(1,'Comida Española', 'Comida de todo el territorio español','<h3>Descripción</h3><p>Desde La Coruña a Murcia, desde Bilbao a Cádiz o desde Badajoz a Valencia, todas nuestras recetas (no independentistas).</p>', 'img/banderaEsp.jpg', 'img/banderaEsp.jpg', [1,2],[3,1]),
     
-    new TipoComida(2,'Comida Española', 'Comida de todo el territorio español','<h3>Descripción</h3><p>Desde La Coruña a Murcia, desde Bilbao a Cádiz o desde Badajoz a Valencia, todas nuestras recetas (no independentistas).</p>', 'img/banderaEsp.jpg', 'img/banderaEsp.jpg', [1,2],[3,1])
+    new TipoComida(2,'Comida Norte Americana', 'Aquí encontrarás toda la gastronomía típica de los Estados Unidos','<h3>Descripción</h3><p>Recorreras todos los sabores y productos desde la costa Este a la Oeste y desde Alaska a la frontera con México.</p>', 'img/banderaEEUU.jpg', 'img/banderaEEUU.jpg', [2,4,5],[2,4,5])
     ];
     
     getTiposComidas() {
@@ -32,7 +32,7 @@ private tiposComidas = [
 
   getTipoComida(id: number | string) {
     let tipoComida = this.tiposComidas.filter(h => h.id === +id)[0]
-    return withObserver(new TipoComida(tipoComida.id, tipoComida.title, tipoComida.abstract, tipoComida.details, tipoComida.thumbnail, tipoComida.thumbnailbig, tipoComida.map));
+    return withObserver(new TipoComida(tipoComida.id, tipoComida.title, tipoComida.abstract, tipoComida.details, tipoComida.thumbnail, tipoComida.thumbnailbig, tipoComida.restaurantes, tipoComida.recetas));
   }
 
   removeTipoComida(tipoComida: TipoComida){
@@ -54,6 +54,8 @@ private tiposComidas = [
       oldTipoComida.thumbnail = tipoComida.thumbnail;
       oldTipoComida.thumbnailbig = tipoComida.thumbnailbig;
       oldTipoComida.map = tipoComida.map;
+      oldPerfil.recetas = perfil.recetas;
+      oldPerfil.restaurantes = perfil.restaurantes;
     } else {
       tipoComida.id = this.tiposComidas.length+1;
       this.tiposComidas.push(tipoComida);
