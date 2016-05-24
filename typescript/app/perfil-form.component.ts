@@ -6,7 +6,7 @@ import {Perfil, PerfilService} from './perfil.service';
     template: `
         <div class="row">
         
-        <div class="col-xs-6 col-md-6 text-center">
+    <div *ngIf="user != true" class="col-xs-6 col-md-6 text-center">
             <h3>Registrate</h3>
           <div class="form-group">
 	 				 <input type="text" class="form-control" [(ngModel)]="perfil.name" id="username" placeholder="Nombre">
@@ -55,6 +55,8 @@ export class PerfilFormComponent {
   pactual: Perfil;
   usuario: string;
   pass: string;
+    user: boolean;
+    admin: boolean;
 
   constructor(
     private _router:Router,
@@ -70,9 +72,17 @@ export class PerfilFormComponent {
         this.newPerfil = false;
       } else {
         this.perfil = new Perfil(undefined,'','','','','','','','','');
-        this.pactual = new Perfil(undefined,'','','','','','','','','');
         this.newPerfil = true;
       }
+      service.getUsuario().subscribe(
+            pactual => this.pactual = pactual,
+            error => console.error(error)
+        );
+      service.getUser().subscribe(
+                user => this.user = user,
+                error => console.error(error)
+            );
+      
   }
 
   ngOnInit(){
@@ -87,21 +97,22 @@ export class PerfilFormComponent {
   }
 
   login(usuario: string, pass: string;) {
-    for (var user of this.perfiles) {
-      if (user.user == usuario) {
-        if (user.pass == pass) {
-            this.pactual = user;
-            this.service.setUsuario(user);
-            /*this.service.getUsuario().subscribe(
-              pactual => this.pactual = pactual,
-              error => console.log(error)
-            );*/
+      this.user = false;
+      //admin = false;
+    for (var u of this.perfiles) {
+      if (u.user == usuario) {
+        if (u.pass == pass) {
+            this.pactual = u;
+            this.service.setUsuario(u);
+            this.user = true;
+            this.service.setUser(this.user);
             break;
         }
       }
     }
-    //this._router.navigate(['Index']);
-    this._router.navigate(['PerfilPublicoDetail', {id: this.pactual.id}]);
+    if (this.user) {
+        this._router.navigate(['PerfilPublicoDetail', {id: this.pactual.id}]);
+    }
   }
   
   save() {
