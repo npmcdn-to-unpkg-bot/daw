@@ -1,6 +1,7 @@
 import {Component}  from 'angular2/core';
 import {RouteParams, Router} from 'angular2/router';
 import {Restaurante, RestauranteService}   from './restaurante.service';
+import {Perfil, PerfilService} from './perfil.service';
 
 @Component({
   template: `
@@ -54,7 +55,8 @@ export class RestauranteFormComponent {
   constructor(
     private _router:Router,
     routeParams:RouteParams,
-    private service: RestauranteService){
+    private service: RestauranteService,
+    private perfilService: PerfilService){
 
       let id = routeParams.get('id');
       if(id){
@@ -67,6 +69,10 @@ export class RestauranteFormComponent {
         this.restaurante = new Restaurante(undefined,'','');
         this.newRestaurante = true;
       }
+        perfilService.getUsuario().subscribe(
+                pactual => this.pactual = pactual,
+                error => console.error(error)
+            );
   }
 
   cancel() {

@@ -1,6 +1,7 @@
 import {Component}  from 'angular2/core';
 import {RouteParams, Router} from 'angular2/router';
 import {Receta, RecetaService}   from './receta.service';
+import {Perfil, PerfilService}   from './perfil.service';
 
 @Component({
   template: `
@@ -42,15 +43,19 @@ import {Receta, RecetaService}   from './receta.service';
         </div>
     </div>`
 })
-export class RecetaFormComponent {
+export class RecetaFormComponent{
 
   newReceta: boolean;
   receta: Receta;
+    pactual: Perfil;
+    
 
   constructor(
     private _router:Router,
     routeParams:RouteParams,
-    private service: RecetaService){
+    private service: RecetaService,
+    private perfilService: PerfilService,
+  ){
 
       let id = routeParams.get('id');
       if(id){
@@ -63,6 +68,11 @@ export class RecetaFormComponent {
         this.receta = new Receta(undefined,'','');
         this.newReceta = true;
       }
+      
+      this.perfilService.getUsuario().subscribe(
+            pactual => this.pactual = pactual,
+            error => console.log(error),
+        );
   }
 
   cancel() {

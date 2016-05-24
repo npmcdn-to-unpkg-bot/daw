@@ -53,6 +53,7 @@ directives: [ROUTER_DIRECTIVES],
 export class PerfilDetailComponent { 
     
     perfil: Perfil;
+    pactual:Perfil;
     
     constructor(
     private router: Router,
@@ -62,6 +63,10 @@ export class PerfilDetailComponent {
         let id = routeParams.get('id');
         service.getPerfil(id).subscribe(
             perfil => this.perfil = perfil,
+            error => console.error(error)
+        );
+        service.getUsuario().subscribe(
+            pactual => this.pactual = pactual,
             error => console.error(error)
         );
     }

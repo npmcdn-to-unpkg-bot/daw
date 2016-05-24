@@ -70,6 +70,7 @@ export class PerfilDetailFavoritosComponent {
     perfil: Perfil;
     recetas: Receta[];
     restaurantes: Restaurante[];
+pactual: Perfil;
     
     constructor(
         private router: Router,
@@ -81,6 +82,10 @@ export class PerfilDetailFavoritosComponent {
         let id = routeParams.get('id');
         service.getPerfil(id).subscribe(
             perfil => this.perfil = perfil,
+            error => console.error(error)
+        );
+        service.getUsuario().subscribe(
+            pactual => this.pactual = pactual,
             error => console.error(error)
         );
     }

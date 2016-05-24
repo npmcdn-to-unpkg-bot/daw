@@ -1,6 +1,7 @@
 import {Component, OnInit}   from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteParams, Router} from 'angular2/router';
 import {Receta, RecetaService}   from './receta.service';
+import {Perfil, PerfilService} from './perfil.service';
 
 @Component({
     directives: [ROUTER_DIRECTIVES],
@@ -23,14 +24,19 @@ import {Receta, RecetaService}   from './receta.service';
 export class RecetaListComponent implements OnInit {
 
     recetas: Receta[];
+    pactual: Perfil;
 
-    constructor(private router:Router, private service: RecetaService) {}
+constructor(private router:Router, private service: RecetaService, private perfilService: PerfilService) {}
 
     ngOnInit(){
       this.service.getRecetas().subscribe(
         recetas => this.recetas = recetas,
         error => console.log(error)
       );
+        this.perfilService.getUsuario().subscribe(
+            pactual => this.pactual = pactual,
+            error => console.error(error)
+        );
     }
 
     newReceta() {

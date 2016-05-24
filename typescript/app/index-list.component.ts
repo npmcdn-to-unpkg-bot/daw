@@ -3,6 +3,7 @@ import {ROUTER_DIRECTIVES, RouteParams, Router} from 'angular2/router';
 import {Index, IndexService}   from './index.service';
 import {Receta, RecetaService}   from './receta.service';
 import {Restaurante, RestauranteService}   from './restaurante.service';
+import {Perfil, PerfilService} from './perfil.service';
 
 @Component({
     directives: [ROUTER_DIRECTIVES],
@@ -243,11 +244,13 @@ export class IndexListComponent implements OnInit {
 
     restaurantes: Restaurante[];
     recetas: Recetas[];
+    pactual: Perfil;
 
     constructor(
       private router:Router,
       private RestauranteService: RestauranteService,
       private RecetaService: RecetaService,
+        private perfilService: PerfilService,
     ) {}
 
     ngOnInit(){
@@ -257,6 +260,10 @@ export class IndexListComponent implements OnInit {
       );
       this.RecetaService.getRecetas().subscribe(
         recetas => this.recetas = recetas,
+        error => console.log(error)
+      );
+        this.perfilService.getUsuario().subscribe(
+        pactual => this.pactual = pactual,
         error => console.log(error)
       );
     }

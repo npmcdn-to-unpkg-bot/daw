@@ -45,6 +45,7 @@ export class RecetaDetailComponent implements OnInit{
     receta: Receta;
     recetas: Recetas[];
     perfil: Perfil;
+    pactual: Perfil;
     constructor(
       private router: Router,
       routeParams: RouteParams,
@@ -61,13 +62,17 @@ export class RecetaDetailComponent implements OnInit{
 
     ngOnInit(){
         this.recetasService.getRecetas().subscribe(
-        recetas => this.recetas = recetas,
-        error => console.log(error),
+            recetas => this.recetas = recetas,
+            error => console.log(error),
         );
 
         this.perfilService.getPerfil(this.receta.userid).subscribe(
-        perfil => this.perfil = perfil,
-        error => console.log(error),
+            perfil => this.perfil = perfil,
+            error => console.log(error),
+        );
+        this.perfilService.getUsuario().subscribe(
+            pactual => this.pactual = pactual,
+            error => console.log(error),
         );
 
     }

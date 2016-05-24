@@ -47,6 +47,7 @@ export class PerfilDetailRecetasComponent implements OnInit{
     
     perfil: Perfil;
     recetas: Recetas[];
+pactual: Perfil;
     
     constructor(
     private router: Router,
@@ -57,6 +58,10 @@ export class PerfilDetailRecetasComponent implements OnInit{
         let id = routeParams.get('id');
         service.getPerfil(id).subscribe(
             perfil => this.perfil = perfil,
+            error => console.error(error)
+        );
+        service.getUsuario().subscribe(
+            pactual => this.pactual = pactual,
             error => console.error(error)
         );
     }

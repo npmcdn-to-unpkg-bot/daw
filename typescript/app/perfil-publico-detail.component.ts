@@ -6,7 +6,6 @@ import {Receta, RecetaService} from './receta.service';
 @Component({
   directives: [ROUTER_DIRECTIVES],
   template: `
-    <p>{{pactual.user}}</p>
      <div class="container-fluid">
         <div class="row">
             <div class="col-md-5 perfil-publico">
@@ -43,7 +42,7 @@ export class PerfilPublicoDetailComponent implements OnInit{
         private router: Router,
         routeParams: RouteParams,
         private service: PerfilService,
-        private recetasService: RecetaService,
+        private recetaService: RecetaService,
         ) {
             let id = routeParams.get('id');
             service.getPerfil(id).subscribe(
@@ -57,14 +56,10 @@ export class PerfilPublicoDetailComponent implements OnInit{
     }
     
     ngOnInit() {
-        this.recetasService.getRecetas().subscribe(
+        this.recetaService.getRecetas().subscribe(
             recetas => this.recetas = recetas,
             error => console.log(error),
         );
-        /*this.service.getUsuario().subscribe(
-            pactual => this.pactual = pactual,
-            error => console.log(error),
-      );*/
     }
     
 }
