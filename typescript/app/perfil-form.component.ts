@@ -1,7 +1,6 @@
 import {Component, OnInit}  from 'angular2/core';
 import {RouteParams, Router} from 'angular2/router';
 import {Perfil, PerfilService} from './perfil.service';
-import {UsuarioService} from './usuario.service';
 
 @Component({
     template: `
@@ -37,7 +36,6 @@ import {UsuarioService} from './usuario.service';
         
         <div class="col-xs-6 col-md-6 text-center ">
             <h3>Inicia sesión</h3>
-					<form>
 		 				<div class="form-group">
 						    <input type="text" [(ngModel)]="usuario" class="form-control" id="exampleInputEmail1" placeholder="Nombre de usuario">
 						</div>
@@ -45,7 +43,6 @@ import {UsuarioService} from './usuario.service';
 						    <input type="password" [(ngModel)]="pass" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
 						</div>
 						<button type="submit" (click)="login(usuario, pass)" class="btn btn-default">Entrar</button>
-					</form>
 				</div>
         </div>
       `
@@ -55,15 +52,14 @@ export class PerfilFormComponent {
   newPerfil: boolean;
   perfil: Perfil;
   perfiles: Perfil[];
-  usuarioActual: Perfil;
+  pactual: Perfil;
   usuario: string;
   pass: string;
 
   constructor(
     private _router:Router,
     routeParams:RouteParams,
-    private service: PerfilService,
-    private usuarioService: UsuarioService){
+    private service: PerfilService){
 
       let id = routeParams.get('id');
       if(id){
@@ -74,7 +70,7 @@ export class PerfilFormComponent {
         this.newPerfil = false;
       } else {
         this.perfil = new Perfil(undefined,'','','','','','','','','');
-        this.usuario = new Perfil(undefined,'','','','','','','','','');
+        this.pactual = new Perfil(undefined,'','','','','','','','','');
         this.newPerfil = true;
       }
   }
@@ -94,14 +90,18 @@ export class PerfilFormComponent {
     for (var user of this.perfiles) {
       if (user.user == usuario) {
         if (user.pass == pass) {
-          this.usuarioActual = user;
-          this.usuarioService.setUsuario(user);
-          break;
+            this.pactual = user;
+            this.service.setUsuario(user);
+            /*this.service.getUsuario().subscribe(
+              pactual => this.pactual = pactual,
+              error => console.log(error)
+            );*/
+            break;
         }
       }
     }
     //this._router.navigate(['Index']);
-    this._router.navigate(['PerfilPublicoDetail', {id: this.usuarioActual.id}]);
+    this._router.navigate(['PerfilPublicoDetail', {id: this.pactual.id}]);
   }
   
   save() {

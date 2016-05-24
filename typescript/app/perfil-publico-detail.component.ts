@@ -2,11 +2,11 @@ import {Component, OnInit}  from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteParams, Router} from 'angular2/router';
 import {Perfil, PerfilService} from './perfil.service';
 import {Receta, RecetaService} from './receta.service';
-import {UsuarioService} from './usuario.service';
 
 @Component({
   directives: [ROUTER_DIRECTIVES],
   template: `
+    <p>{{pactual.user}}</p>
      <div class="container-fluid">
         <div class="row">
             <div class="col-md-5 perfil-publico">
@@ -37,18 +37,21 @@ export class PerfilPublicoDetailComponent implements OnInit{
     
     perfil: Perfil;
     recetas: Receta[];
-    usuario: Perfil;
+    pactual: Perfil;
     
     constructor(
         private router: Router,
         routeParams: RouteParams,
         private service: PerfilService,
         private recetasService: RecetaService,
-        private usuarioService: UsuarioService,
         ) {
             let id = routeParams.get('id');
             service.getPerfil(id).subscribe(
                 perfil => this.perfil = perfil,
+                error => console.error(error)
+            );
+            service.getUsuario().subscribe(
+                pactual => this.pactual = pactual,
                 error => console.error(error)
             );
     }
@@ -58,10 +61,10 @@ export class PerfilPublicoDetailComponent implements OnInit{
             recetas => this.recetas = recetas,
             error => console.log(error),
         );
-        this.usuarioService.getUsuario().subscribe(
-            usuario => this.usuario = usuario,
-            error => console.log(error)
-      );
+        /*this.service.getUsuario().subscribe(
+            pactual => this.pactual = pactual,
+            error => console.log(error),
+      );*/
     }
     
 }

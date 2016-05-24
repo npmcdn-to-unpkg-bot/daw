@@ -26,7 +26,17 @@ export class PerfilService{
       new Perfil(1, 'Tim', 'Cook', 'CEO de Apple. Amante de La Tierra. Me gusta hacer buenos productos y cobrar mucho por ello. También disfruto haciendo recetas y cocinando para mis seres queridos tras una buena keynote.', 'tcook@apple.com', 'TimCook','apple4ever', 'http://images.apple.com/pr/bios/images/cook_hero.png',[1,2],[2,3]),
       new Perfil(2, 'Lebron', 'James', 'Dos veces ganador de la NBA. Cuatro veces MVP. Dos veces Oro Olímpico. Pero nada de esto se puede comparar con mi pasión por la comida. Mis recetas son exóticas y fáciles de hacer para los que como yo, no tenemos mucho tiempo (porque estamos ganando millones haciendo lo que amamos).', 'lebronj@m.es', 'TheChosenOne','IMTHEBEST', 'http://cdn5.triplepundit.com/wp-content/uploads/2011/04/chosen_lebron_james1.png',[2],[1])
     ];
+    private pactual: Perfil;
 
+    getUsuario() {
+        return withObserver(this.pactual);
+            //return withObserver(new Perfil(pactual.id, pactual.name, pactual.apellidos, pactual.descripcion, pactual.correo, pactual.user, pactual.pass,  pactual.thumbnail, pactual.restFavs, pactual.recFavs));
+      }
+
+setUsuario(user: Perfil) {
+    //this.pactual = user;
+    this.pactual = new Perfil (user.id, user.name, user.apellidos, user.descripcion, user.correo, user.user, user.pass, user.thumbnail, user.restFavs, user.recFavs);
+  }
 getRecFavs() {    
     return withObserver(this.recFavs);
   }
