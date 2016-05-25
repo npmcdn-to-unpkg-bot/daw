@@ -7,8 +7,8 @@ import {Restaurante, RestauranteService} from './restaurante.service';
 @Component({
 directives: [ROUTER_DIRECTIVES],
   template: `
-    <div class="container-fluid">        
-        <div class="col-xs-2 col-md-2">
+    <div *ngIf="user" class="container-fluid">        
+        <div *ngIf="perfil.id == pactual.id" class="col-xs-2 col-md-2">
             <ul class="nav nav-pills nav-stacked">
                 <li>
                     <a [routerLink]="['PerfilDetail', {id: perfil.id}]">Mi Cuenta</a>
@@ -70,7 +70,8 @@ export class PerfilDetailFavoritosComponent {
     perfil: Perfil;
     recetas: Receta[];
     restaurantes: Restaurante[];
-pactual: Perfil;
+    pactual: Perfil;
+    user: boolean;
     
     constructor(
         private router: Router,
@@ -86,6 +87,10 @@ pactual: Perfil;
         );
         service.getUsuario().subscribe(
             pactual => this.pactual = pactual,
+            error => console.error(error)
+        );
+        service.getUser().subscribe(
+            user => this.user = user,
             error => console.error(error)
         );
     }

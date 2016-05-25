@@ -6,8 +6,8 @@ import {Receta, RecetaService} from './receta.service';
 @Component({
 directives: [ROUTER_DIRECTIVES],
   template: `
-    <div class="container-fluid">
-        <div class="row">
+    <div *ngIf="user" class="container-fluid">
+        <div *ngIf="perfil.id == pactual.id" class="row">
             <div class="col-xs-2 col-md-2">
                 <ul class="nav nav-pills nav-stacked">
                     <li>
@@ -47,7 +47,9 @@ export class PerfilDetailRecetasComponent implements OnInit{
     
     perfil: Perfil;
     recetas: Recetas[];
-pactual: Perfil;
+    pactual: Perfil;
+    user: boolean;
+    admin: boolean;
     
     constructor(
     private router: Router,
@@ -62,6 +64,10 @@ pactual: Perfil;
         );
         service.getUsuario().subscribe(
             pactual => this.pactual = pactual,
+            error => console.error(error)
+        );
+        service.getUser().subscribe(
+            user => this.user = user,
             error => console.error(error)
         );
     }

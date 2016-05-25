@@ -15,9 +15,11 @@ import {Perfil, PerfilService} from './perfil.service';
                 <h3><a [routerLink]="['PerfilPublicoDetail', {id: perfil.id}]">{{perfil.name}} {{perfil.apellidos}}</a></h3>
                 <h4><a [routerLink]="['PerfilPublicoDetail', {id: perfil.id}]">@{{perfil.user}}</a></h4>
                 <p>{{perfil.descripcion}}</p>
-                <button type="submit" class="btn btn-default publicar" (click)="removeReceta()">Eliminar</button>
-                <button type="submit" class="btn btn-default publicar" (click)="editReceta()">Editar</button>
-                <button type="submit" class="btn btn-default publicar">Favoritos</button>
+                <div *ngIf="user == true">
+                    <button *ngIf="perfil.id == pactual.id" type="submit" class="btn btn-default publicar" (click)="removeReceta()">Eliminar</button>
+                    <button *ngIf="perfil.id == pactual.id" type="submit" class="btn btn-default publicar" (click)="editReceta()">Editar</button>
+                    <button type="submit" class="btn btn-default publicar">Favoritos</button>
+                </div>
               </div>
               <div class="col-md-9">
                   <h2>{{receta.title}}</h2>
@@ -46,6 +48,8 @@ export class RecetaDetailComponent implements OnInit{
     recetas: Recetas[];
     perfil: Perfil;
     pactual: Perfil;
+    user: boolean;
+    admin: boolean;
     constructor(
       private router: Router,
       routeParams: RouteParams,
@@ -73,6 +77,10 @@ export class RecetaDetailComponent implements OnInit{
         this.perfilService.getUsuario().subscribe(
             pactual => this.pactual = pactual,
             error => console.log(error),
+        );
+        this.perfilService.getUser().subscribe(
+            user => this.user = user,
+            error => console.error(error)
         );
 
     }

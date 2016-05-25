@@ -6,7 +6,7 @@ import {Perfil, PerfilService} from './perfil.service';
     template: `
         <div class="row">
         
-    <div *ngIf="user != true" class="col-xs-6 col-md-6 text-center">
+    <div class="col-xs-6 col-md-6 text-center">
             <h3>Registrate</h3>
           <div class="form-group">
 	 				 <input type="text" class="form-control" [(ngModel)]="perfil.name" id="username" placeholder="Nombre">
