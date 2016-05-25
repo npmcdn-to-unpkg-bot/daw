@@ -14,6 +14,8 @@ import {Perfil, PerfilService} from './perfil.service';
             <h2 class="text-center">{{restaurante.title}}</h2>
             <button (click)="editRestaurante()" type="submit" class="btn btn-default publicar">Editar</button>
             <button (click)="removeRestaurante()" type="submit" class="btn btn-default publicar">Eliminar</button>
+            <button (click)="addFavoritosRest()" type="submit" class="btn btn-default publicar">Añadir a Favoritos</button>
+    
             <div class="contenido" [innerHtml]="restaurante.details"></div>
             <div class="row">
                 <div class="col-md-12">
@@ -78,6 +80,10 @@ export class RestauranteDetailComponent {
 
     editRestaurante() {
         this.router.navigate(['RestauranteEdit', { id: this.restaurante.id }]);
+    }
+    
+    addFavoritosRest(){
+    this.perfilService.anadirFavoritoRest(this.pactual, this.restaurante.id)
     }
 
     gotoRestaurantes() {

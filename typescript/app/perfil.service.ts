@@ -97,8 +97,13 @@ private pactual: new Perfil(undefined, '', '', '', '', '', '', '', '', '');
 
       }
 
-    anadirFavorito (perfil: Perfil, receta: Receta) {
+    anadirFavoritoRec (perfil: Perfil, receta: number) {
         perfil.recetasFavs.push(receta);
+        return withObserver(perfil);
+    }
+    
+    anadirFavoritoRest (perfil: Perfil, restaurante: number) {
+        perfil.restFavs.push(restaurante);
         return withObserver(perfil);
     }
 }
