@@ -20,8 +20,8 @@ import {Restaurante, RestauranteService} from './restaurante.service';
           </div>
         </div>
         <div class="row">   
-            <div class="col-xs-2 col-md-8">
-                <h2>Recetas</h2>
+            <div class="container-fluid">
+                <h2>Recetas de {{tipocomida.title}}</h2>
                 <div *ngFor="#fav of tipocomida.recetas">
                     <div *ngFor="#receta of recetas">
                         <div *ngIf="receta.id == fav" class="col-xs-6 col-md-4">
@@ -29,16 +29,14 @@ import {Restaurante, RestauranteService} from './restaurante.service';
                                 <img src="{{receta.thumbnail}}" alt="{{receta.title}}">
                                 <div class="caption">
                                     <h3><a [routerLink]="['RecetaDetail', {id: receta.id}]">{{receta.title}}</a></h3>
-                                    <p>{{receta.abstract}}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-xs-2 col-md-2"></div>
-                <div class="col-xs-2 col-md-8">
-                <h2>Restaurantes</h2>
+            <div class="container-fluid">
+                <h2>Restaurantes de {{tipocomida.title}}</h2>
                 <div *ngFor="#fav of tipocomida.restaurantes">
                     <div *ngFor="#rest of restaurantes">
                         <div *ngIf="rest.id == fav" class="col-xs-6 col-md-4">
@@ -46,7 +44,6 @@ import {Restaurante, RestauranteService} from './restaurante.service';
                                 <img src="{{rest.thumbnail}}" alt="{{rest.title}}">
                                 <div class="caption">
                                     <h3><a [routerLink]="['RestauranteDetail', {id: rest.id}]">{{rest.title}}</a></h3>
-                                    <p>{{rest.abstract}}</p>
                                 </div>
                             </div>
                         </div>
