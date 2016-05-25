@@ -82,6 +82,10 @@ export class PerfilFormComponent {
                 user => this.user = user,
                 error => console.error(error)
             );
+      service.getAdmin().subscribe(
+                admin => this.admin = admin,
+                error => console.error(error)
+            );
       
   }
 
@@ -105,6 +109,10 @@ export class PerfilFormComponent {
             this.pactual = u;
             this.service.setUsuario(u);
             this.user = true;
+            if(u.id == 1) {
+                this.admin = true;
+    this.service.setAdmin(this.admin);
+            }
             this.service.setUser(this.user);
             break;
         }

@@ -5,7 +5,7 @@ import {Perfil, PerfilService} from './perfil.service';
 
 @Component({
   template: `
-   <div *ngIf="user" class="container-fluid">
+   <div *ngIf="admin" class="container-fluid">
         <div *ngIf="perfil.id == pactual.id" class="row">
             <div class="col-xs-2 col-md-2">
                 <ul class="nav nav-pills nav-stacked">
@@ -77,6 +77,10 @@ export class RestauranteFormComponent {
             );
         perfilService.getUser().subscribe(
             user => this.user = user,
+            error => console.error(error)
+        );
+        perfilService.getAdmin().subscribe(
+            admin => this.admin = admin,
             error => console.error(error)
         );
   }

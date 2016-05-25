@@ -12,9 +12,9 @@ import {Perfil, PerfilService} from './perfil.service';
         <div class="row">
           <div class="col-md-12">
             <h2 class="text-center">{{restaurante.title}}</h2>
-            <button (click)="editRestaurante()" type="submit" class="btn btn-default publicar">Editar</button>
-            <button (click)="removeRestaurante()" type="submit" class="btn btn-default publicar">Eliminar</button>
-            <button (click)="addFavoritosRest()" type="submit" class="btn btn-default publicar">Añadir a Favoritos</button>
+            <button *ngIf="admin" (click)="editRestaurante()" type="submit" class="btn btn-default publicar">Editar</button>
+            <button *ngIf="admin" (click)="removeRestaurante()" type="submit" class="btn btn-default publicar">Eliminar</button>
+            <button *ngIf="user" (click)="addFavoritosRest()" type="submit" class="btn btn-default publicar">Añadir a Favoritos</button>
     
             <div class="contenido" [innerHtml]="restaurante.details"></div>
             <div class="row">
@@ -45,6 +45,8 @@ export class RestauranteDetailComponent {
     restaurante: Restaurante;
     restaurantes: Restaurantes[];
     pactual: Perfil;
+    user: boolean;
+    admin: boolean;
 
     constructor(
     private router: Router,
@@ -67,6 +69,14 @@ export class RestauranteDetailComponent {
                 pactual => this.pactual = pactual,
                 error => console.error(error)
             );
+         this.perfilService.getUser().subscribe(
+            user => this.user = user,
+            error => console.error(error)
+        );
+         this.perfilService.getAdmin().subscribe(
+            admin => this.admin = admin,
+            error => console.error(error)
+        );
     }
     removeRestaurante() {
         let okResponse = window.confirm("¿Quieres eliminar este restaurante?");

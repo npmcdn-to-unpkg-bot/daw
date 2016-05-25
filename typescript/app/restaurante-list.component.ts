@@ -8,7 +8,7 @@ import {Perfil, PerfilService} from './perfil.service';
     template: `
     <div class="container-fluid">
       <h1 class="text-center recetas-h1">Restaurantes</h1>
-    <div><button style="margin-bottom: 10px; margin-left: 20px;" (click)="newRestaurante()" class="btn btn-default publicar">Nuevo Restaurante</button></div>
+    <div *ngIf="admin"><button style="margin-bottom: 10px; margin-left: 20px;" (click)="newRestaurante()" class="btn btn-default publicar">Nuevo Restaurante</button></div>
       <div *ngFor="#restaurante of restaurantes" class="col-xs-6 col-md-4">
           <div class="thumbnail">
               <img src="{{restaurante.thumbnail}}" alt="{{restaurante.title}}">
@@ -25,6 +25,8 @@ export class RestauranteListComponent implements OnInit {
 
     restaurantes: Restaurante[];
     pactual: Perfil;
+user: boolean;
+admin: boolean;
 
     constructor(private router:Router, private service: RestauranteService, private perfilService: PerfilService) {}
 
@@ -35,6 +37,14 @@ export class RestauranteListComponent implements OnInit {
       );
         this.perfilService.getUsuario().subscribe(
             pactual => this.pactual = pactual,
+            error => console.error(error)
+        );
+        this.perfilService.getUsuario().subscribe(
+            user => this.user = user,
+            error => console.error(error)
+        );
+        this.perfilService.getUsuario().subscribe(
+            admin => this.admin = admin,
             error => console.error(error)
         );
     }

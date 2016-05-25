@@ -3,6 +3,7 @@ import {ROUTER_DIRECTIVES, RouteParams, Router} from 'angular2/router';
 import {TipoComida, TipoComidaService} from './tipo-comida.service';
 import {Receta, RecetaService} from './receta.service';
 import {Restaurante, RestauranteService} from './restaurante.service';
+import {Perfil, PerfilService} from './perfil.service';
 
 @Component({
     directives: [ROUTER_DIRECTIVES],
@@ -13,8 +14,8 @@ import {Restaurante, RestauranteService} from './restaurante.service';
         <div class="row">
           <div class="col-md-12">
             <h2 class="text-center">{{tipocomida.title}}</h2>
-            <button (click)="editTipoComida()" type="submit" class="btn btn-default publicar">Editar</button>
-            <button (click)="removeTipoComida()" type="submit" class="btn btn-default publicar">Eliminar</button>
+            <button *ngIf="admin" (click)="editTipoComida()" type="submit" class="btn btn-default publicar">Editar</button>
+            <button *ngIf="admin" (click)="removeTipoComida()" type="submit" class="btn btn-default publicar">Eliminar</button>
             <div class="contenido" [innerHtml]="tipocomida.details"></div>
             
           </div>
@@ -63,13 +64,17 @@ export class TipoComidaDetailComponent {
     tiposcomidas: TipoComida[];
     recetas: Receta[];
     restaurantes: Restaurante[];
+    pactual: Perfil;
+    user: boolean;
+    admin: boolean;
     
     constructor(
         private router: Router,
         routeParams: RouteParams,
         private service: TipoComidaService,
         private recetaService: RecetaService,
-        private restauranteService: RestauranteService
+        private restauranteService: RestauranteService,
+        private perfilService: PerfilService
         
     ){
         let id = routeParams.get('id');
@@ -91,6 +96,18 @@ export class TipoComidaDetailComponent {
         restaurantes => this.restaurantes = restaurantes,
         error => console.log(error)
       );
+       this.perfilService.getUsuario().subscribe(
+            pactual => this.pactual = pactual,
+            error => console.error(error)
+        );
+        this.perfilService.getUser().subscribe(
+            user => this.user = user,
+            error => console.error(error)
+        );
+        this.perfilService.getAdmin().subscribe(
+            admin => this.admin = admin,
+            error => console.error(error)
+        );
     }
     removeTipoComida() {
         let okResponse = window.confirm("¿Quieres eliminar este tipo de comida?");

@@ -1,10 +1,11 @@
 import {Component}  from 'angular2/core';
 import {RouteParams, Router} from 'angular2/router';
 import {TipoComida, TipoComidaService}   from './tipo-comida.service';
+import {Perfil, PerfilService} from './perfil.service';
 
 @Component({
   template: `
-   <div class="container-fluid">
+   <div *ngIf="admin" class="container-fluid">
         <div class="row">
             <div class="col-xs-2 col-md-2">
                 <ul class="nav nav-pills nav-stacked">
@@ -51,11 +52,15 @@ export class TipoComidaFormComponent {
 
   newTipoComida: boolean;
   tipocomida: TipoComida;
+    pactual: Perfil;
+    user: boolean;
+    admin: boolean;
 
   constructor(
     private _router:Router,
     routeParams:RouteParams,
-    private service: TipoComidaService){
+    private service: TipoComidaService,
+  private perfilService: PerfilService){
 
       let id = routeParams.get('id');
       if(id){
@@ -68,6 +73,18 @@ export class TipoComidaFormComponent {
         this.tipocomida = new TipoComida(undefined,'','');
         this.newTipoComida = true;
       }
+      perfilService.getUsuario().subscribe(
+            pactual => this.pactual = pactual,
+            error => console.error(error)
+        );
+        perfilService.getUser().subscribe(
+            user => this.user = user,
+            error => console.error(error)
+        );
+        perfilService.getAdmin().subscribe(
+            admin => this.admin = admin,
+            error => console.error(error)
+        );
   }
 
   cancel() {
