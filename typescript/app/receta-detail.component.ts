@@ -18,7 +18,7 @@ import {Perfil, PerfilService} from './perfil.service';
                 <div *ngIf="user == true">
                     <button *ngIf="perfil.id == pactual.id" type="submit" class="btn btn-default publicar" (click)="removeReceta()">Eliminar</button>
                     <button *ngIf="perfil.id == pactual.id" type="submit" class="btn btn-default publicar" (click)="editReceta()">Editar</button>
-                    <button type="submit" class="btn btn-default publicar">Favoritos</button>
+                    <button (click)="addFavoritosRec()" type="submit" class="btn btn-default publicar">Añadir a Favoritos</button>
                 </div>
               </div>
               <div class="col-md-9">
@@ -96,6 +96,10 @@ export class RecetaDetailComponent implements OnInit{
 
     editReceta() {
         this.router.navigate(['RecetaEdit', { id: this.receta.id }]);
+    }
+    
+    addFavoritosRec(){
+        this.perfilService.anadirFavoritoRec(this.pactual, this.receta.id)
     }
 
     gotoReceta() {
