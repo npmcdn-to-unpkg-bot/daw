@@ -25,8 +25,8 @@ export class RestauranteListComponent implements OnInit {
 
     restaurantes: Restaurante[];
     pactual: Perfil;
-user: boolean;
-admin: boolean;
+    user: boolean;
+    admin: boolean;
 
     constructor(private router:Router, private service: RestauranteService, private perfilService: PerfilService) {}
 
@@ -43,7 +43,7 @@ admin: boolean;
             user => this.user = user,
             error => console.error(error)
         );
-        this.perfilService.getUsuario().subscribe(
+        this.perfilService.getAdmin().subscribe(
             admin => this.admin = admin,
             error => console.error(error)
         );

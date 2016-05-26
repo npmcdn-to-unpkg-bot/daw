@@ -111,7 +111,7 @@ export class PerfilFormComponent {
             this.user = true;
             if(u.id == 1) {
                 this.admin = true;
-    this.service.setAdmin(this.admin);
+                this.service.setAdmin(this.admin);
             }
             this.service.setUser(this.user);
             break;

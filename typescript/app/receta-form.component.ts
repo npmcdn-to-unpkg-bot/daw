@@ -1,28 +1,29 @@
 import {Component}  from 'angular2/core';
-import {RouteParams, Router} from 'angular2/router';
+import {ROUTER_DIRECTIVES, RouteParams, Router} from 'angular2/router';
 import {Receta, RecetaService}   from './receta.service';
 import {Perfil, PerfilService}   from './perfil.service';
 
 @Component({
+  directives: [ROUTER_DIRECTIVES],
   template: `
       <div *ngIf="user" class="container-fluid">
-        <div *ngIf="perfil.id == pactual.id" class="row">
+        <div *ngIf="receta.userid == pactual.id" class="row">
             <div class="col-xs-2 col-md-2">
                 <ul class="nav nav-pills nav-stacked">
                     <li>
-                        <a href="/typescript/#/perfil/1">Mi Cuenta</a>
+                        <a [routerLink]="['PerfilDetail', {id: pactual.id}]">Mi Cuenta</a>
                     </li>
                     <li>
-                        <a href="/typescript/#/perfil/misrecetas/1">Mis Recetas</a>
+                        <a [routerLink]="['PerfilMisRecetas', {id: pactual.id}]">Mis Recetas</a>
                     </li>
                     <li >
-                        <a href="/typescript/#/perfil/misfavoritos/1">Favoritos</a>
+                        <a [routerLink]="['PerfilMisFavoritos', {id: pactual.id}]">Favoritos</a>
                     </li>
                     <li class="active">
                         <a>Añadir Receta</a>
                     </li>
                     <li>
-                        <a href="/typescript/#/perfil/ajustes/1">Ajustes</a>
+                        <a [routerLink]="['PerfilAjustes', {id: pactual.id}]">Ajustes</a>
                     </li>
                 </ul>
             </div>
@@ -36,7 +37,7 @@ import {Perfil, PerfilService}   from './perfil.service';
                   <textarea [(ngModel)]="receta.details" rows="9" class="form-control" placeholder="Detalles de la receta"></textarea>
                   <input type="text" class="form-control" [(ngModel)]="receta.thumbnail" placeholder="Imagen pequeña" />
                   <input type="text" class="form-control" [(ngModel)]="receta.thumbnailbig" placeholder="Imagen grande" />
-                    <button (click)="cancel()" type="submit" class="btn btn-default publicar">Cancelar</button>
+                  <button (click)="cancel()" type="submit" class="btn btn-default publicar">Cancelar</button>
                   <button (click)="save()" type="submit" class="btn btn-default publicar">Publicar</button>
                 </div>
             </div>
@@ -45,8 +46,8 @@ import {Perfil, PerfilService}   from './perfil.service';
 })
 export class RecetaFormComponent{
 
-  newReceta: boolean;
-  receta: Receta;
+    newReceta: boolean;
+    receta: Receta;
     pactual: Perfil;
     user: boolean;
     admin: boolean;
@@ -85,6 +86,7 @@ export class RecetaFormComponent{
   }
 
   save() {
+      this.receta.userid = pactual.id;
     this.service.saveReceta(this.receta);
     window.history.back();
   }

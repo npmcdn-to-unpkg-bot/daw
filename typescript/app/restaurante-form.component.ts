@@ -1,31 +1,32 @@
 import {Component}  from 'angular2/core';
-import {RouteParams, Router} from 'angular2/router';
+import {ROUTER_DIRECTIVES, RouteParams, Router} from 'angular2/router';
 import {Restaurante, RestauranteService}   from './restaurante.service';
 import {Perfil, PerfilService} from './perfil.service';
 
 @Component({
+  directives: [ROUTER_DIRECTIVES],
   template: `
    <div *ngIf="admin" class="container-fluid">
-        <div *ngIf="perfil.id == pactual.id" class="row">
+        <div class="row">
             <div class="col-xs-2 col-md-2">
                 <ul class="nav nav-pills nav-stacked">
                     <li>
-                        <a href="#"> Mi Cuenta</a>
+                        <a [routerLink]="['PerfilDetail', {id: pactual.id}]"> Mi Cuenta</a>
                     </li>
                     <li>
-                        <a href="#"> Mis Recetas</a>
+                        <a [routerLink]="['PerfilMisRecetas', {id: pactual.id}]"> Mis Recetas</a>
                     </li>
                     <li >
-                        <a href="#"> Favoritos</a>
+                        <a [routerLink]="['PerfilMisFavoritos', {id: pactual.id}]"> Favoritos</a>
                     </li>
                     <li>
-                        <a href="#">Añadir Receta</a>
+                        <a [routerLink]="['RecetaNew']">Añadir Receta</a>
                     </li>
                     <li class="active">
-                        <a href="#">Añadir Restaurante</a>
+                        <a>Añadir Restaurante</a>
                     </li>
                     <li>
-                        <a href="#">Ajustes</a>
+                        <a [routerLink]="['PerfilAjustes', {id: pactual.id}]">Ajustes</a>
                     </li>
                 </ul>
             </div>

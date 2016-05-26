@@ -46,7 +46,7 @@ private pactual: new Perfil(undefined, '', '', '', '', '', '', '', '', '');
         return(withObserver(this.usuario));
     }
     setAdmin(boleano: boolean) {
-        this.admi = boleano;
+        this.admin = boleano;
     }
     getAdmin() {
         return(withObserver(this.admin));
