@@ -15,7 +15,7 @@ import {Perfil, PerfilService} from './perfil.service';
                 <h3><a [routerLink]="['PerfilPublicoDetail', {id: perfil.id}]">{{perfil.name}} {{perfil.apellidos}}</a></h3>
                 <h4><a [routerLink]="['PerfilPublicoDetail', {id: perfil.id}]">@{{perfil.user}}</a></h4>
                 <p>{{perfil.descripcion}}</p>
-                <div *ngIf="user == true">
+                <div *ngIf="user">
                     <button *ngIf="perfil.id == pactual.id" type="submit" class="btn btn-default publicar" (click)="removeReceta()">Eliminar</button>
                     <button *ngIf="perfil.id == pactual.id" type="submit" class="btn btn-default publicar" (click)="editReceta()">Editar</button>
                     <button (click)="addFavoritosRec()" type="submit" class="btn btn-default publicar">Añadir a Favoritos</button>
@@ -99,7 +99,7 @@ export class RecetaDetailComponent implements OnInit{
     }
     
     addFavoritosRec(){
-        this.perfilService.anadirFavoritoRec(this.pactual, this.receta.id)
+        this.perfilService.anadirFavoritoRec(this.pactual, this.receta.id);
     }
 
     gotoReceta() {

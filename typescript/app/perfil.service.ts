@@ -98,12 +98,28 @@ private pactual: new Perfil(undefined, '', '', '', '', '', '', '', '', '');
       }
 
     anadirFavoritoRec (perfil: Perfil, receta: number) {
-        perfil.recetasFavs.push(receta);
-        return withObserver(perfil);
+        let esta = false;
+        for (let i=0; i < perfil.recFavs.length; i++){
+            if (perfil.recFavs[i] == receta){
+                esta = true;
+                break;
+          }
+        }
+        if (!esta) {
+            perfil.recFavs.push(receta);
+        }
     }
     
     anadirFavoritoRest (perfil: Perfil, restaurante: number) {
-        perfil.restFavs.push(restaurante);
-        return withObserver(perfil);
+        let esta = false;
+        for (let i=0; i < perfil.restFavs.length; i++){
+            if (perfil.restFavs[i] == receta){
+                esta = true;
+                break;
+          }
+        }
+        if (!esta) {
+            perfil.restFavs.push(restaurante);
+        }
     }
 }

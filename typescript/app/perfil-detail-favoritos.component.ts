@@ -7,54 +7,62 @@ import {Restaurante, RestauranteService} from './restaurante.service';
 @Component({
 directives: [ROUTER_DIRECTIVES],
   template: `
-    <div *ngIf="user" class="container-fluid">        
-        <div *ngIf="perfil.id == pactual.id" class="col-xs-2 col-md-2">
-            <ul class="nav nav-pills nav-stacked">
-                <li>
-                    <a [routerLink]="['PerfilDetail', {id: perfil.id}]">Mi Cuenta</a>
-                </li>
-                <li>
-                    <a [routerLink]="['PerfilMisRecetas', {id: perfil.id}]">Mis Recetas</a>
-                </li>
-                <li class="active">
-                    <a>Favoritos</a>
-                </li>
-                <li>
-                    <a [routerLink]="['RecetaNew']">Añadir Receta</a>
-                </li>
-                <li>
-                    <a [routerLink]="['PerfilAjustes', {id: perfil.id}]">Ajustes</a>
-                </li>
-            </ul>
-        </div>
-        <div class="row">   
-            <div class="col-xs-2 col-md-8">
-                <h2>Mis Recetas favoritas</h2>
-                <div *ngFor="#fav of perfil.recFavs">
-                    <div *ngFor="#receta of recetas">
-                        <div *ngIf="receta.id == fav" class="col-xs-6 col-md-4">
-                            <div class="thumbnail">
-                                <img src="{{receta.thumbnail}}" alt="{{receta.title}}">
-                                <div class="caption">
-                                    <h3><a [routerLink]="['RecetaDetail', {id: receta.id}]">{{receta.title}}</a></h3>
-                                    <p>{{receta.abstract}}</p>
+    <div *ngIf="user" class="container-fluid">
+        <div *ngIf="perfil.id == pactual.id" class="row">
+            <div class="col-xs-2 col-md-2">
+                <ul class="nav nav-pills nav-stacked">
+                    <li>
+                        <a [routerLink]="['PerfilDetail', {id: perfil.id}]">Mi Cuenta</a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['PerfilMisRecetas', {id: perfil.id}]">Mis Recetas</a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['RecetaNew']">Añadir Receta</a>
+                    </li>
+                    <li class="active">
+                        <a>Favoritos</a>
+                    </li>
+                    <li *ngIf="admin">
+                        <a [routerLink]="['RestauranteNew']">Añadir Restaurante</a>
+                    </li>
+                    <li *ngIf="admin">
+                        <a [routerLink]="['PerfilMisRestaurantes', {id: perfil.id}]">Ver restaurantes</a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['PerfilAjustes', {id: perfil.id}]">Ajustes</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="row">   
+                <div class="col-xs-2 col-md-8">
+                    <h2>Mis Recetas favoritas</h2>
+                    <div *ngFor="#fav of perfil.recFavs">
+                        <div *ngFor="#receta of recetas">
+                            <div *ngIf="receta.id == fav" class="col-xs-6 col-md-4">
+                                <div class="thumbnail">
+                                    <img src="{{receta.thumbnail}}" alt="{{receta.title}}">
+                                    <div class="caption">
+                                        <h3><a [routerLink]="['RecetaDetail', {id: receta.id}]">{{receta.title}}</a></h3>
+                                        <p>{{receta.abstract}}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xs-2 col-md-2"></div>
-                <div class="col-xs-2 col-md-8">
-                <h2>Mis Restaurantes Favoritos</h2>
-                <div *ngFor="#fav of perfil.restFavs">
-                    <div *ngFor="#rest of restaurantes">
-                        <div *ngIf="rest.id == fav" class="col-xs-6 col-md-4">
-                            <div class="thumbnail">
-                                <img src="{{rest.thumbnail}}" alt="{{rest.title}}">
-                                <div class="caption">
-                                    <h3><a [routerLink]="['RestauranteDetail', {id: rest.id}]">{{rest.title}}</a></h3>
-                                    <p>{{rest.abstract}}</p>
+                <div class="col-xs-2 col-md-2"></div>
+                    <div class="col-xs-2 col-md-8">
+                    <h2>Mis Restaurantes Favoritos</h2>
+                    <div *ngFor="#fav of perfil.restFavs">
+                        <div *ngFor="#rest of restaurantes">
+                            <div *ngIf="rest.id == fav" class="col-xs-6 col-md-4">
+                                <div class="thumbnail">
+                                    <img src="{{rest.thumbnail}}" alt="{{rest.title}}">
+                                    <div class="caption">
+                                        <h3><a [routerLink]="['RestauranteDetail', {id: rest.id}]">{{rest.title}}</a></h3>
+                                        <p>{{rest.abstract}}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -91,6 +99,10 @@ export class PerfilDetailFavoritosComponent {
         );
         service.getUser().subscribe(
             user => this.user = user,
+            error => console.error(error)
+        );
+        service.getAdmin().subscribe(
+            admin => this.admin = admin,
             error => console.error(error)
         );
     }

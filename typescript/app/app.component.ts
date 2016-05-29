@@ -16,6 +16,7 @@ import {PerfilService} from './perfil.service';
 import {PerfilDetailComponent} from './perfil-detail.component';
 import {PerfilFormComponent} from './perfil-form.component';
 import {PerfilDetailRecetasComponent} from './perfil-detail-recetas.component';
+import {PerfilDetailRestaurantesComponent} from './perfil-detail-restaurantes.component';
 import {PerfilDetailFavoritosComponent} from './perfil-detail-favoritos.component';
 import {PerfilDetailAjustesComponent} from './perfil-detail-ajustes.component';
 //PerfilPublico
@@ -56,6 +57,7 @@ import {IndexListComponent} from './index-list.component';
   {path: '/perfil/:id', name: 'PerfilDetail', component: PerfilDetailComponent},
   {path: '/perfil/new', name: 'PerfilNew', component: PerfilFormComponent},
   {path: '/perfil/misrecetas/:id', name: 'PerfilMisRecetas', component: PerfilDetailRecetasComponent},
+    {path: '/perfil/restaurantes/:id', name: 'PerfilMisRestaurantes', component: PerfilDetailRestaurantesComponent},
   {path: '/perfil/misfavoritos/:id', name: 'PerfilMisFavoritos', component: PerfilDetailFavoritosComponent},
   {path: '/perfil/ajustes/:id', name: 'PerfilAjustes', component: PerfilDetailAjustesComponent},
 //PerfilPublico

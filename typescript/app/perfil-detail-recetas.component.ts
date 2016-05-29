@@ -16,11 +16,17 @@ directives: [ROUTER_DIRECTIVES],
                     <li class="active">
                         <a>Mis Recetas</a>
                     </li>
+                    <li>
+                        <a [routerLink]="['RecetaNew']">Añadir Receta</a>
+                    </li>
                     <li >
                         <a [routerLink]="['PerfilMisFavoritos', {id: perfil.id}]">Favoritos</a>
                     </li>
-                    <li>
-                        <a [routerLink]="['RecetaNew']">Añadir Receta</a>
+                    <li *ngIf="admin">
+                        <a [routerLink]="['RestauranteNew']">Añadir Restaurante</a>
+                    </li>
+                    <li *ngIf="admin">
+                        <a [routerLink]="['PerfilMisRestaurantes', {id: perfil.id}]">Ver restaurantes</a>
                     </li>
                     <li>
                         <a [routerLink]="['PerfilAjustes', {id: perfil.id}]">Ajustes</a>
@@ -68,6 +74,10 @@ export class PerfilDetailRecetasComponent implements OnInit{
         );
         service.getUser().subscribe(
             user => this.user = user,
+            error => console.error(error)
+        );
+        service.getAdmin().subscribe(
+            admin => this.admin = admin,
             error => console.error(error)
         );
     }

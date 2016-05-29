@@ -1,16 +1,17 @@
-import {Component}  from 'angular2/core';
+import {Component, OnInit}  from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteParams, Router} from 'angular2/router';
 import {Perfil, PerfilService} from './perfil.service';
+import {Restaurante, RestauranteService} from './restaurante.service';
 
 @Component({
 directives: [ROUTER_DIRECTIVES],
   template: `
-    <div *ngIf="user" class="container-fluid">
-        <div *ngIf="perfil.id == pactual.id" class="row">
+    <div *ngIf="admin" class="container-fluid">
+        <div class="row">
             <div class="col-xs-2 col-md-2">
                 <ul class="nav nav-pills nav-stacked">
-                    <li class="active">
-                        <a>Mi Cuenta</a>
+                    <li>
+                        <a [routerLink]="['PerfilDetail', {id: perfil.id}]">Mi Cuenta</a>
                     </li>
                     <li>
                         <a [routerLink]="['PerfilMisRecetas', {id: perfil.id}]">Mis Recetas</a>
@@ -24,8 +25,8 @@ directives: [ROUTER_DIRECTIVES],
                     <li *ngIf="admin">
                         <a [routerLink]="['RestauranteNew']">Añadir Restaurante</a>
                     </li>
-                    <li *ngIf="admin">
-                        <a [routerLink]="['PerfilMisRestaurantes', {id: perfil.id}]">Ver restaurantes</a>
+                    <li class="active" *ngIf="admin">
+                        <a>Ver restaurantes</a>
                     </li>
                     <li>
                         <a [routerLink]="['PerfilAjustes', {id: perfil.id}]">Ajustes</a>
@@ -33,33 +34,26 @@ directives: [ROUTER_DIRECTIVES],
                 </ul>
             </div>
             <div class="col-xs-2 col-md-8">
-                <div class="cabecera-subrayada">
-                <h1>{{perfil.user}}</h1>
-                </div>
-                <div class="imagen-de-perfil">
-                    <img src="{{perfil.thumbnail}}" width="200px" height="200px" />
-                    <div class="botones-foto">
-                        <button type="submit" (click)="deletePhoto()" class="btn btn-default separado">Quitar</button>
-                        <button type="submit" class="btn btn-default separado">Subir...</button>
+                <div *ngFor="#restaurante of restaurantes">
+                    <div class="col-xs-6 col-md-4">
+                    <div class="thumbnail">
+                        <img src="{{restaurante.thumbnail}}" alt="{{restaurante.title}}">
+                        <div class="caption">
+                            <h3><a [routerLink]="['RestauranteEdit', {id: restaurante.id}]">{{restaurante.title}}</a></h3>
+                            <p>{{restaurante.abstract}}</p>
+                        </div>
                     </div>
-                </div>
-                <div class="inputs">
-                    <input type="text" class="form-control" [(ngModel)]="perfil.name" placeholder="Nombre"/>
-                    <input type="text" class="form-control" [(ngModel)]="perfil.apellidos" placeholder="Apellidos"/>
-                    <textarea type="text" rows="9" class="form-control" [(ngModel)]="perfil.descripcion" placeholder="Descripción"></textarea>
-                    
-                    <input type="text" class="form-control" [(ngModel)]="perfil.thumbnail" placeholder="Photo"/>
-                    <button (click)="save()" type="submit" class="btn btn-default">Guardar</button>
                 </div>
             </div>
         </div>
     </div>
   `
 })
-export class PerfilDetailComponent { 
+export class PerfilDetailRestaurantesComponent implements OnInit{ 
     
     perfil: Perfil;
-    pactual:Perfil;
+    restaurante: Restaurante[];
+    pactual: Perfil;
     user: boolean;
     admin: boolean;
     
@@ -67,6 +61,7 @@ export class PerfilDetailComponent {
     private router: Router,
     routeParams: RouteParams,
     private service: PerfilService,
+    private restauranteService: RestauranteService,
     ) {
         let id = routeParams.get('id');
         service.getPerfil(id).subscribe(
@@ -86,12 +81,11 @@ export class PerfilDetailComponent {
             error => console.error(error)
         );
     }
-    save() {
-        this.service.savePerfil(this.perfil);
-        window.history.back();
-    }
-
-    deletePhoto() {
-        this.perfil.thumbnail = '';
+    
+    ngOnInit(){
+        this.restauranteService.getRestaurantes().subscribe(
+        restaurantes => this.restaurantes = restaurantes,
+        error => console.log(error),
+        );
     }
 }

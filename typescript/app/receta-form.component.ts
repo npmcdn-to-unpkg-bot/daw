@@ -7,7 +7,7 @@ import {Perfil, PerfilService}   from './perfil.service';
   directives: [ROUTER_DIRECTIVES],
   template: `
       <div *ngIf="user" class="container-fluid">
-        <div *ngIf="receta.userid == pactual.id" class="row">
+        <div class="row">
             <div class="col-xs-2 col-md-2">
                 <ul class="nav nav-pills nav-stacked">
                     <li>
@@ -16,20 +16,40 @@ import {Perfil, PerfilService}   from './perfil.service';
                     <li>
                         <a [routerLink]="['PerfilMisRecetas', {id: pactual.id}]">Mis Recetas</a>
                     </li>
-                    <li >
-                        <a [routerLink]="['PerfilMisFavoritos', {id: pactual.id}]">Favoritos</a>
-                    </li>
                     <li class="active">
                         <a>Añadir Receta</a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['PerfilMisFavoritos', {id: pactual.id}]">Favoritos</a>
+                    </li>
+                    <li *ngIf="admin">
+                        <a [routerLink]="['RestauranteNew']">Añadir Restaurante</a>
+                    </li>
+                    <li *ngIf="admin">
+                        <a [routerLink]="['PerfilMisRestaurantes', {id: pactual.id}]">Ver restaurantes</a>
                     </li>
                     <li>
                         <a [routerLink]="['PerfilAjustes', {id: pactual.id}]">Ajustes</a>
                     </li>
                 </ul>
             </div>
-            <div class="col-xs-2 col-md-8">
+            <div *ngIf="receta.userid == pactual.id" class="col-xs-2 col-md-8">
                 <div class="cabecera-subrayada">
-                    <h1>Añadir o editar receta</h1>
+                    <h1>Editar receta</h1>
+                </div>
+                <div class="inputs-receta">
+                  <input type="text" class="form-control" [(ngModel)]="receta.title" placeholder="Título"/>
+                  <input type="text" class="form-control" [(ngModel)]="receta.abstract" placeholder="Descripción" />
+                  <textarea [(ngModel)]="receta.details" rows="9" class="form-control" placeholder="Detalles de la receta"></textarea>
+                  <input type="text" class="form-control" [(ngModel)]="receta.thumbnail" placeholder="Imagen pequeña" />
+                  <input type="text" class="form-control" [(ngModel)]="receta.thumbnailbig" placeholder="Imagen grande" />
+                  <button (click)="cancel()" type="submit" class="btn btn-default publicar">Cancelar</button>
+                  <button (click)="save()" type="submit" class="btn btn-default publicar">Publicar</button>
+                </div>
+            </div>
+            <div *ngIf="newReceta" class="col-xs-2 col-md-8">
+                <div class="cabecera-subrayada">
+                    <h1>Añadir receta</h1>
                 </div>
                 <div class="inputs-receta">
                   <input type="text" class="form-control" [(ngModel)]="receta.title" placeholder="Título"/>
@@ -79,6 +99,10 @@ export class RecetaFormComponent{
             user => this.user = user,
             error => console.log(error),
         );
+      this.perfilService.getAdmin().subscribe(
+            admin => this.admin = admin,
+            error => console.log(error),
+        );
   }
 
   cancel() {
@@ -86,7 +110,7 @@ export class RecetaFormComponent{
   }
 
   save() {
-      this.receta.userid = pactual.id;
+      this.receta.userid = this.pactual.id;
     this.service.saveReceta(this.receta);
     window.history.back();
   }

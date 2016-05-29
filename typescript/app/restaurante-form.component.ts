@@ -11,19 +11,22 @@ import {Perfil, PerfilService} from './perfil.service';
             <div class="col-xs-2 col-md-2">
                 <ul class="nav nav-pills nav-stacked">
                     <li>
-                        <a [routerLink]="['PerfilDetail', {id: pactual.id}]"> Mi Cuenta</a>
+                        <a [routerLink]="['PerfilDetail', {id: pactual.id}]">Mi Cuenta</a>
                     </li>
                     <li>
-                        <a [routerLink]="['PerfilMisRecetas', {id: pactual.id}]"> Mis Recetas</a>
-                    </li>
-                    <li >
-                        <a [routerLink]="['PerfilMisFavoritos', {id: pactual.id}]"> Favoritos</a>
+                        <a [routerLink]="['PerfilMisRecetas', {id: pactual.id}]">Mis Recetas</a>
                     </li>
                     <li>
                         <a [routerLink]="['RecetaNew']">Añadir Receta</a>
                     </li>
-                    <li class="active">
+                    <li>
+                        <a [routerLink]="['PerfilMisFavoritos', {id: pactual.id}]">Favoritos</a>
+                    </li>
+                    <li *ngIf="admin" class="active">
                         <a>Añadir Restaurante</a>
+                    </li>
+                    <li *ngIf="admin">
+                        <a [routerLink]="['PerfilMisRestaurantes', {id: pactual.id}]">Ver restaurantes</a>
                     </li>
                     <li>
                         <a [routerLink]="['PerfilAjustes', {id: pactual.id}]">Ajustes</a>
