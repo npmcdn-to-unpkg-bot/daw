@@ -7,11 +7,11 @@ import {Receta, RecetaService} from './receta.service';
 directives: [ROUTER_DIRECTIVES],
   template: `
     <div *ngIf="user" class="container-fluid">
-        <div *ngIf="perfil.id == pactual.id" class="row">
+        <div class="row">
             <div class="col-xs-2 col-md-2">
                 <ul class="nav nav-pills nav-stacked">
                     <li>
-                        <a [routerLink]="['PerfilDetail', {id: perfil.id}]">Mi Cuenta</a>
+                        <a [routerLink]="['PerfilDetail']">Mi Cuenta</a>
                     </li>
                     <li class="active">
                         <a>Mis Recetas</a>
@@ -20,22 +20,22 @@ directives: [ROUTER_DIRECTIVES],
                         <a [routerLink]="['RecetaNew']">Añadir Receta</a>
                     </li>
                     <li >
-                        <a [routerLink]="['PerfilMisFavoritos', {id: perfil.id}]">Favoritos</a>
+                        <a [routerLink]="['PerfilMisFavoritos']">Favoritos</a>
                     </li>
                     <li *ngIf="admin">
                         <a [routerLink]="['RestauranteNew']">Añadir Restaurante</a>
                     </li>
                     <li *ngIf="admin">
-                        <a [routerLink]="['PerfilMisRestaurantes', {id: perfil.id}]">Ver restaurantes</a>
+                        <a [routerLink]="['PerfilMisRestaurantes']">Ver restaurantes</a>
                     </li>
                     <li>
-                        <a [routerLink]="['PerfilAjustes', {id: perfil.id}]">Ajustes</a>
+                        <a [routerLink]="['PerfilAjustes']">Ajustes</a>
                     </li>
                 </ul>
             </div>
             <div class="col-xs-2 col-md-8">
                 <div *ngFor="#receta of recetas">
-                    <div class="col-xs-6 col-md-4" *ngIf="receta.userid == perfil.id">
+                    <div class="col-xs-6 col-md-4" *ngIf="receta.userid == pactual.id">
                     <div class="thumbnail">
                         <img src="{{receta.thumbnail}}" alt="{{receta.title}}">
                         <div class="caption">
@@ -49,9 +49,8 @@ directives: [ROUTER_DIRECTIVES],
     </div>
   `
 })
-export class PerfilDetailRecetasComponent implements OnInit{ 
+export class PerfilDetailRecetasComponent implements OnInit {
     
-    perfil: Perfil;
     recetas: Recetas[];
     pactual: Perfil;
     user: boolean;
@@ -63,11 +62,6 @@ export class PerfilDetailRecetasComponent implements OnInit{
     private service: PerfilService,
     private recetasService: RecetaService,
     ) {
-        let id = routeParams.get('id');
-        service.getPerfil(id).subscribe(
-            perfil => this.perfil = perfil,
-            error => console.error(error)
-        );
         service.getUsuario().subscribe(
             pactual => this.pactual = pactual,
             error => console.error(error)

@@ -8,14 +8,14 @@ import {Restaurante, RestauranteService} from './restaurante.service';
 directives: [ROUTER_DIRECTIVES],
   template: `
     <div *ngIf="user" class="container-fluid">
-        <div *ngIf="perfil.id == pactual.id" class="row">
+        <div class="row">
             <div class="col-xs-2 col-md-2">
                 <ul class="nav nav-pills nav-stacked">
                     <li>
-                        <a [routerLink]="['PerfilDetail', {id: perfil.id}]">Mi Cuenta</a>
+                        <a [routerLink]="['PerfilDetail']">Mi Cuenta</a>
                     </li>
                     <li>
-                        <a [routerLink]="['PerfilMisRecetas', {id: perfil.id}]">Mis Recetas</a>
+                        <a [routerLink]="['PerfilMisRecetas']">Mis Recetas</a>
                     </li>
                     <li>
                         <a [routerLink]="['RecetaNew']">Añadir Receta</a>
@@ -27,17 +27,17 @@ directives: [ROUTER_DIRECTIVES],
                         <a [routerLink]="['RestauranteNew']">Añadir Restaurante</a>
                     </li>
                     <li *ngIf="admin">
-                        <a [routerLink]="['PerfilMisRestaurantes', {id: perfil.id}]">Ver restaurantes</a>
+                        <a [routerLink]="['PerfilMisRestaurantes']">Ver restaurantes</a>
                     </li>
                     <li>
-                        <a [routerLink]="['PerfilAjustes', {id: perfil.id}]">Ajustes</a>
+                        <a [routerLink]="['PerfilAjustes']">Ajustes</a>
                     </li>
                 </ul>
             </div>
             <div class="row">   
                 <div class="col-xs-2 col-md-8">
                     <h2>Mis Recetas favoritas</h2>
-                    <div *ngFor="#fav of perfil.recFavs">
+                    <div *ngFor="#fav of pactual.recFavs">
                         <div *ngFor="#receta of recetas">
                             <div *ngIf="receta.id == fav" class="col-xs-6 col-md-4">
                                 <div class="thumbnail">
@@ -54,7 +54,7 @@ directives: [ROUTER_DIRECTIVES],
                 <div class="col-xs-2 col-md-2"></div>
                     <div class="col-xs-2 col-md-8">
                     <h2>Mis Restaurantes Favoritos</h2>
-                    <div *ngFor="#fav of perfil.restFavs">
+                    <div *ngFor="#fav of pactual.restFavs">
                         <div *ngFor="#rest of restaurantes">
                             <div *ngIf="rest.id == fav" class="col-xs-6 col-md-4">
                                 <div class="thumbnail">
@@ -73,13 +73,13 @@ directives: [ROUTER_DIRECTIVES],
     </div>
   `
 })
-export class PerfilDetailFavoritosComponent { 
-    
-    perfil: Perfil;
+export class PerfilDetailFavoritosComponent {
+
     recetas: Receta[];
     restaurantes: Restaurante[];
     pactual: Perfil;
     user: boolean;
+    admin: boolean;
     
     constructor(
         private router: Router,
@@ -88,11 +88,6 @@ export class PerfilDetailFavoritosComponent {
         private recetaService: RecetaService,
         private restauranteService: RestauranteService 
     ) {
-        let id = routeParams.get('id');
-        service.getPerfil(id).subscribe(
-            perfil => this.perfil = perfil,
-            error => console.error(error)
-        );
         service.getUsuario().subscribe(
             pactual => this.pactual = pactual,
             error => console.error(error)
@@ -118,11 +113,11 @@ export class PerfilDetailFavoritosComponent {
     }
     
     save() {
-        this.service.savePerfil(this.perfil);
+        this.service.savePerfil(this.pactual);
         window.history.back();
     }
 
     deletePhoto() {
-        this.perfil.thumbnail = '';
+        this.pactual.thumbnail = '';
     }
 }

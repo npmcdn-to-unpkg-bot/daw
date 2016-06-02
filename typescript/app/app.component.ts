@@ -54,12 +54,12 @@ import {IndexListComponent} from './index-list.component';
   {path: '/receta/new', name: 'RecetaNew', component: RecetaFormComponent},
   {path: '/receta/edit/:id', name: 'RecetaEdit', component: RecetaFormComponent},
   //PerfilPrivado
-  {path: '/perfil/:id', name: 'PerfilDetail', component: PerfilDetailComponent},
+  {path: '/perfil/', name: 'PerfilDetail', component: PerfilDetailComponent},
   {path: '/perfil/new', name: 'PerfilNew', component: PerfilFormComponent},
-  {path: '/perfil/misrecetas/:id', name: 'PerfilMisRecetas', component: PerfilDetailRecetasComponent},
-    {path: '/perfil/restaurantes/:id', name: 'PerfilMisRestaurantes', component: PerfilDetailRestaurantesComponent},
-  {path: '/perfil/misfavoritos/:id', name: 'PerfilMisFavoritos', component: PerfilDetailFavoritosComponent},
-  {path: '/perfil/ajustes/:id', name: 'PerfilAjustes', component: PerfilDetailAjustesComponent},
+  {path: '/perfil/misrecetas/', name: 'PerfilMisRecetas', component: PerfilDetailRecetasComponent},
+    {path: '/perfil/restaurantes/', name: 'PerfilMisRestaurantes', component: PerfilDetailRestaurantesComponent},
+  {path: '/perfil/misfavoritos/', name: 'PerfilMisFavoritos', component: PerfilDetailFavoritosComponent},
+  {path: '/perfil/ajustes/', name: 'PerfilAjustes', component: PerfilDetailAjustesComponent},
 //PerfilPublico
   {path: '/perfil/publico/:id', name: 'PerfilPublicoDetail', component: PerfilPublicoDetailComponent},
 //TipoComida

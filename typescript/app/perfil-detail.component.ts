@@ -6,49 +6,49 @@ import {Perfil, PerfilService} from './perfil.service';
 directives: [ROUTER_DIRECTIVES],
   template: `
     <div *ngIf="user" class="container-fluid">
-        <div *ngIf="perfil.id == pactual.id" class="row">
+        <div class="row">
             <div class="col-xs-2 col-md-2">
                 <ul class="nav nav-pills nav-stacked">
                     <li class="active">
                         <a>Mi Cuenta</a>
                     </li>
                     <li>
-                        <a [routerLink]="['PerfilMisRecetas', {id: perfil.id}]">Mis Recetas</a>
+                        <a [routerLink]="['PerfilMisRecetas']">Mis Recetas</a>
                     </li>
                     <li>
                         <a [routerLink]="['RecetaNew']">Añadir Receta</a>
                     </li>
                     <li>
-                        <a [routerLink]="['PerfilMisFavoritos', {id: perfil.id}]">Favoritos</a>
+                        <a [routerLink]="['PerfilMisFavoritos']">Favoritos</a>
                     </li>
                     <li *ngIf="admin">
                         <a [routerLink]="['RestauranteNew']">Añadir Restaurante</a>
                     </li>
                     <li *ngIf="admin">
-                        <a [routerLink]="['PerfilMisRestaurantes', {id: perfil.id}]">Ver restaurantes</a>
+                        <a [routerLink]="['PerfilMisRestaurantes']">Ver restaurantes</a>
                     </li>
                     <li>
-                        <a [routerLink]="['PerfilAjustes', {id: perfil.id}]">Ajustes</a>
+                        <a [routerLink]="['PerfilAjustes']">Ajustes</a>
                     </li>
                 </ul>
             </div>
             <div class="col-xs-2 col-md-8">
                 <div class="cabecera-subrayada">
-                <h1>{{perfil.user}}</h1>
+                <h1>{{pactual.user}}</h1>
                 </div>
                 <div class="imagen-de-perfil">
-                    <img src="{{perfil.thumbnail}}" width="200px" height="200px" />
+                    <img src="{{pactual.thumbnail}}" width="200px" height="200px" />
                     <div class="botones-foto">
                         <button type="submit" (click)="deletePhoto()" class="btn btn-default separado">Quitar</button>
                         <button type="submit" class="btn btn-default separado">Subir...</button>
                     </div>
                 </div>
                 <div class="inputs">
-                    <input type="text" class="form-control" [(ngModel)]="perfil.name" placeholder="Nombre"/>
-                    <input type="text" class="form-control" [(ngModel)]="perfil.apellidos" placeholder="Apellidos"/>
-                    <textarea type="text" rows="9" class="form-control" [(ngModel)]="perfil.descripcion" placeholder="Descripción"></textarea>
+                    <input type="text" class="form-control" [(ngModel)]="pactual.name" placeholder="Nombre"/>
+                    <input type="text" class="form-control" [(ngModel)]="pactual.apellidos" placeholder="Apellidos"/>
+                    <textarea type="text" rows="9" class="form-control" [(ngModel)]="pactual.descripcion" placeholder="Descripción"></textarea>
                     
-                    <input type="text" class="form-control" [(ngModel)]="perfil.thumbnail" placeholder="Photo"/>
+                    <input type="text" class="form-control" [(ngModel)]="pactual.thumbnail" placeholder="Photo"/>
                     <button (click)="save()" type="submit" class="btn btn-default">Guardar</button>
                 </div>
             </div>
@@ -56,9 +56,8 @@ directives: [ROUTER_DIRECTIVES],
     </div>
   `
 })
-export class PerfilDetailComponent { 
-    
-    perfil: Perfil;
+export class PerfilDetailComponent {
+
     pactual:Perfil;
     user: boolean;
     admin: boolean;
@@ -68,11 +67,6 @@ export class PerfilDetailComponent {
     routeParams: RouteParams,
     private service: PerfilService,
     ) {
-        let id = routeParams.get('id');
-        service.getPerfil(id).subscribe(
-            perfil => this.perfil = perfil,
-            error => console.error(error)
-        );
         service.getUsuario().subscribe(
             pactual => this.pactual = pactual,
             error => console.error(error)
@@ -87,11 +81,11 @@ export class PerfilDetailComponent {
         );
     }
     save() {
-        this.service.savePerfil(this.perfil);
+        this.service.savePerfil(this.pactual);
         window.history.back();
     }
 
     deletePhoto() {
-        this.perfil.thumbnail = '';
+        this.pactual.thumbnail = '';
     }
 }

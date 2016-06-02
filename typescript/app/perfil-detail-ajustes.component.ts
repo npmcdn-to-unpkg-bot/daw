@@ -6,26 +6,26 @@ import {Perfil, PerfilService} from './perfil.service';
 directives: [ROUTER_DIRECTIVES],
   template: `
     <div *ngIf="user" class="container-fluid">
-        <div *ngIf="perfil.id == pactual.id" class="row">
+        <div class="row">
             <div class="col-xs-2 col-md-2">
                 <ul class="nav nav-pills nav-stacked">
                     <li>
-                        <a [routerLink]="['PerfilDetail', {id: perfil.id}]">Mi Cuenta</a>
+                        <a [routerLink]="['PerfilDetail']">Mi Cuenta</a>
                     </li>
                     <li>
-                        <a [routerLink]="['PerfilMisRecetas', {id: perfil.id}]">Mis Recetas</a>
+                        <a [routerLink]="['PerfilMisRecetas']">Mis Recetas</a>
                     </li>
                     <li>
                         <a [routerLink]="['RecetaNew']">Añadir Receta</a>
                     </li>
                     <li>
-                        <a [routerLink]="['PerfilMisFavoritos', {id: perfil.id}]">Favoritos</a>
+                        <a [routerLink]="['PerfilMisFavoritos']">Favoritos</a>
                     </li>
                     <li *ngIf="admin">
                         <a [routerLink]="['RestauranteNew']">Añadir Restaurante</a>
                     </li>
                     <li *ngIf="admin">
-                        <a [routerLink]="['PerfilMisRestaurantes', {id: perfil.id}]">Ver restaurantes</a>
+                        <a [routerLink]="['PerfilMisRestaurantes']">Ver restaurantes</a>
                     </li>
                     <li class="active">
                         <a>Ajustes</a>
@@ -34,15 +34,15 @@ directives: [ROUTER_DIRECTIVES],
             </div>
             <div class="col-xs-2 col-md-8">
                 <div class="cabecera-subrayada">
-                <h1>{{perfil.user}}</h1>
+                <h1>{{pactual.user}}</h1>
                 </div>
                 <div class="imagen-de-perfil">
-                    <img src="{{perfil.thumbnail}}" width="200px" height="200px" />
+                    <img src="{{pactual.thumbnail}}" width="200px" height="200px" />
                 </div>
                 <div class="inputs">
-                    <input type="text" class="form-control" [(ngModel)]="perfil.user" placeholder="Nombre de usuario"/>
-                    <input type="text" class="form-control" [(ngModel)]="perfil.correo" placeholder="Correo"/>
-                    <textarea type="text" rows="9" class="form-control" [(ngModel)]="perfil.pass" placeholder="Contraseña"></textarea>
+                    <input type="text" class="form-control" [(ngModel)]="pactual.user" placeholder="Nombre de usuario"/>
+                    <input type="text" class="form-control" [(ngModel)]="pactual.correo" placeholder="Correo"/>
+                    <textarea type="text" rows="9" class="form-control" [(ngModel)]="pactual.pass" placeholder="Contraseña"></textarea>
                     <button (click)="save()" type="submit" class="btn btn-default">Guardar</button>
                 </div>
             </div>
@@ -50,9 +50,8 @@ directives: [ROUTER_DIRECTIVES],
     </div>
   `
 })
-export class PerfilDetailAjustesComponent { 
-    
-    perfil: Perfil;
+export class PerfilDetailAjustesComponent {
+
     pactual: Perfil;
     user: boolean;
     admin: boolean;
@@ -63,11 +62,6 @@ export class PerfilDetailAjustesComponent {
     private service: PerfilService,
     
     ) {
-        let id = routeParams.get('id');
-        service.getPerfil(id).subscribe(
-            perfil => this.perfil = perfil,
-            error => console.error(error)
-        );
         service.getUsuario().subscribe(
             pactual => this.pactual = pactual,
             error => console.error(error)
@@ -82,11 +76,11 @@ export class PerfilDetailAjustesComponent {
         );
     }
     save() {
-        this.service.savePerfil(this.perfil);
+        this.service.savePerfil(this.pactual);
         window.history.back();
     }
 
     deletePhoto() {
-        this.perfil.thumbnail = '';
+        this.pactual.thumbnail = '';
     }
 }

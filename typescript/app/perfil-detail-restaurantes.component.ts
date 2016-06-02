@@ -11,16 +11,16 @@ directives: [ROUTER_DIRECTIVES],
             <div class="col-xs-2 col-md-2">
                 <ul class="nav nav-pills nav-stacked">
                     <li>
-                        <a [routerLink]="['PerfilDetail', {id: perfil.id}]">Mi Cuenta</a>
+                        <a [routerLink]="['PerfilDetail']">Mi Cuenta</a>
                     </li>
                     <li>
-                        <a [routerLink]="['PerfilMisRecetas', {id: perfil.id}]">Mis Recetas</a>
+                        <a [routerLink]="['PerfilMisRecetas']">Mis Recetas</a>
                     </li>
                     <li>
                         <a [routerLink]="['RecetaNew']">Añadir Receta</a>
                     </li>
                     <li>
-                        <a [routerLink]="['PerfilMisFavoritos', {id: perfil.id}]">Favoritos</a>
+                        <a [routerLink]="['PerfilMisFavoritos']">Favoritos</a>
                     </li>
                     <li *ngIf="admin">
                         <a [routerLink]="['RestauranteNew']">Añadir Restaurante</a>
@@ -29,7 +29,7 @@ directives: [ROUTER_DIRECTIVES],
                         <a>Ver restaurantes</a>
                     </li>
                     <li>
-                        <a [routerLink]="['PerfilAjustes', {id: perfil.id}]">Ajustes</a>
+                        <a [routerLink]="['PerfilAjustes']">Ajustes</a>
                     </li>
                 </ul>
             </div>
@@ -49,9 +49,8 @@ directives: [ROUTER_DIRECTIVES],
     </div>
   `
 })
-export class PerfilDetailRestaurantesComponent implements OnInit{ 
-    
-    perfil: Perfil;
+export class PerfilDetailRestaurantesComponent implements OnInit{
+
     restaurante: Restaurante[];
     pactual: Perfil;
     user: boolean;
@@ -63,11 +62,6 @@ export class PerfilDetailRestaurantesComponent implements OnInit{
     private service: PerfilService,
     private restauranteService: RestauranteService,
     ) {
-        let id = routeParams.get('id');
-        service.getPerfil(id).subscribe(
-            perfil => this.perfil = perfil,
-            error => console.error(error)
-        );
         service.getUsuario().subscribe(
             pactual => this.pactual = pactual,
             error => console.error(error)
