@@ -27,6 +27,12 @@ directives: [ROUTER_DIRECTIVES],
                     <li *ngIf="admin">
                         <a [routerLink]="['PerfilMisRestaurantes']">Ver restaurantes</a>
                     </li>
+                    <li *ngIf="admin">
+                        <a [routerLink]="['TipoComidaNew']">Añadir Tipo comida</a>
+                    </li>
+                    <li *ngIf="admin">
+                        <a [routerLink]="['PerfilMisTiposComidas']">Ver tipo comida</a>
+                    </li>
                     <li class="active">
                         <a>Ajustes</a>
                     </li>

@@ -1,31 +1,41 @@
 import {Component}  from 'angular2/core';
-import {RouteParams, Router} from 'angular2/router';
+import {ROUTER_DIRECTIVES, RouteParams, Router} from 'angular2/router';
 import {TipoComida, TipoComidaService}   from './tipo-comida.service';
 import {Perfil, PerfilService} from './perfil.service';
 
 @Component({
+    directives: [ROUTER_DIRECTIVES],
   template: `
    <div *ngIf="admin" class="container-fluid">
         <div class="row">
             <div class="col-xs-2 col-md-2">
                 <ul class="nav nav-pills nav-stacked">
                     <li>
-                        <a href="#"> Mi Cuenta</a>
+                        <a [routerLink]="['PerfilDetail']">Mi Cuenta</a>
                     </li>
                     <li>
-                        <a href="#"> Mis Recetas</a>
-                    </li>
-                    <li >
-                        <a href="#"> Favoritos</a>
+                        <a [routerLink]="['PerfilMisRecetas']">Mis Recetas</a>
                     </li>
                     <li>
-                        <a href="#">Añadir Receta</a>
-                    </li>
-                    <li class="active">
-                        <a href="#">Añadir Restaurante</a>
+                        <a [routerLink]="['RecetaNew']">Añadir Receta</a>
                     </li>
                     <li>
-                        <a href="#">Ajustes</a>
+                        <a [routerLink]="['PerfilMisFavoritos']">Favoritos</a>
+                    </li>
+                    <li *ngIf="admin">
+                        <a [routerLink]="['RestauranteNew']">Añadir Restaurante</a>
+                    </li>
+                    <li *ngIf="admin">
+                        <a [routerLink]="['PerfilMisRestaurantes']">Ver restaurantes</a>
+                    </li>
+                    <li class="active" *ngIf="admin">
+                        <a>Añadir Tipo comida</a>
+                    </li>
+                    <li *ngIf="admin">
+                        <a [routerLink]="['PerfilMisTiposComidas']">Ver tipo comida</a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['PerfilAjustes']">Ajustes</a>
                     </li>
                 </ul>
             </div>
@@ -52,7 +62,7 @@ export class TipoComidaFormComponent {
 
   newTipoComida: boolean;
   tipocomida: TipoComida;
-    pactual: Perfil;
+    pactual: Perfil;s
     user: boolean;
     admin: boolean;
 

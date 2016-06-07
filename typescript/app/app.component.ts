@@ -17,6 +17,7 @@ import {PerfilDetailComponent} from './perfil-detail.component';
 import {PerfilFormComponent} from './perfil-form.component';
 import {PerfilDetailRecetasComponent} from './perfil-detail-recetas.component';
 import {PerfilDetailRestaurantesComponent} from './perfil-detail-restaurantes.component';
+import {PerfilDetailTipoComidaComponent} from './perfil-detail-tipocomida.component';
 import {PerfilDetailFavoritosComponent} from './perfil-detail-favoritos.component';
 import {PerfilDetailAjustesComponent} from './perfil-detail-ajustes.component';
 //PerfilPublico
@@ -26,8 +27,6 @@ import {TipoComidaListComponent} from './tipo-comida-list.component';
 import {TipoComidaDetailComponent} from './tipo-comida-detail.component';
 import {TipoComidaFormComponent} from './tipo-comida-form.component';
 import {TipoComidaService} from './tipo-comida.service';
-//Login
-import {UsuarioService} from './usuario.service';
 //Index
 import {IndexService} from './index.service';
 import {IndexListComponent} from './index-list.component';
@@ -37,7 +36,7 @@ import {IndexListComponent} from './index-list.component';
   template: `
     <router-outlet></router-outlet>
   `,
-  providers:  [RestauranteService, RecetaService, PerfilService, UsuarioService,TipoComidaService],
+  providers:  [RestauranteService, RecetaService, PerfilService,TipoComidaService],
   directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([
@@ -58,6 +57,7 @@ import {IndexListComponent} from './index-list.component';
   {path: '/perfil/new', name: 'PerfilNew', component: PerfilFormComponent},
   {path: '/perfil/misrecetas/', name: 'PerfilMisRecetas', component: PerfilDetailRecetasComponent},
     {path: '/perfil/restaurantes/', name: 'PerfilMisRestaurantes', component: PerfilDetailRestaurantesComponent},
+    {path: '/perfil/tipocomida/', name: 'PerfilMisTiposComida', component: PerfilDetailTipoComidaComponent},
   {path: '/perfil/misfavoritos/', name: 'PerfilMisFavoritos', component: PerfilDetailFavoritosComponent},
   {path: '/perfil/ajustes/', name: 'PerfilAjustes', component: PerfilDetailAjustesComponent},
 //PerfilPublico

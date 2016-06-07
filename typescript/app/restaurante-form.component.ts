@@ -28,6 +28,12 @@ import {Perfil, PerfilService} from './perfil.service';
                     <li *ngIf="admin">
                         <a [routerLink]="['PerfilMisRestaurantes']">Ver restaurantes</a>
                     </li>
+                    <li *ngIf="admin">
+                        <a [routerLink]="['TipoComidaNew']">Añadir Tipo comida</a>
+                    </li>
+                    <li *ngIf="admin">
+                        <a [routerLink]="['PerfilMisTiposComidas']">Ver tipo comida</a>
+                    </li>
                     <li>
                         <a [routerLink]="['PerfilAjustes']">Ajustes</a>
                     </li>
