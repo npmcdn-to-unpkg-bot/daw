@@ -6,7 +6,7 @@ import {Perfil, PerfilService} from './perfil.service';
     template: `
         <div class="row">
         
-    <div class="col-xs-6 col-md-6 text-center">
+    <div class="col-md-6 col-md-offset-3 center" style="margin-bottom: 75px;">
             <h3>Registrate</h3>
           <div class="form-group">
 	 				 <input type="text" class="form-control" [(ngModel)]="perfil.name" id="username" placeholder="Nombre">
@@ -29,12 +29,12 @@ import {Perfil, PerfilService} from './perfil.service';
           <div class="form-group">
 				    <input type="text" [(ngModel)]="perfil.thumbnail" class="form-control" id="email" placeholder="Dirección de email">
 					</div>
-          <button (click)="save()" type="submit" class="btn btn-default">Entrar</button>
+          <button (click)="save()" type="submit" class="btn btn-default center-block">Entrar</button>
 				</div>
         </div>
         <div class="row">
         
-        <div class="col-xs-6 col-md-6 text-center ">
+        <div class="col-md-6 col-md-offset-3" style="margin-bottom: 100px;">
             <h3>Inicia sesión</h3>
 		 				<div class="form-group">
 						    <input type="text" [(ngModel)]="usuario" class="form-control" id="exampleInputEmail1" placeholder="Nombre de usuario">
@@ -42,7 +42,7 @@ import {Perfil, PerfilService} from './perfil.service';
 						<div class="form-group">
 						    <input type="password" [(ngModel)]="pass" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
 						</div>
-						<button type="submit" (click)="login(usuario, pass)" class="btn btn-default">Entrar</button>
+						<button type="submit" (click)="login(usuario, pass)" class="btn btn-default center-block">Entrar</button>
 				</div>
         </div>
       `
