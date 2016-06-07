@@ -36,7 +36,7 @@ import {IndexListComponent} from './index-list.component';
   template: `
     <router-outlet></router-outlet>
   `,
-  providers:  [RestauranteService, RecetaService, PerfilService,TipoComidaService],
+  providers:  [RestauranteService, RecetaService, PerfilService, TipoComidaService],
   directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([
@@ -57,7 +57,7 @@ import {IndexListComponent} from './index-list.component';
   {path: '/perfil/new', name: 'PerfilNew', component: PerfilFormComponent},
   {path: '/perfil/misrecetas/', name: 'PerfilMisRecetas', component: PerfilDetailRecetasComponent},
     {path: '/perfil/restaurantes/', name: 'PerfilMisRestaurantes', component: PerfilDetailRestaurantesComponent},
-    {path: '/perfil/tipocomida/', name: 'PerfilMisTiposComida', component: PerfilDetailTipoComidaComponent},
+    {path: '/perfil/tipocomida/', name: 'PerfilMisTiposComidas', component: PerfilDetailTipoComidaComponent},
   {path: '/perfil/misfavoritos/', name: 'PerfilMisFavoritos', component: PerfilDetailFavoritosComponent},
   {path: '/perfil/ajustes/', name: 'PerfilAjustes', component: PerfilDetailAjustesComponent},
 //PerfilPublico

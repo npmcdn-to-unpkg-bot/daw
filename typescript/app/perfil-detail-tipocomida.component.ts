@@ -4,7 +4,7 @@ import {Perfil, PerfilService} from './perfil.service';
 import {TipoComida, TipoComidaService} from './tipo-comida.service';
 
 @Component({
-directives: [ROUTER_DIRECTIVES],
+  directives: [ROUTER_DIRECTIVES],
   template: `
     <div *ngIf="admin" class="container-fluid">
         <div class="row">

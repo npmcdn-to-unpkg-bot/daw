@@ -4,7 +4,7 @@ import {TipoComida, TipoComidaService}   from './tipo-comida.service';
 import {Perfil, PerfilService} from './perfil.service';
 
 @Component({
-    directives: [ROUTER_DIRECTIVES],
+  directives: [ROUTER_DIRECTIVES],
   template: `
    <div *ngIf="admin" class="container-fluid">
         <div class="row">
@@ -60,9 +60,9 @@ import {Perfil, PerfilService} from './perfil.service';
 
 export class TipoComidaFormComponent {
 
-  newTipoComida: boolean;
-  tipocomida: TipoComida;
-    pactual: Perfil;s
+    newTipoComida: boolean;
+    tipocomida: TipoComida;
+    pactual: Perfil;
     user: boolean;
     admin: boolean;
 

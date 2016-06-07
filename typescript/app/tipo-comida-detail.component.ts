@@ -53,8 +53,6 @@ import {Perfil, PerfilService} from './perfil.service';
             </div>
         </div>
       </div>
-            
-    
       `
 })
 

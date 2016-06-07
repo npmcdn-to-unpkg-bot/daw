@@ -2,9 +2,6 @@ import {Injectable} from 'angular2/core';
 import {Observable} from 'rxjs/Observable';
 import {withObserver} from './utils';
 
-import {Receta} from './receta.service';
-import {Restaurante} from './restaurante.service';
-
 export class TipoComida {
   constructor(
     public id: number,
@@ -20,7 +17,7 @@ export class TipoComida {
 
 @Injectable()
 export class TipoComidaService{
-private tiposComidas = [
+    private tiposComidas = [
     new TipoComida(1,'Comida Española', 'Comida de todo el territorio español','<h3>Descripción</h3><p>La gastronomía de España es una variada forma de preparar platos, que se ve enriquecida por las aportaciones de las diversas regiones que componen el país. Cocina de origen que oscila entre el estilo rural y el costero, representa una diversidad fruto de muchas culturas, así como de paisajes y climas. La cocina española está fuertemente influida a lo largo de su historia por los pueblos que conquistan su territorio, así como de los pueblos que posteriormente conquista y coloniza. Esta situación le ha proporcionado una gran variedad de técnicas culinarias e ingredientes.</p><h3>Ejemplos de Comida Española</h3><div class="row"><div class="col-xs-4 col-md-4 videos"><h3>Tortilla de Patatas</h3><ul><li><img src="img/tortillapng.png" width="100px" height="auto"/></li></ul></div><div class="col-xs-4 col-md-4 resources"><h3>Paella</h3><ul><li><img src="img/paella.png" width="100px" height="auto" /><ul></div><div class="col-xs-4 col-md-4 resources"><h3>Pulpo a la Gallega</h3><ul><li><img src="img/pulpo.png" width="100px" height="auto" /></li></ul></div>', 'img/banderaEsp.jpg', 'img/banderaspain.jpg', [1,2],[3,1]),
     
     new TipoComida(2,'Comida Norte Americana', 'Aquí encontrarás toda la gastronomía típica de los Estados Unidos','<h3>Descripción</h3><p>La gastronomía de los Estados Unidos corresponde a una mezcla muy variada y algo interpretada de otras gastronomías, esto es así debido a que es un país creado fundamentalmente de inmigrantes procedentes de diferentes países de Europa, Asia, África, y otros países. Podría denominarse como autóctona la gastronomía de los indígenas de Norteamérica y el resto es una fusión de diferentes culturas gastronómicas llevadas a diferentes extremos, por una parte está la fast food llena de su atractivo marketing, por otra parte está la comida tradicioshnal fundamentada en las tradiciones ganaderas de antaño, tanto de ganado vacuno como ovino y caprino. Las comidas extranjeras más famosas son la China y la de sus vecinos de México.</p><h3>Ejemplos de Comida Norte Americana</h3><div class="row"><div class="col-xs-4 col-md-4 videos"><h3>Hamburguesa</h3><ul><li><img src="img/foster-black.png" width="100px" height="auto"/></li></ul></div><div class="col-xs-4 col-md-4 resources"><h3>Costillas</h3><ul><li><img src="img/foster-national.png" width="100px" height="auto" /><ul></div><div class="col-xs-4 col-md-4 resources"><h3>Bacon Cheese Fires</h3><ul><li><img src="img/foster-patatas.png" width="100px" height="auto" /></li></ul></div>', 'img/banderaEEUU.jpg', 'img/banderaEEUU.jpg', [2,4,5],[2,4,5]),
@@ -55,15 +52,15 @@ private tiposComidas = [
 
   saveTipoComida(tipoComida: TipoComida){
     if(tipoComida.id){
-      let oldTipoComida = this.tiposComidas.filter(h => h.id === restaurante.id)[0];
+      let oldTipoComida = this.tiposComidas.filter(h => h.id === tipoComida.id)[0];
       oldTipoComida.title = tipoComida.title;
       oldTipoComida.abstract = tipoComida.abstract;
       oldTipoComida.details = tipoComida.details;
       oldTipoComida.thumbnail = tipoComida.thumbnail;
       oldTipoComida.thumbnailbig = tipoComida.thumbnailbig;
       oldTipoComida.map = tipoComida.map;
-      oldPerfil.recetas = perfil.recetas;
-      oldPerfil.restaurantes = perfil.restaurantes;
+      oldTipoComida.recetas = tipoComida.recetas;
+      oldTipoComida.restaurantes = tipoComida.restaurantes;
     } else {
       tipoComida.id = this.tiposComidas.length+1;
       this.tiposComidas.push(tipoComida);
