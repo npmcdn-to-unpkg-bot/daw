@@ -25,10 +25,16 @@ import {RecetaDetailComponent} from './receta-detail.component';
 import {RecetaFormComponent} from './receta-form.component';
 import {RecetaService} from './receta.service';
 
+//Tipos de Comidas
+import {TipoComidaListComponent} from './tipo-comida-list.component';
+import {TipoComidaDetailComponent} from './tipo-comida-detail.component';
+import {TipoComidaFormComponent} from './tipo-comida-form.component';
+import {TipoComidaService} from './tipo-comida.service';
+
 @Component({
   selector: 'app',
   templateUrl: 'app/app.component.html',
-  providers:  [BookService, RecetaService, RestauranteService, LoginService, HTTP_PROVIDERS],
+  providers:  [BookService, RecetaService, RestauranteService, LoginService,TipoComidaService HTTP_PROVIDERS],
   directives: [LoginComponent, ROUTER_DIRECTIVES, Alert]
 })
 @RouteConfig([
@@ -43,7 +49,11 @@ import {RecetaService} from './receta.service';
   {path: '/recetas', name: 'Recetas', component: RecetaListComponent},
   {path: '/receta/:id', name: 'RecetaDetail', component: RecetaDetailComponent},
   {path: '/receta/new', name: 'RecetaNew', component: RecetaFormComponent},
-  {path: '/receta/edit/:id', name: 'RecetaEdit', component: RecetaFormComponent}
+  {path: '/receta/edit/:id', name: 'RecetaEdit', component: RecetaFormComponent},
+  {path: '/tipocomida', name: 'TipoComida', component: TipoComidaListComponent},
+  {path: '/tipocomida/:id', name: 'TipoComidaDetail', component: TipoComidaDetailComponent},
+  {path: '/tipocomida/new', name: 'TipoComidaNew', component: TipoComidaFormComponent},
+  {path: '/tipocomida/edit/:id', name: 'TipoComidaEdit', component: TipoComidaFormComponent}
 ])
 export class AppComponent {
 }
