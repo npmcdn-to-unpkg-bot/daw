@@ -2,7 +2,7 @@ import {Component}  from 'angular2/core';
 import {RouteParams, Router} from 'angular2/router';
 
 import {Book, BookService}   from './book.service';
-import {LoginService}   from './login.service';
+import {LoginService} from './login.service';
 
 @Component({
     template: `

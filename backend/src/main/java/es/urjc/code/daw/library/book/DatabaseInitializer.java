@@ -49,8 +49,8 @@ public class DatabaseInitializer implements CommandLineRunner {
 
 		// Sample users
 
-		userRepository.save(new User("user", "pass", "ROLE_USER"));
-		userRepository.save(new User("admin", "pass", "ROLE_USER", "ROLE_ADMIN"));
+		userRepository.save(new User("user", "", "", "", "pass", "", new long[] {1, 2}, new long[] {1, 2}, "ROLE_USER"));
+		userRepository.save(new User("admin", "", "", "", "pass", "", new long[] {1, 2}, new long[] {1, 2}, "ROLE_USER", "ROLE_ADMIN"));
 		
 		// Sample restaurantes
 		

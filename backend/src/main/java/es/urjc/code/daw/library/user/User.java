@@ -42,19 +42,32 @@ public class User {
 	private Long id;
 
 	private String name;
-
+	private String apellidos;
+	private String descripcion;
+	private String user;
+	
 	@JsonIgnore
 	private String passwordHash;
 
 	@ElementCollection(fetch = FetchType.EAGER)
 	private List<String> roles;
-
+	
+	private String thumbnail;
+	private long[] restFavs;
+	private long[] recFavs;
+	
 	public User() {
 	}
 
-	public User(String name, String password, String... roles) {
+	public User(String name, String apellidos, String descripcion, String user, String password, String thumbnail, long[] restFavs, long[] recFavs, String... roles) {
 		this.name = name;
+		this.apellidos = apellidos;
+		this.descripcion = descripcion;
+		this.user = user;
 		this.passwordHash = new BCryptPasswordEncoder().encode(password);
+		this.thumbnail = thumbnail;
+		this.restFavs = restFavs;
+		this.recFavs = recFavs;
 		this.roles = new ArrayList<>(Arrays.asList(roles));
 	}
 
@@ -81,5 +94,12 @@ public class User {
 	public void setRoles(List<String> roles) {
 		this.roles = roles;
 	}
+	
+	/*public long getId() {
+		return id;
+	}*/
 
+	public void setId(long id) {
+		this.id = id;
+	}
 }

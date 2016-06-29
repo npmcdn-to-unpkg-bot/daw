@@ -5,8 +5,16 @@ import 'rxjs/Rx';
 export interface User {  
     id?: number;
     name: string;
+    apellidos: string;
+    descripcion: string;
+    user: string;
     roles: string[];
+    thumbnail: string;
+    restFavs: long[];
+    recFavs: long[];
 }
+
+const URL = 'user/';
 
 @Injectable()
 export class LoginService {
@@ -17,6 +25,12 @@ export class LoginService {
 	
 	constructor(private http: Http){
 		this.reqIsLogged();
+	}
+	
+	getPerfil (id: number | string) {
+		return this.http.get(URL + id)
+			.map(response => response.json())
+			.catch(error => this.handleError(error));
 	}
 	
 	reqIsLogged(){
