@@ -1,6 +1,6 @@
 import {Component, OnInit}   from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteParams, Router} from 'angular2/router';
-import {TipoComida, TipoComidaService}   from './tipo-comida.service';
+import {Tipocomida, TipocomidaService}   from './tipo-comida.service';
 
 
 @Component({
@@ -14,31 +14,31 @@ import {TipoComida, TipoComidaService}   from './tipo-comida.service';
               <img src="{{tipocomida.thumbnail}}" alt="{{tipocomida.title}}">
               <div class="caption">
                   <h3><a [routerLink]="['TipoComidaDetail', {id: tipocomida.id}]">{{tipocomida.title}}</a></h3>
-                  <p>{{tipocomida.abstract}}</p>
+                  <p>{{tipocomida.description}}</p>
               </div>
           </div>
       </div>
     </div>
   `
 })
-export class TipoComidaListComponent implements OnInit {
+export class TipocomidaListComponent implements OnInit {
 
-    tiposcomidas: TipoComida[];
+    tiposcomidas: Tipocomida[];
    
     user: boolean;
     admin: boolean;
 
-    constructor(private router:Router, private service: TipoComidaService) {}
+    constructor(private router:Router, private service: TipocomidaService) {}
 
     ngOnInit(){
-      this.service.getTiposComidas().subscribe(
+      this.service.getTiposcomidas().subscribe(
         tiposcomidas => this.tiposcomidas = tiposcomidas,
         error => console.log(error)
       );
 
     }
 
-    newTipoComida() {
+    newTipocomida() {
       this.router.navigate(['TipoComidaNew']);
     }
 }

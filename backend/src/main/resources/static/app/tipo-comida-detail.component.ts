@@ -1,14 +1,13 @@
 import {Component}  from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteParams, Router} from 'angular2/router';
-import {TipoComida, TipoComidaService} from './tipo-comida.service';
+import {Tipocomida, TipocomidaService} from './tipo-comida.service';
 import {Receta, RecetaService} from './receta.service';
 import {Restaurante, RestauranteService} from './restaurante.service';
-
 
 @Component({
     directives: [ROUTER_DIRECTIVES],
     template: `
-    <div *ngIf="tipoComida">
+    <div *ngIf="tipocomida">
       <div class="thumbnail-restaurante" style="background: url({{tipocomida.thumbnailbig}}) no-repeat 0 30px fixed; background-size: 100%">
       </div>
       <div class="container-fluid seccInter">
@@ -58,10 +57,10 @@ import {Restaurante, RestauranteService} from './restaurante.service';
       `
 })
 
-export class TipoComidaDetailComponent {
+export class TipocomidaDetailComponent {
     
-    tipocomida: TipoComida;
-    tiposcomidas: TipoComida[];
+    tipocomida: Tipocomida;
+    tipocomidas: Tipocomida[];
     recetas: Receta[];
     restaurantes: Restaurante[];
     
@@ -71,26 +70,26 @@ export class TipoComidaDetailComponent {
     constructor(
         private router: Router,
         routeParams: RouteParams,
-        private service: TipoComidaService,
+        private service: TipocomidaService,
         private recetaService: RecetaService,
         private restauranteService: RestauranteService,
         
         
     ){
         let id = routeParams.get('id');
-        service.getTipoComida(id).subscribe(
+        service.getTipocomida(id).subscribe(
             tipocomida => this.tipocomida = tipocomida,
             error => console.error(error)
         );
     }
     ngOnInit(){
-        this.service.getTiposComidas().subscribe(
-        tiposcomidas => this.tiposcomidas = tiposcomidas,
-        error => console.log(error)
+        this.service.getTiposcomidas().subscribe(
+        	tiposcomidas => this.tiposcomidas = tiposcomidas,
+        	error => console.log(error)
         );
         this.recetaService.getRecetas().subscribe(
-        recetas => this.recetas = recetas,
-        error => console.log(error)
+        	recetas => this.recetas = recetas,
+        	error => console.log(error)
       );
       this.restauranteService.getRestaurantes().subscribe(
         restaurantes => this.restaurantes = restaurantes,
@@ -99,21 +98,21 @@ export class TipoComidaDetailComponent {
        
         
     }
-    removeTipoComida() {
+    removeTipocomida() {
         let okResponse = window.confirm("¿Quieres eliminar este tipo de comida?");
         if (okResponse) {
-            this.service.removeTipoComida(this.tipocomida).subscribe(
+            this.service.removeTipocomida(this.tipocomida).subscribe(
                 _ => this.router.navigate(['TiposComidas']),
                 error => console.error(error)
             )
         }
     }
     
-    editTipoComida() {
+    editTipocomida() {
         this.router.navigate(['TipoComidaEdit', { id: this.tipocomida.id }]);
     }
     
-    gotoTipoComida() {
+    gotoTipocomida() {
         this.router.navigate(['TiposComidas']);
     }
     

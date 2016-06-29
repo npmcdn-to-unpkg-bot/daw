@@ -19,18 +19,22 @@ public class Tipocomida {
 	private String details;
 	private String thumbnail;
 	private String thumbnailbig;
-	private String map;
-
+	private long[] recetas;
+	private long[] restaurantes;
+	//private ArrayList<long> recetas;
+	//private ArrayList<long> restaurantes;
+	
 	public Tipocomida() {}
 
-	public Tipocomida(String title, String description, String details, String thumbnail, String thumbnailbig, String map) {
+	public Tipocomida(String title, String description, String details, String thumbnail, String thumbnailbig, long[] recetas, long[] restaurantes) {
 		super();
 		this.title = title;
 		this.description = description;
 		this.details = details;
 		this.thumbnail = thumbnail;
 		this.thumbnailbig = thumbnailbig;
-		this.map = map;
+		this.recetas = recetas;
+		this.restaurantes = restaurantes;
 	}
 
 	public String getTitle() {
@@ -73,12 +77,20 @@ public class Tipocomida {
 		this.thumbnailbig = thumbnailbig;
 	}
 	
-	public String getMap() {
-		return map;
+	public long[] getRecetas() {
+		return recetas;
 	}
 
-	public void setMap(String map) {
-		this.map = map;
+	public void setRecetas(long[] recetas) {
+		this.recetas = recetas;
+	}
+	
+	public long[] getRestaurantes() {
+		return restaurantes;
+	}
+
+	public void setRestaurantes(long[] restaurantes) {
+		this.restaurantes = restaurantes;
 	}
 
 	public long getId() {

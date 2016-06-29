@@ -26,15 +26,15 @@ import {RecetaFormComponent} from './receta-form.component';
 import {RecetaService} from './receta.service';
 
 //Tipos de Comidas
-import {TipoComidaListComponent} from './tipo-comida-list.component';
-import {TipoComidaDetailComponent} from './tipo-comida-detail.component';
-import {TipoComidaFormComponent} from './tipo-comida-form.component';
-import {TipoComidaService} from './tipo-comida.service';
+import {TipocomidaListComponent} from './tipo-comida-list.component';
+import {TipocomidaDetailComponent} from './tipo-comida-detail.component';
+import {TipocomidaFormComponent} from './tipo-comida-form.component';
+import {TipocomidaService} from './tipo-comida.service';
 
 @Component({
   selector: 'app',
   templateUrl: 'app/app.component.html',
-  providers:  [BookService, RecetaService, RestauranteService, LoginService,TipoComidaService HTTP_PROVIDERS],
+  providers:  [BookService, RecetaService, RestauranteService, LoginService, TipocomidaService, HTTP_PROVIDERS],
   directives: [LoginComponent, ROUTER_DIRECTIVES, Alert]
 })
 @RouteConfig([
@@ -50,10 +50,10 @@ import {TipoComidaService} from './tipo-comida.service';
   {path: '/receta/:id', name: 'RecetaDetail', component: RecetaDetailComponent},
   {path: '/receta/new', name: 'RecetaNew', component: RecetaFormComponent},
   {path: '/receta/edit/:id', name: 'RecetaEdit', component: RecetaFormComponent},
-  {path: '/tipocomida', name: 'TipoComida', component: TipoComidaListComponent},
-  {path: '/tipocomida/:id', name: 'TipoComidaDetail', component: TipoComidaDetailComponent},
-  {path: '/tipocomida/new', name: 'TipoComidaNew', component: TipoComidaFormComponent},
-  {path: '/tipocomida/edit/:id', name: 'TipoComidaEdit', component: TipoComidaFormComponent}
+  {path: '/tipocomida', name: 'TipoComida', component: TipocomidaListComponent},
+  {path: '/tipocomida/:id', name: 'TipoComidaDetail', component: TipocomidaDetailComponent},
+  {path: '/tipocomida/new', name: 'TipoComidaNew', component: TipocomidaFormComponent},
+  {path: '/tipocomida/edit/:id', name: 'TipoComidaEdit', component: TipocomidaFormComponent}
 ])
 export class AppComponent {
 }

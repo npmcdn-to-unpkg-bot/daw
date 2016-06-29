@@ -10,6 +10,8 @@ import es.urjc.code.daw.library.restaurante.Restaurante;
 import es.urjc.code.daw.library.restaurante.RestauranteRepository;
 import es.urjc.code.daw.library.receta.Receta;
 import es.urjc.code.daw.library.receta.RecetaRepository;
+import es.urjc.code.daw.library.tipocomida.Tipocomida;
+import es.urjc.code.daw.library.tipocomida.TipocomidaRepository;
 
 @Controller
 public class DatabaseInitializer implements CommandLineRunner {
@@ -25,6 +27,9 @@ public class DatabaseInitializer implements CommandLineRunner {
 	
 	@Autowired
 	private RecetaRepository recetaRepository;
+	
+	@Autowired
+	private TipocomidaRepository tipocomidaRepository;
 
 	@Override
 	public void run(String... args) throws Exception {
@@ -57,6 +62,10 @@ public class DatabaseInitializer implements CommandLineRunner {
 		recetaRepository.save(new Receta(1, "Empanadas Burguer con Queso", "El aperitivo perfecto", "<div class='col-md-9'><div class='meta'><div class='fecha'>Publicado el 13 - 06 - 2015</div></div><div class='contenido'><h3>Ingredientes</h3><p>1 Masa para Empanada BUITONI</p><p>4 mini-hamburguesas de carne (25 g)</p><p>4 cucharaditas de Tomate Frito SOLIS 0%</p><p>1 loncha de queso para fundir</p><p>Jugo Maggi</p><h3>Preparación</h3><p>1.Con ayuda de un cortapastas o un vaso grande, cortar 8 círculos grandes de masa.</p><p>2. Sobre 4 de ellos poner sobre cada uno, una cucharadita de tomate, una hamburguesa y un trozo de queso y cubrirlo con el resto de los círculos.</p><p>3. Unir los bordes presionando con los dedos hasta que quede bien cerrados los círculos. Hacer un pequeño orificio en el centro y pintar la masa con el jugo Maggi.</p><p>4. Cocer las empanadas burguer en el horno, previamente calentado a 200ºC, durante unos 30 minutos.</p><h3>Consejos</h3><p>Es una receta de comida fast food pero hecha en casa y con ingredientes de buena calidad.</p></div></div>", "img/empanadas-burguer-con-queso.jpg", "img/empanadas-burguer-grande.jpg"));
 		recetaRepository.save(new Receta(1, "Solomillo con Salsa de Setas appelletti","Plato para lucirse y riquísimo", "<div class='col-md-9'><div class='meta'><div class='fecha'>Publicado el 13 - 06 - 2015</div></div><div class='contenido'><h3>Ingredientes</h3><p>1 solomillo de cerdo</p><p>1 barqueta Cappelletti prosciutto BUITONI</p><p> 1 tarrina Salsa Funghi BUITONI</p><p>1 diente de ajo</p><p>1 hoja de laurel</p><p>2 cucharadas de aceite de oliva pimienta</p><h3>Preparación</h3><p>1. Sazonar el solomillo con pimienta y dorarlo en un poco de aceite junto con el ajo y el laurel; flamearlo con coñac y cocerlo a fuego suave durante 15 minutos, dándole vueltas de vez en cuando. Añadir la salsa de setas y cocerlas unos minutos más a fuego muy suave.</p><p>2. Hervir los cappelletti en abundante agua con sal, tal y como se indica en el embalaje. Escurrirlo, reservando un poco del agua de cocción (1/2 vaso) y añadirla a la salsa de setas.</p><h3>Consejos</h3><p>Flamear el solomillo con coñac es opcional. Es un plato único muy completo. La salsa de setas ya lleva sal con lo que no hace falta añadir más.</p></div></div>", "img/solomillo-setas-grande.jpg", "img/solomillo-setas-grande.jpg"));
 
+		// Sample tipocomidas
+		
+		tipocomidaRepository.save(new Tipocomida("Comida Española", "Comida de todo el territorio español","<h3>Descripción</h3><p>La gastronomía de España es una variada forma de preparar platos, que se ve enriquecida por las aportaciones de las diversas regiones que componen el país. Cocina de origen que oscila entre el estilo rural y el costero, representa una diversidad fruto de muchas culturas, así como de paisajes y climas. La cocina española está fuertemente influida a lo largo de su historia por los pueblos que conquistan su territorio, así como de los pueblos que posteriormente conquista y coloniza. Esta situación le ha proporcionado una gran variedad de técnicas culinarias e ingredientes.</p><h3>Ejemplos de Comida Española</h3><div class='row'><div class='col-xs-4 col-md-4 videos'><h3>Tortilla de Patatas</h3><ul><li><img src='img/tortillapng.png' width='100px' height='auto'/></li></ul></div><div class='col-xs-4 col-md-4 resources'><h3>Paella</h3><ul><li><img src='img/paella.png' width='100px' height='auto' /><ul></div><div class='col-xs-4 col-md-4 resources'><h3>Pulpo a la Gallega</h3><ul><li><img src='img/pulpo.png' width='100px' height='auto' /></li></ul></div>", "img/banderaEsp.jpg", "img/banderaspain.jpg", new long[]{1,2},new long[]{3,1}));
+		tipocomidaRepository.save(new Tipocomida("Comida Norte Americana", "Aquí encontrarás toda la gastronomía típica de los Estados Unidos","<h3>Descripción</h3><p>La gastronomía de los Estados Unidos corresponde a una mezcla muy variada y algo interpretada de otras gastronomías, esto es así debido a que es un país creado fundamentalmente de inmigrantes procedentes de diferentes países de Europa, Asia, África, y otros países. Podría denominarse como autóctona la gastronomía de los indígenas de Norteamérica y el resto es una fusión de diferentes culturas gastronómicas llevadas a diferentes extremos, por una parte está la fast food llena de su atractivo marketing, por otra parte está la comida tradicioshnal fundamentada en las tradiciones ganaderas de antaño, tanto de ganado vacuno como ovino y caprino. Las comidas extranjeras más famosas son la China y la de sus vecinos de México.</p><h3>Ejemplos de Comida Norte Americana</h3><div class='row'><div class='col-xs-4 col-md-4 videos><h3>Hamburguesa</h3><ul><li><img src='img/foster-black.png' width='100px' height='auto'/></li></ul></div><div class='col-xs-4 col-md-4 resources'><h3>Costillas</h3><ul><li><img src='img/foster-national.png' width='100px' height='auto' /><ul></div><div class='col-xs-4 col-md-4 resources'><h3>Bacon Cheese Fires</h3><ul><li><img src='img/foster-patatas.png' width='100px' height='auto' /></li></ul></div>", "img/banderaEEUU.jpg", "img/banderaEEUU.jpg", new long[]{2, 4, 5},new long[]{2, 4, 5}));
 	}
 
 }

@@ -1,12 +1,12 @@
 import {Component}  from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteParams, Router} from 'angular2/router';
-import {TipoComida, TipoComidaService}   from './tipo-comida.service';
+import {Tipocomida, TipocomidaService}   from './tipo-comida.service';
 
 
 @Component({
   directives: [ROUTER_DIRECTIVES],
   template: `
-   <div *ngIf="tipoComida">
+   <div *ngIf="tipocomida">
    <div *ngIf="admin" class="container-fluid">
         <div class="row">
             <div class="col-xs-2 col-md-2">
@@ -46,7 +46,7 @@ import {TipoComida, TipoComidaService}   from './tipo-comida.service';
                 </div>
                 <div class="inputs-receta">
                     <input [(ngModel)]="tipocomida.title" class="form-control" placeholder="Nombre"/>
-                    <input [(ngModel)]="tipocomida.abstract" class="form-control" placeholder="Breve descripción" />
+                    <input [(ngModel)]="tipocomida.description" class="form-control" placeholder="Breve descripción" />
                     <textarea rows="9" class="form-control" [(ngModel)]="tipocomida.details" placeholder="Detalles"></textarea>
                     <input class="form-control" [(ngModel)]="tipocomida.thumbnail" placeholder="Imagen pequeña"/>
                     <input class="form-control" [(ngModel)]="tipocomida.thumbnailbig" placeholder="Imagen grande"/>
@@ -60,10 +60,10 @@ import {TipoComida, TipoComidaService}   from './tipo-comida.service';
     </div>`
 })
 
-export class TipoComidaFormComponent {
+export class TipocomidaFormComponent {
 
     newTipoComida: boolean;
-    tipocomida: TipoComida;
+    tipocomida: Tipocomida;
     
     user: boolean;
     admin: boolean;
@@ -71,7 +71,19 @@ export class TipoComidaFormComponent {
   constructor(
     private _router:Router,
     routeParams:RouteParams,
-    private service: TipoComidaService,
+    private service: TipocomidaService){
+    let id = routeParams.get('id');
+      if(id){
+        service.getTipocomida(id).subscribe(
+          tipocomida => this.tipocomida = tipocomida,
+          error => console.error(error)
+        );
+        this.newTipoComida = false;
+      } else {
+        this.tipocomida = new Tipocomida(undefined,'','');
+        this.newTipoComida = true;
+      }
+    }
   
 
   cancel() {
@@ -79,7 +91,10 @@ export class TipoComidaFormComponent {
   }
 
   save() {
-    this.service.saveTipoComida(this.tipocomida);
+    this.service.saveTipocomida(this.tipocomida).suscribe(
+  		tipocomida => {},
+  		error => console.error('Error al crear el nuevo restaurante: '+error)
+  	);
     window.history.back();
   }
 }
