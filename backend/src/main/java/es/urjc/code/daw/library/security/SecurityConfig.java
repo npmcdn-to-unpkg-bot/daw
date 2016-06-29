@@ -52,7 +52,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		// URLs that need authentication to access to it
 		http.authorizeRequests().antMatchers(HttpMethod.POST, "/books/**").hasRole("USER");
 		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/books/**").hasRole("USER");
-		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/books/**").hasRole("ADMIN");		
+		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/books/**").hasRole("ADMIN");	
+		http.authorizeRequests().antMatchers(HttpMethod.POST, "/tipocomidas/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/tipocomidas/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/tipocomidas/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.POST, "/restaurantes/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/restaurantes/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/restaurantes/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.POST, "/comidas/**").hasRole("USER");
+		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/comidas/**").hasRole("USER");
+		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/comidas/**").hasRole("USER");
 
 		// Other URLs can be accessed without authentication
 		http.authorizeRequests().anyRequest().permitAll();

@@ -1,6 +1,7 @@
 import {Component, OnInit}  from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteParams, Router} from 'angular2/router';
 import {Receta, RecetaService} from './receta.service';
+import {User, LoginService} from './login.service';
 
 @Component({
     directives: [ROUTER_DIRECTIVES],
@@ -11,13 +12,15 @@ import {Receta, RecetaService} from './receta.service';
     <div class="container-fluid">
           <div class="row">
               <div class="col-md-3 info-usuario">
-                <img class="avatar" src="{{perfil.thumbnail}}" width="200px" height="200px"/>
-                <h3><a [routerLink]="['PerfilPublicoDetail', {id: perfil.id}]">{{perfil.name}} {{perfil.apellidos}}</a></h3>
-                <h4><a [routerLink]="['PerfilPublicoDetail', {id: perfil.id}]">@{{perfil.user}}</a></h4>
-                <p>{{perfil.descripcion}}</p>
-                <div *ngIf="user">
-                    <button *ngIf="perfil.id == pactual.id" type="submit" class="btn btn-default publicar" (click)="removeReceta()">Eliminar</button>
-                    <button *ngIf="perfil.id == pactual.id" type="submit" class="btn btn-default publicar" (click)="editReceta()">Editar</button>
+              	<div *ngIf="perfil">
+	                <img class="avatar" src="{{perfil.thumbnail}}" width="200px" height="200px"/>
+    	            <h3><a [routerLink]="['PerfilPublicoDetail', {id: perfil.id}]">{{perfil.name}} {{perfil.apellidos}}</a></h3>
+        	        <h4><a [routerLink]="['PerfilPublicoDetail', {id: perfil.id}]">@{{perfil.user}}</a></h4>
+            	    <p>{{perfil.descripcion}}</p>
+                </div>
+                <div *ngIf="loginService.isLogged">
+                    <button *ngIf="loginService.user.id == receta.userid" type="submit" class="btn btn-default publicar" (click)="removeReceta()">Eliminar</button>
+                    <button *ngIf="loginService.user.id == receta.userid" type="submit" class="btn btn-default publicar" (click)="editReceta()">Editar</button>
                     <button (click)="addFavoritosRec()" type="submit" class="btn btn-default publicar">Añadir a Favoritos</button>
                 </div>
               </div>
@@ -47,15 +50,13 @@ export class RecetaDetailComponent implements OnInit{
 
     receta: Receta;
     recetas: Recetas[];
-    perfil: Perfil;
-    pactual: Perfil;
-    user: boolean;
-    admin: boolean;
+    perfil: User;
     constructor(
       private router: Router,
       routeParams: RouteParams,
       private service: RecetaService,
       private recetasService: RecetaService,
+      private loginService: LoginService
       ){
         let id = routeParams.get('id');
         service.getReceta(id).subscribe(
@@ -69,6 +70,10 @@ export class RecetaDetailComponent implements OnInit{
             recetas => this.recetas = recetas,
             error => console.log(error),
         );
+        /*this.loginService.getPerfil(this.receta.userid).subscribe(
+        	perfil => this.perfil = user,
+        	error => console.log(error),
+        );*/
     }
     removeReceta() {
         let okResponse = window.confirm("¿Quieres eliminar esta receta?");
@@ -85,7 +90,7 @@ export class RecetaDetailComponent implements OnInit{
     }
     
     addFavoritosRec(){
-        this.perfilService.anadirFavoritoRec(this.pactual, this.receta.id);
+        //this.perfilService.anadirFavoritoRec(this.pactual, this.receta.id);
     }
 
     gotoReceta() {

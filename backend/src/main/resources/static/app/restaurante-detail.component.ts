@@ -1,6 +1,7 @@
 import {Component}  from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteParams, Router} from 'angular2/router';
 import {Restaurante, RestauranteService}   from './restaurante.service';
+import {LoginService} from './login.service';
 
 @Component({
     directives: [ROUTER_DIRECTIVES],
@@ -12,9 +13,9 @@ import {Restaurante, RestauranteService}   from './restaurante.service';
         <div class="row">
           <div class="col-md-12">
             <h2 class="text-center">{{restaurante.title}}</h2>
-            <button *ngIf="admin" (click)="editRestaurante()" type="submit" class="btn btn-default publicar">Editar</button>
-            <button *ngIf="admin" (click)="removeRestaurante()" type="submit" class="btn btn-default publicar">Eliminar</button>
-            <button *ngIf="user" (click)="addFavoritosRest()" type="submit" class="btn btn-default publicar">Añadir a Favoritos</button>
+            <button *ngIf="loginService.isAdmin" (click)="editRestaurante()" type="submit" class="btn btn-default publicar">Editar</button>
+            <button *ngIf="loginService.isAdmin" (click)="removeRestaurante()" type="submit" class="btn btn-default publicar">Eliminar</button>
+            <button *ngIf="loginService.isLogged" (click)="addFavoritosRest()" type="submit" class="btn btn-default publicar">Añadir a Favoritos</button>
     
             <div class="contenido" [innerHtml]="restaurante.details"></div>
             <div class="row">
@@ -46,7 +47,10 @@ export class RestauranteDetailComponent {
     restaurante: Restaurante;
     restaurantes: Restaurantes[];
 
-    constructor(private router: Router, routeParams: RouteParams, private service: RestauranteService) {
+    constructor(private router: Router,
+    routeParams: RouteParams,
+    private service: RestauranteService,
+    private loginService: LoginService) {
         let id = routeParams.get('id');
         service.getRestaurante(id).subscribe(
             restaurante => this.restaurante = restaurante,

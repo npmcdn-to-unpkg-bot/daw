@@ -3,6 +3,7 @@ import {ROUTER_DIRECTIVES, RouteParams, Router} from 'angular2/router';
 import {Tipocomida, TipocomidaService} from './tipo-comida.service';
 import {Receta, RecetaService} from './receta.service';
 import {Restaurante, RestauranteService} from './restaurante.service';
+import {LoginService} from './login.service':
 
 @Component({
     directives: [ROUTER_DIRECTIVES],
@@ -14,8 +15,8 @@ import {Restaurante, RestauranteService} from './restaurante.service';
         <div class="row">
           <div class="col-md-12">
             <h2 class="text-center">{{tipocomida.title}}</h2>
-            <button *ngIf="admin" (click)="editTipoComida()" type="submit" class="btn btn-default publicar">Editar</button>
-            <button *ngIf="admin" (click)="removeTipoComida()" type="submit" class="btn btn-default publicar">Eliminar</button>
+            <button *ngIf="loginService.isLogged && loginService.isAdmin" (click)="editTipocomida()" type="submit" class="btn btn-default publicar">Editar</button>
+            <button *ngIf="loginService.isLogged && loginService.isAdmin" (click)="removeTipocomida()" type="submit" class="btn btn-default publicar">Eliminar</button>
             <div class="contenido" [innerHtml]="tipocomida.details"></div>
             
           </div>
@@ -64,16 +65,13 @@ export class TipocomidaDetailComponent {
     recetas: Receta[];
     restaurantes: Restaurante[];
     
-    user: boolean;
-    admin: boolean;
-    
     constructor(
         private router: Router,
         routeParams: RouteParams,
         private service: TipocomidaService,
         private recetaService: RecetaService,
         private restauranteService: RestauranteService,
-        
+        private loginService: LoginService
         
     ){
         let id = routeParams.get('id');
@@ -102,7 +100,7 @@ export class TipocomidaDetailComponent {
         let okResponse = window.confirm("¿Quieres eliminar este tipo de comida?");
         if (okResponse) {
             this.service.removeTipocomida(this.tipocomida).subscribe(
-                _ => this.router.navigate(['TiposComidas']),
+                _ => this.router.navigate(['TipoComida']),
                 error => console.error(error)
             )
         }

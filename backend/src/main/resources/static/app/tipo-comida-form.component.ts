@@ -2,41 +2,40 @@ import {Component}  from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteParams, Router} from 'angular2/router';
 import {Tipocomida, TipocomidaService}   from './tipo-comida.service';
 
-
 @Component({
   directives: [ROUTER_DIRECTIVES],
   template: `
    <div *ngIf="tipocomida">
-   <div *ngIf="admin" class="container-fluid">
+   <div  class="container-fluid">
         <div class="row">
             <div class="col-xs-2 col-md-2">
                 <ul class="nav nav-pills nav-stacked">
                     <li>
-                        <a [routerLink]="['PerfilDetail']">Mi Cuenta</a>
+                        <a >Mi Cuenta</a>
                     </li>
                     <li>
-                        <a [routerLink]="['PerfilMisRecetas']">Mis Recetas</a>
+                        <a>Mis Recetas</a>
                     </li>
                     <li>
-                        <a [routerLink]="['RecetaNew']">Añadir Receta</a>
+                        <a >Añadir Receta</a>
                     </li>
                     <li>
-                        <a [routerLink]="['PerfilMisFavoritos']">Favoritos</a>
+                        <a>Favoritos</a>
                     </li>
-                    <li *ngIf="admin">
-                        <a [routerLink]="['RestauranteNew']">Añadir Restaurante</a>
+                    <li >
+                        <a>Añadir Restaurante</a>
                     </li>
-                    <li *ngIf="admin">
-                        <a [routerLink]="['PerfilMisRestaurantes']">Ver restaurantes</a>
+                    <li>
+                        <a >Ver restaurantes</a>
                     </li>
-                    <li class="active" *ngIf="admin">
+                    <li class="active" >
                         <a>Añadir Tipo comida</a>
                     </li>
-                    <li *ngIf="admin">
-                        <a [routerLink]="['PerfilMisTiposComidas']">Ver tipo comida</a>
+                    <li >
+                        <a >Ver tipo comida</a>
                     </li>
                     <li>
-                        <a [routerLink]="['PerfilAjustes']">Ajustes</a>
+                        <a >Ajustes</a>
                     </li>
                 </ul>
             </div>
@@ -64,26 +63,24 @@ export class TipocomidaFormComponent {
 
     newTipoComida: boolean;
     tipocomida: Tipocomida;
-    
-    user: boolean;
-    admin: boolean;
 
   constructor(
     private _router:Router,
     routeParams:RouteParams,
     private service: TipocomidaService){
-    let id = routeParams.get('id');
-      if(id){
-        service.getTipocomida(id).subscribe(
-          tipocomida => this.tipocomida = tipocomida,
-          error => console.error(error)
-        );
-        this.newTipoComida = false;
-      } else {
-        this.tipocomida = new Tipocomida(undefined,'','');
-        this.newTipoComida = true;
-      }
-    }
+    
+	    let id = routeParams.get('id');
+	      if(id){
+	        service.getTipocomida(id).subscribe(
+	          tipocomida => this.tipocomida = tipocomida,
+	          error => console.error(error)
+	        );
+	        this.newTipoComida = false;
+	      } else {
+	        this.tipocomida = { title: '', description: '', details: '', thumbnail: '', thumbnailbig: '',recetas: [],restaurantes: [] };
+	        this.newTipoComida = true;
+	      }
+  }
   
 
   cancel() {
@@ -91,7 +88,7 @@ export class TipocomidaFormComponent {
   }
 
   save() {
-    this.service.saveTipocomida(this.tipocomida).suscribe(
+    this.service.saveTipocomida(this.tipocomida).subscribe(
   		tipocomida => {},
   		error => console.error('Error al crear el nuevo restaurante: '+error)
   	);

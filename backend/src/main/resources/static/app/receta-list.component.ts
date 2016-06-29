@@ -1,13 +1,14 @@
 import {Component, OnInit}   from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteParams, Router} from 'angular2/router';
 import {Receta, RecetaService}   from './receta.service';
+import {LoginService} from './login.service';
 
 @Component({
     directives: [ROUTER_DIRECTIVES],
     template: `
     <div class="container-fluid">
       <h1 class="text-center recetas-h1">Recetas</h1>
-      <div *ngIf="user"><button style="margin-bottom: 10px; margin-left: 20px;" (click)="newReceta()" class="btn btn-default publicar">Nuevo receta</button></div>
+      <div *ngIf="loginService.isLogged"><button style="margin-bottom: 10px; margin-left: 20px;" (click)="newReceta()" class="btn btn-default publicar">Nuevo receta</button></div>
       <div *ngFor="#receta of recetas" class="col-xs-6 col-md-4">
           <div class="thumbnail">
               <img src="{{receta.thumbnail}}" alt="{{receta.title}}">
@@ -24,7 +25,9 @@ export class RecetaListComponent implements OnInit {
 
     recetas: Receta[];
 
-constructor(private router:Router, private service: RecetaService) {}
+constructor(private router:Router,
+private service: RecetaService,
+private loginService: LoginService) {}
 
     ngOnInit(){
       this.service.getRecetas().subscribe(

@@ -6,36 +6,36 @@ import {Restaurante, RestauranteService}   from './restaurante.service';
   directives: [ROUTER_DIRECTIVES],
   template: `
    <div *ngIf="restaurante">
-   <div *ngIf="admin" class="container-fluid">
+   <div class="container-fluid">
         <div class="row">
             <div class="col-xs-2 col-md-2">
                 <ul class="nav nav-pills nav-stacked">
                     <li>
-                        <a [routerLink]="['PerfilDetail']">Mi Cuenta</a>
+                        <a>Mi Cuenta</a>
                     </li>
                     <li>
-                        <a [routerLink]="['PerfilMisRecetas']">Mis Recetas</a>
+                        <a>Mis Recetas</a>
                     </li>
                     <li>
-                        <a [routerLink]="['RecetaNew']">Añadir Receta</a>
+                        <a>Añadir Receta</a>
                     </li>
                     <li>
-                        <a [routerLink]="['PerfilMisFavoritos']">Favoritos</a>
+                        <a>Favoritos</a>
                     </li>
-                    <li *ngIf="admin" class="active">
+                    <li class="active">
                         <a>Añadir Restaurante</a>
                     </li>
-                    <li *ngIf="admin">
-                        <a [routerLink]="['PerfilMisRestaurantes']">Ver restaurantes</a>
-                    </li>
-                    <li *ngIf="admin">
-                        <a [routerLink]="['TipoComidaNew']">Añadir Tipo comida</a>
-                    </li>
-                    <li *ngIf="admin">
-                        <a [routerLink]="['PerfilMisTiposComidas']">Ver tipo comida</a>
+                    <li>
+                        <a>Ver restaurantes</a>
                     </li>
                     <li>
-                        <a [routerLink]="['PerfilAjustes']">Ajustes</a>
+                        <a>Añadir Tipo comida</a>
+                    </li>
+                    <li>
+                        <a>Ver tipo comida</a>
+                    </li>
+                    <li>
+                        <a>Ajustes</a>
                     </li>
                 </ul>
             </div>
@@ -63,7 +63,9 @@ export class RestauranteFormComponent {
   newRestaurante: boolean;
   restaurante: Restaurante;
 
-  constructor(private _router:Router, routeParams:RouteParams, private service: RestauranteService){
+  constructor(private _router:Router,
+  routeParams:RouteParams,
+  private service: RestauranteService){
 
       let id = routeParams.get('id');
       if(id){
@@ -73,7 +75,7 @@ export class RestauranteFormComponent {
         );
         this.newRestaurante = false;
       } else {
-        this.restaurante = new Restaurante(undefined,'','');
+        this.restaurante = { title: '', description: '', details: '', thumbnail: '', thumbnailbig: '', map: '' };
         this.newRestaurante = true;
       }
   }
@@ -83,7 +85,7 @@ export class RestauranteFormComponent {
   }
 
   save() {
-  	this.service.saveRestaurante(this.restaurante).suscribe(
+  	this.service.saveRestaurante(this.restaurante).subscribe(
   		restaurante => {},
   		error => console.error('Error al crear el nuevo restaurante: '+error)
   	);

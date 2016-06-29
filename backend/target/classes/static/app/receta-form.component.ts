@@ -1,6 +1,7 @@
 import {Component}  from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteParams, Router} from 'angular2/router';
 import {Receta, RecetaService}   from './receta.service';
+import {LoginService} from './login.service';
 
 @Component({
   directives: [ROUTER_DIRECTIVES],
@@ -11,35 +12,35 @@ import {Receta, RecetaService}   from './receta.service';
             <div class="col-xs-2 col-md-2">
                 <ul class="nav nav-pills nav-stacked">
                     <li>
-                        <a [routerLink]="['PerfilDetail']">Mi Cuenta</a>
+                        <a>Mi Cuenta</a>
                     </li>
                     <li>
-                        <a [routerLink]="['PerfilMisRecetas']">Mis Recetas</a>
+                        <a>Mis Recetas</a>
                     </li>
                     <li class="active">
                         <a>Añadir Receta</a>
                     </li>
                     <li>
-                        <a [routerLink]="['PerfilMisFavoritos']">Favoritos</a>
+                        <a>Favoritos</a>
                     </li>
-                    <li *ngIf="admin">
-                        <a [routerLink]="['RestauranteNew']">Añadir Restaurante</a>
+                    <li *ngIf="loginService.isAdmin">
+                        <a>Añadir Restaurante</a>
                     </li>
-                    <li *ngIf="admin">
-                        <a [routerLink]="['PerfilMisRestaurantes']">Ver restaurantes</a>
+                    <li *ngIf="loginService.isAdmin">
+                        <a>Ver restaurantes</a>
                     </li>
-                    <li *ngIf="admin">
-                        <a [routerLink]="['TipoComidaNew']">Añadir Tipo comida</a>
+                    <li *ngIf="loginService.isAdmin">
+                        <a>Añadir Tipo comida</a>
                     </li>
-                    <li *ngIf="admin">
-                        <a [routerLink]="['PerfilMisTiposComidas']">Ver tipo comida</a>
+                    <li *ngIf="loginService.isAdmin">
+                        <a>Ver tipo comida</a>
                     </li>
                     <li>
-                        <a [routerLink]="['PerfilAjustes']">Ajustes</a>
+                        <a>Ajustes</a>
                     </li>
                 </ul>
             </div>
-            <div *ngIf="receta.userid == pactual.id" class="col-xs-2 col-md-8">
+            <div *ngIf="!newReceta" class="col-xs-2 col-md-8">
                 <div class="cabecera-subrayada">
                     <h1>Editar receta</h1>
                 </div>
@@ -80,6 +81,7 @@ export class RecetaFormComponent{
     private _router:Router,
     routeParams:RouteParams,
     private service: RecetaService,
+    private loginService: LoginService
   ){
 
       let id = routeParams.get('id');
@@ -90,7 +92,7 @@ export class RecetaFormComponent{
         );
         this.newReceta = false;
       } else {
-        this.receta = new Receta(undefined,'','');
+        this.receta = { title: '', description: '', details: '', thumbnail: '', thumbnailbig: '' };
         this.newReceta = true;
       }
   }
@@ -100,8 +102,10 @@ export class RecetaFormComponent{
   }
 
   save() {
-      this.receta.userid = this.pactual.id;
-    this.service.saveReceta(this.receta);
+      this.service.saveReceta(this.receta).subscribe(
+    	receta => {}, 
+    	error => console.error('Error al crear nueva receta: '+error)
+    );
     window.history.back();
   }
 }
