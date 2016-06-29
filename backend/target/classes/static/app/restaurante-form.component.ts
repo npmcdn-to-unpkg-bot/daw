@@ -5,6 +5,7 @@ import {Restaurante, RestauranteService}   from './restaurante.service';
 @Component({
   directives: [ROUTER_DIRECTIVES],
   template: `
+   <div *ngIf="restaurante">
    <div *ngIf="admin" class="container-fluid">
         <div class="row">
             <div class="col-xs-2 col-md-2">
@@ -54,6 +55,7 @@ import {Restaurante, RestauranteService}   from './restaurante.service';
                 </div>
             </div>
         </div>
+    </div>
     </div>`
 })
 export class RestauranteFormComponent {
