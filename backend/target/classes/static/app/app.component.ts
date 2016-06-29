@@ -19,10 +19,16 @@ import {RestauranteDetailComponent} from './restaurante-detail.component';
 import {RestauranteFormComponent} from './restaurante-form.component';
 import {RestauranteService} from './restaurante.service';
 
+//Recetas
+import {RecetaListComponent} from './receta-list.component';
+import {RecetaDetailComponent} from './receta-detail.component';
+import {RecetaFormComponent} from './receta-form.component';
+import {RecetaService} from './receta.service';
+
 @Component({
   selector: 'app',
   templateUrl: 'app/app.component.html',
-  providers:  [BookService, RestauranteService, LoginService, HTTP_PROVIDERS],
+  providers:  [BookService, RecetaService, RestauranteService, LoginService, HTTP_PROVIDERS],
   directives: [LoginComponent, ROUTER_DIRECTIVES, Alert]
 })
 @RouteConfig([
@@ -33,7 +39,11 @@ import {RestauranteService} from './restaurante.service';
   {path: '/restaurantes', name: 'Restaurantes', component: RestauranteListComponent},
   {path: '/restaurante/:id', name: 'RestauranteDetail', component: RestauranteDetailComponent},
   {path: '/restaurante/new', name: 'RestauranteNew', component: RestauranteFormComponent},
-  {path: '/restaurante/edit/:id', name: 'RestauranteEdit', component: RestauranteFormComponent}
+  {path: '/restaurante/edit/:id', name: 'RestauranteEdit', component: RestauranteFormComponent},
+  {path: '/recetas', name: 'Recetas', component: RecetaListComponent},
+  {path: '/receta/:id', name: 'RecetaDetail', component: RecetaDetailComponent},
+  {path: '/receta/new', name: 'RecetaNew', component: RecetaFormComponent},
+  {path: '/receta/edit/:id', name: 'RecetaEdit', component: RecetaFormComponent}
 ])
-export class AppComponent {	
+export class AppComponent {
 }

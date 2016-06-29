@@ -30,7 +30,7 @@ export class RestauranteService {
 	      .map(response => response.json())
 	      .catch(error => this.handleError(error));
   }
-	
+
   saveRestaurante(restaurante: Restaurante){
     let body = JSON.stringify(restaurante);
     let headers = new Headers({
@@ -48,14 +48,14 @@ export class RestauranteService {
     let headers = new Headers({
 	   'X-Requested-With': 'XMLHttpRequest'
 	});
-	let options = new RequestOptions({ headers });  
-	  
+	let options = new RequestOptions({ headers });
+
     return this.http.delete(URL + restaurante.id, options)
       .map(response => undefined)
       .catch(error => this.handleError(error));
   }
-  
-  updateBook(restaurante: Restaurante) {
+
+  updateRestaurante(restaurante: Restaurante) {
 
     let body = JSON.stringify(restaurante);
     let headers = new Headers({
