@@ -49,6 +49,7 @@ public class DatabaseInitializer implements CommandLineRunner {
 
 		// Sample users
 
+		userRepository.save(new User("tim", "cook", "ceo apple", "TimCook", "pass", "http://images.apple.com/pr/bios/images/cook_hero.png", new long[] {1, 2}, new long[] {1, 2}, "ROLE_USER"));
 		userRepository.save(new User("user", "", "", "", "pass", "", new long[] {1, 2}, new long[] {1, 2}, "ROLE_USER"));
 		userRepository.save(new User("admin", "", "", "", "pass", "", new long[] {1, 2}, new long[] {1, 2}, "ROLE_USER", "ROLE_ADMIN"));
 		
