@@ -9,6 +9,10 @@ import {BookDetailComponent} from './book-detail.component';
 import {BookFormComponent} from './book-form.component';
 import {BookService} from './book.service';
 
+//Index
+import {IndexService} from './index.service';
+import {IndexListComponent} from './index-list.component';
+
 // Login
 import {LoginComponent} from './login.component';
 import {LoginService} from './login.service';
@@ -38,7 +42,9 @@ import {TipocomidaService} from './tipo-comida.service';
   directives: [LoginComponent, ROUTER_DIRECTIVES, Alert]
 })
 @RouteConfig([
-  {path: '/books', name: 'Books', component: BookListComponent, useAsDefault: true},
+ 	//Index
+  {path: '/', name: 'Index', component: IndexListComponent, useAsDefault: true},
+  {path: '/books', name: 'Books', component: BookListComponent},
   {path: '/book/:id', name: 'BookDetail', component: BookDetailComponent},
   {path: '/book/new', name: 'BookNew', component: BookFormComponent},
   {path: '/book/edit/:id', name: 'BookEdit', component: BookFormComponent},
