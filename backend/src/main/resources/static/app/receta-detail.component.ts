@@ -12,11 +12,11 @@ import {User, LoginService} from './login.service';
     <div class="container-fluid">
           <div class="row">
               <div class="col-md-3 info-usuario">
-              	<div *ngIf="perfil">
-	                <img class="avatar" src="{{perfil.thumbnail}}" width="200px" height="200px"/>
-    	            <h3><a [routerLink]="['PerfilPublicoDetail', {id: perfil.id}]">{{perfil.name}} {{perfil.apellidos}}</a></h3>
-        	        <h4><a [routerLink]="['PerfilPublicoDetail', {id: perfil.id}]">@{{perfil.user}}</a></h4>
-            	    <p>{{perfil.descripcion}}</p>
+              	<div *ngIf="user">
+	                <img class="avatar" src="{{user.thumbnail}}" width="200px" height="200px"/>
+    	            <h3><a [routerLink]="['PerfilPublicoDetail', {id: user.id}]">{{user.name}} {{user.apellidos}}</a></h3>
+        	        <h4><a [routerLink]="['PerfilPublicoDetail', {id: user.id}]">@{{user.user}}</a></h4>
+            	    <p>{{user.descripcion}}</p>
                 </div>
                 <div *ngIf="loginService.isLogged">
                     <button *ngIf="loginService.user.id == receta.userid" type="submit" class="btn btn-default publicar" (click)="removeReceta()">Eliminar</button>
@@ -50,7 +50,7 @@ export class RecetaDetailComponent implements OnInit{
 
     receta: Receta;
     recetas: Recetas[];
-    perfil: User;
+    user: User;
     constructor(
       private router: Router,
       routeParams: RouteParams,
@@ -71,7 +71,7 @@ export class RecetaDetailComponent implements OnInit{
             error => console.log(error),
         );
         /*this.loginService.getPerfil(this.receta.userid).subscribe(
-        	perfil => this.perfil = user,
+        	user => this.user = user,
         	error => console.log(error),
         );*/
     }
@@ -90,7 +90,7 @@ export class RecetaDetailComponent implements OnInit{
     }
     
     addFavoritosRec(){
-        //this.perfilService.anadirFavoritoRec(this.pactual, this.receta.id);
+        //this.userService.anadirFavoritoRec(this.pactual, this.receta.id);
     }
 
     gotoReceta() {

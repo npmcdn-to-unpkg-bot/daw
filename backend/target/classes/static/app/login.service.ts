@@ -2,6 +2,7 @@ import { Injectable, OnInit } from 'angular2/core';
 import { Http, RequestOptions, Headers } from 'angular2/http';
 import 'rxjs/Rx';
 
+
 export interface User {  
     id?: number;
     name: string;
@@ -27,11 +28,28 @@ export class LoginService {
 		this.reqIsLogged();
 	}
 	
-	getPerfil (id: number | string) {
+	getUser() {
+		return this.user;
+	}
+	
+	getUsuario(id: number | string) {
 		return this.http.get(URL + id)
 			.map(response => response.json())
 			.catch(error => this.handleError(error));
 	}
+	
+	saveUser(user: User){
+	    let body = JSON.stringify(user);
+	    let headers = new Headers({
+	        'Content-Type': 'application/json',
+	        'X-Requested-With': 'XMLHttpRequest'
+	    });
+	    let options = new RequestOptions({ headers });
+	
+	    return this.http.post(URL, body, options)
+	      .map(response => response.json())
+	      .catch(error => this.handleError(error));
+	  }
 	
 	reqIsLogged(){
 		

@@ -78,6 +78,30 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	public String getApellidos() {
+		return apellidos;
+	}
+
+	public void set(String descripcion) {
+		this.descripcion = descripcion;
+	}
+	
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+	
+	public String getUser() {
+		return user;
+	}
+
+	public void setUser(String user) {
+		this.user = user;
+	}
 
 	public String getPasswordHash() {
 		return passwordHash;
@@ -87,6 +111,30 @@ public class User {
 		this.passwordHash = passwordHash;
 	}
 
+	public String getThumbnail() {
+		return thumbnail;
+	}
+
+	public void setThumbnail(String thumbnail) {
+		this.thumbnail = thumbnail;
+	}
+	
+	public long[] getResFavs() {
+		return restFavs;
+	}
+
+	public void setRestFavs(long[] restFavs) {
+		this.restFavs = restFavs;
+	}
+	
+	public long[] getRecFavs() {
+		return recFavs;
+	}
+
+	public void setRecFavs(long[] recFavs) {
+		this.recFavs = recFavs;
+	}
+	
 	public List<String> getRoles() {
 		return roles;
 	}
@@ -95,9 +143,9 @@ public class User {
 		this.roles = roles;
 	}
 	
-	/*public long getId() {
+	public Long getId() {
 		return id;
-	}*/
+	}
 
 	public void setId(long id) {
 		this.id = id;

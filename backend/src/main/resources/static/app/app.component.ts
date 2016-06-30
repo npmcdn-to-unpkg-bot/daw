@@ -16,6 +16,8 @@ import {IndexListComponent} from './index-list.component';
 // Login
 import {LoginComponent} from './login.component';
 import {LoginService} from './login.service';
+import {LoginDetailComponent} from './login-detail.component';
+import {LoginFormComponent} from './login-form.component';
 
 // Restaurantes
 import {RestauranteListComponent} from './restaurante-list.component';
@@ -38,7 +40,7 @@ import {TipocomidaService} from './tipo-comida.service';
 @Component({
   selector: 'app',
   templateUrl: 'app/app.component.html',
-  providers:  [BookService, RecetaService, RestauranteService, LoginService, TipocomidaService, HTTP_PROVIDERS],
+  providers:  [BookService, IndexService, RecetaService, RestauranteService, LoginService, TipocomidaService, HTTP_PROVIDERS],
   directives: [LoginComponent, ROUTER_DIRECTIVES, Alert]
 })
 @RouteConfig([
@@ -59,7 +61,9 @@ import {TipocomidaService} from './tipo-comida.service';
   {path: '/tipocomida', name: 'TipoComida', component: TipocomidaListComponent},
   {path: '/tipocomida/:id', name: 'TipoComidaDetail', component: TipocomidaDetailComponent},
   {path: '/tipocomida/new', name: 'TipoComidaNew', component: TipocomidaFormComponent},
-  {path: '/tipocomida/edit/:id', name: 'TipoComidaEdit', component: TipocomidaFormComponent}
+  {path: '/tipocomida/edit/:id', name: 'TipoComidaEdit', component: TipocomidaFormComponent},
+  {path: '/perfil/', name: 'PerfilDetail', component: LoginDetailComponent},
+  {path: '/perfil/new', name: 'PerfilNew', component: LoginFormComponent}
 ])
 export class AppComponent {
 }
